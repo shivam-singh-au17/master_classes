@@ -5,44 +5,39 @@ function runProgram(input) {
     var k = Number(input1[2]);
     var count = 0;
 
+    var i = left;
+    while (i <= right) {
 
-
-    // var i = left;
-    // while (i <= right) {
-    //     i++;
-    //     if (i % k == 0) {
-    //         count++;
-    //     }
-    // }
-    // console.log(count);
-
-
-
-
-    if (left == 1) {
-        for (var i = k; i <= right; i = i + k) {
-            if (i == i) {
-                count++
-            }
+        if (i % k == 0) {
+            count++;
         }
-        console.log(count);  
-    } else if (k == 1) {
-        for (var i = left; i <= right; i = i + k) {
-            if (i == i) {
-                count++
-            }
-        }
-        console.log(count);
-    } else {
-        for (var i = left; i <= right; i = i + k) {
-            if (i == i) {
-                count++
-            }
-        }
-        console.log(count);
+        i++;
     }
+    console.log(count);
 
-
+    
+   // if (left == 1) {
+    //     for (var i = k; i <= right; i = i + k) {
+    //         if (i == i) {
+    //             count++
+    //         }
+    //     }
+    //     console.log(count);  
+    // } else if (k == 1) {
+    //     for (var i = left; i <= right; i = i + k) {
+    //         if (i == i) {
+    //             count++
+    //         }
+    //     }
+    //     console.log(count);
+    // } else {
+    //     for (var i = left; i <= right; i = i + k) {
+    //         if (i == i) {
+    //             count++
+    //         }
+    //     }
+    //     console.log(count);
+    // }
 
 
 

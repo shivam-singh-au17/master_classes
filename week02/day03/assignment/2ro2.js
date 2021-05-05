@@ -3,11 +3,12 @@ function runProgram(input) {
     var num1 = Number(input1[0]);
     var num2 = Number(input1[1]);
     var result = "";
-    for (var i = num1; i <= num2; i = i + num1) {
+
+    for (var i = num1; i <= num2; i *= 2) {
         result = result + i + " "
     }
-    result = result.split(" ")
-    console.log(result[0],result[1]);
+    console.log(result);
+
 
 }
 if (process.env.USERNAME === "shiva") {
@@ -30,3 +31,9 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
+
+
+
+
+ 
