@@ -4,6 +4,21 @@ function runProgram(input) {
     var right = Number(input1[1]);
     var k = Number(input1[2]);
     var count = 0;
+
+
+
+    // var i = left;
+    // while (i <= right) {
+    //     i++;
+    //     if (i % k == 0) {
+    //         count++;
+    //     }
+    // }
+    // console.log(count);
+
+
+
+
     if (left == 1) {
         for (var i = k; i <= right; i = i + k) {
             if (i == i) {
@@ -26,11 +41,14 @@ function runProgram(input) {
         }
         console.log(count);
     }
-    
+
+
+
+
 
 }
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5 172 21`);
+    runProgram(`10 100 10`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
