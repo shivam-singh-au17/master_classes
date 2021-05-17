@@ -42,8 +42,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
-
-
-
-
