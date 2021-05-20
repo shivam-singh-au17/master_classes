@@ -1,46 +1,38 @@
+function findAnagram(str1, str2) {
 
-function AnagramDetector(string) {
-    var ans = [];
-    for (var i = 0; i < string.length; i++) {
-        var result = "";
-        for (var k = i; k < string.length; k++) {
-            result += string[k];
-            ans.push(result)
+    let mappedstr1 = {}, mappedstr2 = {};
+
+    for (let item of str1) {
+        mappedstr1[item] = (mappedstr1[item] || 0) + 1;
+    }
+
+    for (let item2 of str2) {
+        mappedstr2[item2] = (mappedstr2[item2] || 0) + 1;
+    }
+
+    for (let key in mappedstr1) {
+        if (!mappedstr2[key]) {
+            return 'False';
+        }
+
+        if (mappedstr1[key] !== mappedstr2[key]) {
+            return 'False';
         }
     }
-    return ans
 
+    return 'True';
 }
 
-function printResult(ans, items2) {
-    var flag = false;
-    for (var i = 0; i < ans.length; i++) {
-        for (var j = 0; j < items2.length; j++) {
-           if (ans[i] == items2[j]) {
-               flag = true;
-           }
-        }
-    }
-    return flag
-}
-
-function printTrueFalse(flag) {
-    if (flag == true) {
-        console.log("True");
-    } else {
-        console.log("False");
-    }
-}
 
 function runProgram(input) {
 
     var newInput = input.split("\n");
     var newInput1 = newInput[0];
-    var newInput2 = newInput[1].split(" ");
+    var newInput2 = newInput[1];
 
-    var strResult = AnagramDetector(newInput1);
-    var answ = printResult(strResult, newInput2);
-    printTrueFalse(answ)
+    var strResult = findAnagram(newInput1, newInput2);
+    console.log(strResult);
+
 }
 if (process.env.USERNAME === "shiva") {
     runProgram(`anagram
