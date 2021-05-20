@@ -19,7 +19,7 @@ function secondMax(items, items2) {
         if (items[i] > items2) {
             count++
             if (count == 2) {
-                var result = i - 1
+                var result = i -1 
             }
         }
     }
