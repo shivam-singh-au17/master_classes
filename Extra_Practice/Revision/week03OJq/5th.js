@@ -1,13 +1,41 @@
 function runProgram(input) {
 
-    var newInput = Number(input);
+    var Input = input;
+    var n = Input.length;
+    var temp = Input[0]
+    var count = 1;
+    var result = "";
 
-    //   TODO:
+    for (var i = 1; i < n; i++) {
+        if (Input[i] == temp) {
+            count++;
+        } else {
+            if (count % 2 != 0) {
+                result += temp;
+                count = 1;
+                temp = Input[i];
+            }
+            result += "";
+            count = 1;
+            temp = Input[i];
+        }
+    }
+    if (count % 2 != 0) {
+        result += temp;
+    } else {
+        result += "";
+    }
+    if (result == "") {
+        console.log("Empty String");
+    } else {
+        console.log(result);
+    }
+    
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`aaabbbbcc`);
+    runProgram(`aabbccdd`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

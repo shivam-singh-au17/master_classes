@@ -1,41 +1,31 @@
 
-function goodString(items) {
-    var temp = items[0]
-    var count = 1;
-    var result = ""
-    for (var i = 0; i < items.length; i++){
-        if (items[i] == temp) {
-            count++
-        } else {
-            result += temp;
-            count = 1
-            temp = items[i]
-        }
-    }
-    result += temp;
-    return result;
+function printTable(items) {
+    var res = "";
+    for (var i = 1; i <= 10; i++) {
+        res += items * i + " ";
+    } return res;
 }
 
 function runProgram(input) {
 
     var Input = input.split("\n");
     var InputTimes = Number(Input[0]);
-    
-    for (var i = 1; i <= InputTimes; i++){
-        var newInput = Input[i];
-      
-        var ans = goodString(newInput);
-        console.log(ans);
-    }
 
+    for (var i = 1; i <= InputTimes; i++) {
+
+        newInput = Number(Input[i]);
+    
+        var ans1 = printTable(newInput);
+        console.log(ans1);
+
+    }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`3
-abb
-aaab
-ababa`);
+    runProgram(`2
+2
+3`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -54,3 +44,4 @@ ababa`);
         process.exit(0);
     });
 }
+

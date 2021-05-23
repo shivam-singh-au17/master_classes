@@ -1,8 +1,22 @@
 function runProgram(input) {
 
-    var newInput = Number(input);
+    var Input = input;
+    var n = Input.length;
+    var temp = Input[0]
+    var count = 1;
+    var result = "";
 
-//   TODO:
+    for (var i = 1; i < n; i++){
+        if (Input[i] == temp) {
+            count++;
+        } else {
+            result += temp + count;
+            count = 1;
+            temp = Input[i];
+        }
+    }
+    result += temp + count;
+    console.log(result);
 
 }
 

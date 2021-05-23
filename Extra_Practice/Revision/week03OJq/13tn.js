@@ -1,48 +1,56 @@
-// function runProgram(input) {
-
-//     var newInput = Number(input);
-
-//     //   TODO:
-
-// }
-
-// if (process.env.USERNAME === "shiva") {
-//     runProgram(`5
-// 3 4 2 0 1`);
-// } else {
-//     process.stdin.resume();
-//     process.stdin.setEncoding("ascii");
-//     let read = "";
-//     process.stdin.on("data", function (input) {
-//         read += input;
-//     });
-//     process.stdin.on("end", function () {
-//         read = read.replace(/\n$/, "");
-//         read = read.replace(/\n$/, "");
-//         runProgram(read);
-//     });
-//     process.on("SIGINT", function () {
-//         read = read.replace(/\n$/, "");
-//         runProgram(read);
-//         process.exit(0);
-//     });
-// }
-
-var arr = [3, 4, 2, 0, 1];
 
 function findIndex2(items) {
-    var present2OrNot = true
-  
+
     for (var i = 0; i < items.length; i++) {
-        if (items[i] == 2 && items[items.length - 1] != 2) {
-            present2OrNot = items[i + 1]
+        if (items[i] == 2 && (items.length - 1) != 2) {
+            var present2OrNot = items[i + 1]
         }
-        // else if (items[items.length - 1] != 2) {
-        //     present2OrNot = false
-        // }
     }
     return present2OrNot
 }
 
-var ans = findIndex2(arr);
-console.log(ans);
+
+function printResult(index) {
+    if (index != undefined) {
+        return index;
+    } else {
+        return -1
+    }
+}
+
+function runProgram(input) {
+
+    var Input = input.split("\n");
+    var newInput = Input[1].split(" ").map(Number);
+ 
+    var ans1 = findIndex2(newInput);
+    var ans2 = printResult(ans1);
+    console.log(ans2);
+
+}
+
+if (process.env.USERNAME === "shiva") {
+    runProgram(`5
+3 4 7 0 1`);
+} else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+        read += input;
+    });
+    process.stdin.on("end", function () {
+        read = read.replace(/\n$/, "");
+        read = read.replace(/\n$/, "");
+        runProgram(read);
+    });
+    process.on("SIGINT", function () {
+        read = read.replace(/\n$/, "");
+        runProgram(read);
+        process.exit(0);
+    });
+}
+
+
+
+

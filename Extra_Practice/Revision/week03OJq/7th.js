@@ -1,13 +1,47 @@
+
+function reduceString(str) {
+    var temp = str[0];
+    var count = 1;
+    var res = "";
+    for (var i = 1; i < str.length; i++) {
+        if (str[i] == temp) {
+            count++;
+        } else {
+            if (count % 2 != 0) {
+                res += temp;
+                count = 1;
+                temp = str[i];
+            } else {
+                res += "";
+                count = 1;
+                temp = str[i];
+            }
+        }
+    }
+    if (count % 2 != 0) {
+        res += temp;
+    } else {
+        res += "";
+    }
+    if (res == "") {
+        return "Empty String"
+    } else {
+        return res;
+    }
+}
+
+
 function runProgram(input) {
 
-    var newInput = Number(input);
+    var newInput = input;
 
-    //   TODO:
+    var ans = reduceString(newInput);
+    console.log(ans);
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`aaabbbbcc`);
+    runProgram(`aaabccddd`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -26,3 +60,4 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
