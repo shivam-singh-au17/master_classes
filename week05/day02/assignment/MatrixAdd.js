@@ -3,7 +3,7 @@ function firstSeconArrSum(arr1, arr2) {
     var arr1Sum = "";
     for (var i = 0; i < arr1.length; i++) {
         var arr2Sum = ""
-        for (var j = 0; j < arr2.length; j++) {
+        for (var j = 0; j < arr1[0].length; j++) {
             arr2Sum += (arr1[i][j] + arr2[i][j]) + " "
         }
         arr1Sum += arr2Sum + "\n"
@@ -43,8 +43,7 @@ function runProgram(input) {
     
     var data1 = arr1_lines.map(lines2arr);
     var data2 = arr2_lines.map(lines2arr);
-    console.log(data1);
-    console.log(data2);
+
 
     var arr1Arr2Sum = firstSeconArrSum(data1, data2)
     var result = printResult(r1, c1, r2, c2, arr1Arr2Sum);
