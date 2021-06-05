@@ -20,6 +20,7 @@ function runProgram(input) {
     } console.log(Math.abs(sum1 - sum2))
 
 }
+
 if (process.env.USERNAME === "shiva") {
     runProgram(`3 3
 1 2 3
@@ -43,3 +44,4 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+

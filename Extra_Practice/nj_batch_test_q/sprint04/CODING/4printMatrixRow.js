@@ -14,7 +14,9 @@ function runProgram(input) {
             res = res + "\n";
         }
     } console.log(res)
+    
 }
+
 if (process.env.USERNAME === "shiva") {
     runProgram(`3 3
 1 2 3

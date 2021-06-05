@@ -21,6 +21,7 @@ function runProgram(input) {
         console.log(res)
     }
 }
+
 if (process.env.USERNAME === "shiva") {
     runProgram(`3 2
 1 0
@@ -44,3 +45,4 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+

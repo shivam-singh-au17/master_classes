@@ -19,6 +19,7 @@ function runProgram(input) {
         console.log(diff);
     }
 }
+
 if (process.env.USERNAME === "shiva") {
     runProgram(`1
 6
@@ -41,3 +42,4 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
