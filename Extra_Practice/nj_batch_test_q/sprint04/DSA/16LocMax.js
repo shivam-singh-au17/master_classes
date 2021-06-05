@@ -1,29 +1,40 @@
 
-
-
-// TODO:
-
-
-
-function functionName(arr) {
-
-  
-
+function localMaxima(arr) {
+    if (arr.length < 3) {
+        return -1
+    } else {
+        var count = 0;
+        for (var i = 1; i < arr.length - 1; i++) {
+            if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
 }
 
 function runProgram(input) {
 
-    var Input = input.split("\n")
+    var Input = input.split("\n");
+    var testCases = Number(Input[0]);
 
-    var newInput2 = Input[1].split(" ").map(Number);
-    var result = functionName(newInput2);
-    console.log(result);
+    for (var i = 1; i <= testCases; i++) {
+
+        var newInput2 = Input[i * 2].split(" ").map(Number);
+        var result = localMaxima(newInput2);
+        console.log(result);
+
+    }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
-3 3 5 5 1`);
+    runProgram(`2
+2
+1 2
+10
+884 729 768 201 266 494 597 328 705 287`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
