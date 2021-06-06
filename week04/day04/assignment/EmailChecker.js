@@ -56,10 +56,29 @@ function userAllowsValid(email) {
     return true
 }
 
-var email = 'masai.school.com'
+// var email = 'mysite@masaischool.com'
+// var email = 'my.name@masaischool.org'
+// var email = 'mysite@masai.school.net'
+// var email = 'masai.school.com'
+// var email = 'masai@.com'
+// var email = '@masai.school.net'
+// var email = 'name@gmail.b'
+// var email = 'name@.org.org'
+// var email = '.name@masaischool.org'
+// var email = 'masaischool()*@gmail.com'
+// var email = 'name..1234@yahoo.com'
 
-if (userNameValid(email) && userDomainValid(email) && userTldValid(email) && userAllowsValid(email)) {
-    console.log("Valid");
-} else {
-    console.log("Not Valid");
-}
+// var ans = userAllowsValid(email);
+// console.log(ans);
+
+
+var test_cases = ['mysite@masaischool.com', 'my.name@masaischool.org', 'masai.school.com','@masai.school.net', 'mysite@masai.school.net'];
+
+test_cases.forEach((email) => {
+    if (userNameValid(email) && userDomainValid(email) && userTldValid(email) && userAllowsValid(email)) {
+        console.log("Valid");
+    } else {
+        console.log("Not Valid");
+    }
+})
+
