@@ -1,24 +1,24 @@
 
-var input = "2020 Monday";
+var data = "2020 Monday";
 
-var split = input.trim().split(" ");
-var first_day = split[1];
-var year = split[0];
+var newInput = data.trim().split(" ");
+var first_day = newInput[1];
+var year = newInput[0];
 
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-var calender = {};
+var printCalender = {};
 
 for (var i = 0; i < months.length; i++) {
-    calender[months[i]] = {};
+    printCalender[months[i]] = {};
     for (var j = 0; j < days.length; j++) {
-        calender[months[i]][days[j]] = []
+        printCalender[months[i]][days[j]] = []
     }
 }
 
-var day_mapper = {
+var day_finder = {
 
     0: "Sunday",
     1: "Monday",
@@ -29,7 +29,7 @@ var day_mapper = {
     6: "Saturday"
 }
 
-var day_recever_mapper = {
+var day_index_finder = {
 
     Sunday: 0,
     Monday: 1,
@@ -41,52 +41,52 @@ var day_recever_mapper = {
 }
 
 
-for (months in calender) {
-    var days31 = ['January', 'March', 'May', 'July', 'August', 'October', 'December'];
-    var day30 = ['April', 'June', 'September', 'November',];
-    var day28 = ["February"];
+for (months in printCalender) {
+    var days_31 = ['January', 'March', 'May', 'July', 'August', 'October', 'December'];
+    var day_30 = ['April', 'June', 'September', 'November',];
+    var day_28 = ["February"];
 
 
-    var first_day_map = day_recever_mapper[first_day]
-    if (days31.includes(months)) {
+    var first_day_map = day_index_finder[first_day]
+    if (days_31.includes(months)) {
         for (var i = 1, j = first_day_map; i <= 31; i++, j++) {
             j = j % 7;
-            var day_back = day_mapper[j];
-            var prev = calender[months][day_back];
+            var day_back = day_finder[j];
+            var prev = printCalender[months][day_back];
             prev.push(i);
-            calender[months][day_back] = prev;
+            printCalender[months][day_back] = prev;
             if (i == 31) {
-                first_day = day_mapper[(j + 1) % 7]
+                first_day = day_finder[(j + 1) % 7]
             }
 
         }
 
     }
-    else if (day30.includes(months)) {
+    else if (day_30.includes(months)) {
         for (var i = 1, j = first_day_map; i <= 30; i++, j++) {
             j = j % 7;
-            var day_back = day_mapper[j];
-            var prev = calender[months][day_back];
+            var day_back = day_finder[j];
+            var prev = printCalender[months][day_back];
             prev.push(i);
-            calender[months][day_back] = prev;
+            printCalender[months][day_back] = prev;
             if (i == 30) {
-                first_day = day_mapper[(j + 1) % 7]
+                first_day = day_finder[(j + 1) % 7]
             }
         }
 
     } else {
         for (var i = 1, j = first_day_map; i <= 28; i++, j++) {
             j = j % 7;
-            var day_back = day_mapper[j];
-            var prev = calender[months][day_back];
+            var day_back = day_finder[j];
+            var prev = printCalender[months][day_back];
             prev.push(i);
-            calender[months][day_back] = prev;
+            printCalender[months][day_back] = prev;
             if (i == 28) {
-                first_day = day_mapper[(j + 1) % 7]
+                first_day = day_finder[(j + 1) % 7]
             }
         }
 
     }
 
 }
-console.log(calender);
+console.log(printCalender);
