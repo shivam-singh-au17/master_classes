@@ -1,29 +1,39 @@
 
-
-
-// TODO:
-
-
-
-function functionName(arr) {
-
-
+function humanTime(mins) {
+    var minutes = mins % 60;
+    if (minutes < 10) {
+        if (mins == 60) {
+            console.log(1 + "hr" + " " + minutes + "0mins");
+        } else if (mins < 60) {
+            console.log(0 + "hr" + " " + "0" + minutes + "mins");
+        } else if (mins % 60 == 0 && mins > 60) {
+            console.log((mins / 60) + "hrs" + " " + minutes + "0mins");
+        } else {
+            console.log(((mins - minutes) / 60) + "hrs" + " " + "0" + minutes + "mins");
+        }
+    } else {
+        if (mins == 60) {
+            console.log(1 + "hr" + " " + minutes + "0mins");
+        } else if (mins < 60) {
+            console.log(0 + "hr" + " " + minutes + "mins");
+        } else if (mins % 60 == 0 && mins > 60) {
+            console.log((mins / 60) + "hrs" + " " + minutes + "0mins");
+        } else {
+            console.log(((mins - minutes) / 60) + "hrs" + " " + minutes + "mins");
+        }
+    }
 
 }
 
 function runProgram(input) {
 
-    var Input = input.split("\n")
-
-    var newInput2 = Input[1].split(" ").map(Number);
-    var result = functionName(newInput2);
-    console.log(result);
+    var Input = Number(input)
+    humanTime(Input);
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
-3 3 5 5 1`);
+    runProgram(`146043908764`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
