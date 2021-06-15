@@ -1,3 +1,27 @@
+// //  rotate arr left to right by k  
+
+var arr = [1, 2, 5, 4, 0, 6];  // 0 6 1 2 5 4
+var k = 9;
+var n = arr.length;
+
+if (k > n) {
+    k = k % n;
+    var rotateArr = []
+    for (var i = 0; i < n; i++) {
+        rotateArr.push(arr[(n + i - k + 2) % n])
+    }
+    console.log(rotateArr);
+} else {
+    var rotateArr = []
+    for (var i = 0; i < n; i++) {
+        rotateArr.push(arr[(n + i - k + 2) % n])
+    }
+    console.log(rotateArr);
+}
+
+
+
+
 // //  rotate arr right to left by k 
 
 // var arr = [7, 1, 4, 2, 8];
@@ -46,42 +70,22 @@
 
 // if all no comes rendemly
 
-var res = 0;
-count = 0;
-var arr = [1, 2, 3, 7, 5];
+// var res = 0;
+// count = 0;
+// var arr = [1, 2, 3, 7, 5];
 
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 == 1) {
-        count++;
-        res = Math.max(res, count)
-    } else {
-        count = 0
-    }
-}
-console.log(res);
-
-
-
-// //  rotate arr left to right by k  TODO:
-
-// var arr = [1, 2, 5, 4, 0, 6];  // 0 6 1 2 5 4
-// var k = 4;
-// var n = arr.length;
-
-// if (k > n) {
-//     k = k % n;
-//     var rotateArr = []
-//     for (var i = 0; i < n; i++) {
-//         rotateArr.push(arr[(n - i + k) % n])
+// for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 1) {
+//         count++;
+//         res = Math.max(res, count)
+//     } else {
+//         count = 0
 //     }
-//     console.log(rotateArr);
-// } else {
-//     var rotateArr = []
-//     for (var i = 0; i < n; i++) {
-//         rotateArr.push(arr[(n - i + k) % n])
-//     }
-//     console.log(rotateArr);
 // }
+// console.log(res);
+
+
+
 
 
 
