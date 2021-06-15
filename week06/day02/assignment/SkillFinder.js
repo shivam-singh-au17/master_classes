@@ -1,41 +1,37 @@
 
-var data = {
+function skillFinder(input) {
 
-    nameAge: {
-        Nrupul: ["cmd", "python", "sql"],
-        Prateek: ["js", "html"],
-        Aman: ["ds", "algo"],
-        Albert: ["js", "react"]
+    var skillData = input.trim().split("\n");
+    
+    var userObj = {};
+    for (var i = 0; i < skillData.length; i++) {
+        var skills = skillData[i].trim().split(" ");
+        var key = skills[0];
+        var value = skills[1];
+        if (userObj[key] == undefined) {
+            userObj[key] = [];
+            userObj[key].push(value);
+        } else {
+            userObj[key].push(value);
+        }
     }
 
+    for (key in userObj) {
+        if (userObj[key].includes("js")) {
+            console.log(key);
+        }
+    }
 
 }
 
-
-
-console.log(data.nameAge.Albert);
-
-function Querying(Query, obj) {
-    if (obj[Query] == undefined) {
-        console.log("Not Found");
-    } else {
-        console.log(obj[Query]);
-    }
-}
-Querying("Nrupul", data.nameAge)
-
-
-
-
-
-
-
-// var NumbersDictionary = {
-
-//     Ajay: 21342,
-//     RamDas: 32146,
-//     Rohith: 23522,
-//     Nihal: 98743
-// }
+skillFinder(`Nrupul cmd
+Prateek js
+Aman ds
+Nrupul python
+Albert js
+Albert react
+Aman algo
+Prateek html
+Nrupul sql`)
 
 
