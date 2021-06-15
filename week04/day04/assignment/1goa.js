@@ -1,12 +1,40 @@
 
-var rotate = function (numsa, k) {
-    var final = numsa.splice(numsa.length - k);
-    for (var i = 0; i < final.length; i++) {
-        numsa.splice(i, 0, final[i]);
-    }
-    return numsa;
-}
+var rotate = function (arr, k) {
 
+    var n = arr.length;
+
+    if (k > n) {
+        k = k % n;
+        var rotateArr = "";
+        for (var i = 0; i < n; i++) {
+            var num = (i + k - n);
+            if (num < 0) {
+                num = (i + k)
+                rotateArr += (arr[num]) + " ";
+            } else {
+                num = (i + k - n);
+                rotateArr += (arr[num]) + " ";
+            }
+        }
+        return rotateArr;
+
+    } else {
+        var rotateArr = "";
+        for (var i = 0; i < n; i++) {
+            var num = (i + k - n);
+            if (num < 0) {
+                num = (i + k)
+                rotateArr += (arr[num]) + " ";
+            } else {
+                num = (i + k - n);
+                rotateArr += (arr[num]) + " ";
+            }
+        }
+        return rotateArr;
+
+    }
+
+}
 
 function runProgram(input) {
 
@@ -19,9 +47,10 @@ function runProgram(input) {
     console.log(result1);
 
 }
+
 if (process.env.USERNAME === "shiva") {
-    runProgram(`6 4
-1 2 5 4 0 6`);
+    runProgram(`4 38
+4 1 8 3`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -41,3 +70,4 @@ if (process.env.USERNAME === "shiva") {
     });
 
 }
+
