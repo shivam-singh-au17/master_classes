@@ -1,42 +1,59 @@
 
-
-
 function CheckHorizontal(mat, row) {
 
-    var countHori = 0;
-    for (var i = 0; i < row; i++) {
+    var countHori = true;
+    var start = 0;
+    var end = row - 1;
+    while (start <= end) {
         for (var j = 0; j < row; j++) {
-            if (mat[i = 0][j] == mat[i = row - 1][j]) {
-                countHori++;
+            if (mat[start][j] != mat[end][j]) {
+                countHori = false;
+                break;
             }
         }
+        start++;
+        end--;
     }
-    return countHori;
+    if (countHori == true) {
+        return 1
+    } else {
+        return 0
+    }
+    
 }
 
 
 function CheckVertical(mat, row) {
 
-    var countVar = 0;
-    for (var i = 0; i < row; i++) {
-        for (var j = 0; j < row; j++) {
-            if (mat[i][j = 0] == mat[i][j = row - 1]) {
-                countVar++;
-            }
+    var countVar = true;
+    var start = 0;
+    var end = row - 1;
+    while (start <= end) {
+        for (var i = 0; i < row; i++) {
+                if (mat[i][start] != mat[i][end]) {
+                    countVar = false;
+                    break;
+                }
         }
+        start++;
+        end--;
     }
-    return countVar;
+    if (countVar == true) {
+        return 1
+    } else {
+        return 0
+    }
 }
 
 
 
-function printResult(countHori, countVar, row) {
+function printResult(countHori, countVar) {
 
-    if (countHori == row && countVar == row) {
+    if (countHori == 1 && countVar == 1 ) {
         return "BOTH";
-    } else if (countHori == row && countVar < row) {
+    } else if (countHori == 1 && countVar == 0) {
         return "HORIZONTAL";
-    } else if (countHori < row && countVar == row) {
+    } else if (countHori == 0 && countVar == 1) {
         return "VERTICAL";
     } else {
         return "NO";
@@ -64,6 +81,9 @@ function runProgram(input) {
         var ansHorizontal = CheckHorizontal(newMat, row);
         var ansVertical = CheckVertical(newMat, row);
 
+        console.log(ansHorizontal);
+        console.log(ansVertical);
+
         var result = printResult(ansHorizontal, ansVertical, row)
         console.log(result);
 
@@ -74,25 +94,58 @@ function runProgram(input) {
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`4
+    runProgram(`7
 4
-*.*.
-.*.*
-*.*.
-.*.*
-3
-.*.
-*.*
-.*.
-3
-..*
-**.
-..*
+.*..
+...*
+*..*
+*.**
 4
 ....
 ..*.
 .**.
-.**.`);
+.**.
+5
+*.*.*
+..*..
+*.*.*
+..*..
+*.*.*
+5
+*.*.*
+.*.*.
+.***.
+.*.*.
+*...*
+5
+.***.
+*****
+.....
+*****
+.***.
+10
+**..****..
+*..**....*
+*.**.**..*
+...*.*.*..
+**.***.**.
+...*.*****
+.**..*....
+....****..
+***..***..
+*.*.......
+11
+*..**..*...
+*.*.*..**..
+.*..**...**
+***....**..
+*..**.**..*
+******.****
+*..**.**..*
+***....**..
+.*..**...**
+*.*.*..**..
+*..**..*...`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -111,3 +164,4 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
