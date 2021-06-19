@@ -35,9 +35,13 @@ function runProgram(input) {
 
     var ans1 = makeArr(input1);
     var ans2 = makeArr(input2);
+    console.log(ans1);
+    console.log(ans2);
 
     var ans11 = storeResult(ans1);
     var ans22 = storeResult(ans2);
+    console.log(ans11);
+    console.log(ans22);
 
     var result = printResult(ans11, ans22);
     console.log(result);
