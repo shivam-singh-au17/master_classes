@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="headline"></div>
+    </div>
+</body>
+<script>
+    function slideShow(){
+        const arr=[ 'Your order is accepted','Your order is being cooked',' Your order is ready','Order out for delivery','Order delivered']
+       let headline1=document.getElementById("headline")
+
+        let headline=document.createElement("h1")
+        headline1.appendChild(headline)
+
+        // headline.innerHTML=arr[0]
+        let i=0;
+        setInterval(function(){
+            if(i==5){
+                i=0
+                
+            }
+            headline.innerHTML=arr[i]
+            i++;
+        },3000)
+
+    }
+    slideShow()
+
+</script>
+</html>

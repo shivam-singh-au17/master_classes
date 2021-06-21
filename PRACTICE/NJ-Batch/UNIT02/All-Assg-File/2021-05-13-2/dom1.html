@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1 id="red">First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="purple">First DIV</div>
+        <div class="yellow">Second DIV</div>
+        <div class="orange">Third DIV</div>
+        <p class="purple">First P</p>
+        <p class="yellow">Second P</p>
+        <p class="orange">Third P</p>
+        <hr/>
+        <button onclick="turnRed()">Change H1</button>
+        <button onclick="turnGreen()">Change H3</button>
+        <button onclick="turnBlue()">Change H5</button>
+        <button>Change Purple</button>
+        <button>Change Yellow</button>
+        <button>Change Orange</button>
+        <script>
+        function turnRed(){
+        var h1=document.getElementById("red");
+        h1.style.color="red"
+
+
+
+        }
+        function turnGreen(){
+            var h3=document.querySelectorAll("h3")
+            for (let i = 0; i < h3.length; i++) {
+                h3[i].style.color="green"
+                
+            }
+     
+        } 
+        function turnBlue(){
+          var h5=document.querySelectorAll("h5");
+          for (let i = 0; i < h5.length; i++) {
+              h5[i].style.color="blue"
+              
+          }
+        }
+        </script>
+    </body>
+</html>

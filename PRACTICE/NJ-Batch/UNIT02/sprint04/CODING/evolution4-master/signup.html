@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .container{
+          width: 100%;
+          height: auto;
+        }
+        #menu{
+            display: flex;
+            height: 50px;
+            width: 100%;
+           }
+           #menu>ul>a{
+               text-decoration: none;
+               margin-left: 20px;
+           }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="menu">
+      <ul> <a href="">LOGIN</a></ul>
+      <ul> <a href="">SIGNUP</a></ul>
+      <ul> <a href="">MENU</a></ul>
+    </div>
+    <div id="signup">
+        <form id="form">
+            <input type="text" placeholder="name" id="name"><br><br>
+            <input type="text" placeholder="contact" id="contact"><br><br>
+            <input type="text" placeholder="email" id="email"><br><br>
+            <input type="password" placeholder="password" id="password"><br><br>
+        </form>
+        <button onclick="getdata()">signup</button>
+    </div>
+    </div>
+</body>
+<script>
+    function getdata(){
+        var form=document.getElementById("form");
+        var name=form.name.value;
+        var contact=form.contact.value;
+        var email=form.email.value;
+        var password=form.password.value;
+        var location={
+            name,
+            contact,
+            email,
+            password
+        }
+        let arr;
+        arr=JSON.parse(localStorage.getItem("locations"));
+        if(arr==null){
+            arr=[];
+        }
+        else{
+            arr=JSON.parse(arr);
+        }
+        arr.push(location);
+        localStorage.setItem("location",JSON.stringify(arr));
+        window.location="\login.html"
+    }
+</script>
+</html>

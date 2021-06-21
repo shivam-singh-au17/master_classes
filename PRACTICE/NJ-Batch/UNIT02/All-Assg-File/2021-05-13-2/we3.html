@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="createh1()">Create H1</button>
+        <button onclick="createh3()">Create 2 H3</button>
+        <button onclick="div()">Create DIVS</button>
+        <button onclick="AddStudent()">Add Students</button>
+        <button onclick="copyRight()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            function createh1(){
+             document.getElementById("headings").innerHTML="<h1>Masai</h1>"
+            
+            }
+            function createh3(){
+                document.getElementById("headings").innerHTML=" <h3> with the content A Transformation in education! and Learn to earn, pay when you get</h3>"
+
+            }
+            var index=1
+            function div(){
+                for (let i = 0; i <10; i++) {
+                    var ele=document.getElementById("cont")
+                var div=document.createElement('div')
+                div.innerHTML="<p>Noor</p>"+index
+           
+                    ele.appendChild(div)
+                    
+            
+                 index++; 
+                    
+                }
+              
+            }
+            function AddStudent(){
+            var element=document.getElementById("vikings");
+            for (let i = 0; i < students.length; i++) {
+             var list=document.createElement("li");
+             list.textContent=students[i];
+             element.appendChild(list)
+                
+            }
+            }
+            function copyRight(){ 
+           var text=document.createElement("p");
+           text.textContent="@ masai 2019"
+           var body=document.body;
+           var h1=document.querySelector("button");
+           body.insertBefore(text,h1)
+             }
+        </script>
+    </body>
+</html>

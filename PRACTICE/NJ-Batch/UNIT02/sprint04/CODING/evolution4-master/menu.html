@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: repeat(3,auto);
+            width: 100%;
+            gap: 20px;
+        }
+        #container>div{
+            margin:20px auto;
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #container>div>img{
+            height: 100px;
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+      
+    </div>
+    <button onclick="showAdd()">add To Cart</button>
+</body>
+<script>
+var food=`
+[
+    {
+        "image":"https://image.shutterstock.com/image-photo/schezwan-noodles-vegetable-hakka-chow-260nw-1251147181.jpg",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    },
+    {
+        "image":"https://b.zmtcdn.com/data/pictures/chains/6/308286/580ff6eba68072bf41ad1d60940bbf66_featured_v2.jpg",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    },
+    {
+        "image":"",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    },
+    {
+        "image":"https://image.shutterstock.com/image-photo/schezwan-noodles-vegetable-hakka-chow-260nw-1251147181.jpg",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    },
+    {
+        "image":"https://b.zmtcdn.com/data/pictures/chains/6/308286/580ff6eba68072bf41ad1d60940bbf66_featured_v2.jpg",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    },
+    {
+        "image":"",
+        "price":"100rs",
+        "discription":"noodle",
+        "prepairTime":"7am"
+    }
+]
+`
+localStorage.setItem("foods",food);
+var data=JSON.parse(localStorage.getItem("foods"))
+data.forEach(element => {
+   var div=document.getElementById("container");
+   var div1=document.createElement("div")
+   var image=document.createElement("img")
+   image.src=element.image;
+   var price=document.createElement("p")
+   price.innerHTML=`Price:${element.price}`
+   var discription=document.createElement("p")
+   discription.innerHTML=`NAME :${element.discription}`
+   var prepairTime=document.createElement("p")
+   prepairTime.innerHTML=`PREPAIR TIME :${element.prepairTime}`
+   var btn=document.createElement("button")
+   btn.innerHTML=`Add to Cart`
+   btn.onclick=function(){
+       addTOcart(element)
+   }
+   div1.append(image,price,discription,prepairTime,btn);
+   div.appendChild(div1)
+   })
+function addTOcart(element){
+    let favarr;
+    let arr;
+    favarr=localStorage.getItem("fav")
+    if(favarr==null){
+        arr=[]
+    }
+    else{
+        arr=JSON.parse(localStorage.getItem("fav"))
+    }
+    arr.push(element)
+    localStorage.setItem("fav",JSON.stringify(arr))
+
+}
+   
+function showAdd(){
+    window.location="\cart.html"
+}
+
+
+   
+</script>
+</html>

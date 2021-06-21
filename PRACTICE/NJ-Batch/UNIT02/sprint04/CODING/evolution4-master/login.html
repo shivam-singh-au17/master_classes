@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .container{
+          width: 100%;
+          height: auto;
+        }
+        #menu{
+            display: flex;
+            height: 50px;
+            width: 100%;
+           }
+           #menu>ul>a{
+               text-decoration: none;
+               margin-left: 20px;
+           }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="menu">
+      <ul> <a href="C:\Users\NOOR\Desktop\evolution\login.html">LOGIN</a></ul>
+      <ul> <a href="C:\Users\NOOR\Desktop\evolution\signup.html">SIGNUP</a></ul>
+      <ul> <a href="">MENU</a></ul>
+    </div>
+    <div id="login">
+        <form id="form">
+            <input type="text" placeholder="email" id="email"><br><br>
+            <input type="password" placeholder="password" id="password"><br><br>
+        </form>
+    </div>
+    <button onclick="getdata()">login</button>
+    </div>
+</body>
+<script>
+    function getdata(){
+        let data=JSON.parse(localStorage.getItem("location"));
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+       for (let i = 0; i < data.length; i++) {
+        if(data[i].email==email && data[i].password==password){
+            alert("login sucessfully")
+            window.location="\menu.html"
+        }
+        else{
+            alert("wrong id or password")
+        }
+           
+       }
+
+
+
+    }
+</script>
+</html>

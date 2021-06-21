@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0130)https://masai-course.s3.ap-south-1.amazonaws.com/users/992/submissions/96875/233007/985b8e47ac221177aa499d7e6a057edc/toDolist.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .linebetween{
+            text-decoration: line-through;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>ToDo List</h1>
+<input type="text" id="myTask">
+<button onclick="getInput()" id="submit-btn">Submit</button>
+<div id="tasks"></div>
+
+<script>
+    var submit_btn=document.getElementById("submit-btn")
+    var id=0;
+    function getInput(){
+        var myTask=document.getElementById("myTask").value;
+        var tasks_div=document.getElementById("tasks")
+        var div=document.createElement("div")
+        id=id+1;
+        div.innerHTML=`<p id=${id}>${myTask}</p> <button onclick=Done(${id})>Done</button> <button onclick=remove(${id})>remove</button>`
+        tasks_div.appendChild(div)
+    }
+    function Done(id){
+        var p=document.getElementById(id)
+        p.setAttribute('class','linebetween')
+    }
+    function remove(id){
+        var p=document.getElementById(id)
+        var parent=p.parentElement
+        parent.remove()
+    }
+
+</script>
+</body></html>

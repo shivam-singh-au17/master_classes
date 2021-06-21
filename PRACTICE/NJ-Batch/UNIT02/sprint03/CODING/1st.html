@@ -1,0 +1,161 @@
+
+<!-- #### Refer to the following Design- -->
+<!-- https://i.imgur.com/qVqybmO.png --> 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+        }
+
+        #div1 {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(2, auto);
+            gap: 50px;
+            height: 620px;
+            width: 74%;
+            border: solid 3px black;
+            margin-top: 10px;
+            margin-right: 50px;
+            background-color: pink;
+            border-left: 1px solid black;
+
+        }
+
+        .xyz {
+            background-color: rgb(255, 0, 119);
+            border-radius: solid 3px black;
+            width: 200px;
+            height: 200px;
+            margin-left: 50px;
+            margin-top: 10px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .form-div {
+            margin-top: 10px;
+            margin-left: 50px;
+            height: 620px;
+            width: 25%;
+            border: solid 3px black;
+            border-right: 1px solid white;
+            font-family: sans-serif;
+            background-color: rgb(255, 0, 119);
+        }
+
+        .xyz>button {
+            margin-left: 20px;
+        }
+
+        .form-div>form {
+            margin-left: 20px;
+            font-size: 40px;
+
+            color: white;
+        }
+
+        .form-div>input {
+
+            color: rgb(0, 2, 1);
+            margin-left: -60px;
+            color: rgb(255, 179, 0);
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nike inventory system</h1>
+    <div class="container">
+
+        <div class="form-div">
+            <form id="form">
+                <input type="text" value="Name" id="name"><br><br>
+                <input type="text" value="Price" id="price"><br><br>
+                <input type="text" value="Discription" id="discription"><br><br>
+                <input type="text" value="Estimated delivery" id="delivery"><br><br>
+                <input type="text" value="image-url" id="image"><br><br>
+
+            </form>
+
+            <input type="submit" value="Add Product" onclick="submit()">
+        </div>
+        <div id="div1"></div>
+    </div>
+</body>
+<script>
+    function submit() {
+        var name = document.getElementById("name").value;
+        var price = document.getElementById("price").value;
+        var discription = document.getElementById("discription").value;
+        var delivery = document.getElementById("delivery").value;
+        var image = document.getElementById("image").src;
+        //   image.src=url;
+        var div1 = document.getElementById("div1");
+        var table = document.createElement('table')
+        var tr1 = document.createElement('tr')
+        var tr2 = document.createElement('tr')
+        var tr3 = document.createElement('tr')
+        var tr4 = document.createElement('tr')
+        var tr5 = document.createElement('tr')
+        var td1 = document.createElement('td')
+        var td2 = document.createElement('td')
+        var td3 = document.createElement('td')
+        var td4 = document.createElement('td')
+        var td5 = document.createElement('td')
+        div1.appendChild(table)
+        table.appendChild(tr1)
+        table.appendChild(tr2)
+        table.appendChild(tr3)
+        table.appendChild(tr4)
+        table.appendChild(tr5)
+        tr1.appendChild(td1)
+        tr2.appendChild(td2)
+        tr3.appendChild(td3)
+        tr4.appendChild(td4)
+        tr5.appendChild(td5)
+        td1.innerHTML = `Name-${name}`
+        td2.innerHTML = `Price-${price}`
+        td3.innerHTML = `Discription-${discription}`
+        td4.innerHTML = `Delivery-${delivery}`
+        td5.innerHTML = `<img src="${image}" alt="loading">`
+
+        table.setAttribute('class', 'xyz')
+        let removeButton = document.createElement('button');
+        removeButton.innerText = "Remove"
+        let priceUpdateButton = document.createElement('button');
+        priceUpdateButton.innerText = "Update"
+        table.appendChild(removeButton)
+        table.appendChild(priceUpdateButton)
+        removeButton.addEventListener('click', function remove() {
+            table.remove();
+        })
+        priceUpdateButton.addEventListener('click', function update() {
+            var new_price = prompt(` Enter new price`);
+            td2.innerHTML = `Price-${new_price}`
+
+        })
+
+    }
+</script>
+
+</html>
