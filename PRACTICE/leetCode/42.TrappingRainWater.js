@@ -29,4 +29,6 @@ function trap(height) {
 
 var height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
 var ans = trap(height);
-console.log(ans);
+console.log('ans:', ans)
+
+
