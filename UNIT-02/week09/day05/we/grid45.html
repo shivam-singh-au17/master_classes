@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        #container {
+            max-width: 60%;
+            margin: auto;
+        }
+
+        .box{
+            margin-top: 100px;
+        }
+
+        .box>div:nth-child(1) {
+           margin: 20px 0px;
+           grid-gap: 20px;
+            display: grid;
+            grid-template-columns: 25% 45% 25%;
+            grid-template-rows: auto;
+        }
+
+        .box>div:nth-child(2) {
+           margin: 20px 0px;
+           grid-gap: 20px;
+            display: grid;
+            grid-template-columns: 47% 24% 24%;
+            grid-template-rows: auto;
+        }
+
+        .box>div:nth-child(3) {
+           margin: 20px 0px;
+           grid-gap: 20px;
+            display: grid;
+            grid-template-columns: 20% 20% 55%;
+            grid-template-rows: auto;
+        }
+
+        .box>div>div {
+            border-radius: 7px;
+            height: 130px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main">
+
+            <div class="box">
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
