@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zigzag.html</title>
+    <style>
+        #container {
+            max-width: 60%;
+            margin: auto;
+        }
+
+        .main {
+            margin-top: 50px;
+        }
+
+        .row1,
+        .row2,
+        .row3 {
+            display: flex;
+        }
+
+        .row1>div,
+        .row2>div,
+        .row3>div {
+            border-radius: 7px;
+            height: 150px;
+            margin: 2%;
+            width: 18%;
+            background-color: teal;
+        }
+
+        .row1>div:nth-child(2) {
+            flex-grow: 2;
+        }
+
+        .row2>div:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .row3>div:nth-child(3) {
+            flex-grow: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main">
+
+            <div class="row1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="row2">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="row3">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

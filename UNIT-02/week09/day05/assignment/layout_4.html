@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout_4.html</title>
+    <style>
+        #container {
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .main {
+            font-size: 50px;
+            text-align: center;
+            margin-top: 30px;
+            grid-gap: 30px;
+            display: grid;
+            grid-template-areas: 'yellow_box yellow_box yellow_box yellow_box '
+                'red_box green_box blue_box tomato_box';
+        }
+
+        .yellow_box {
+            background-color: rgb(255, 230, 7);
+            padding: 20px;
+            grid-area: yellow_box;
+            height: 60px;
+        }
+
+        .red_box {
+            padding: 20px;
+            background-color: rgb(255, 19, 19);
+            grid-area: red_box;
+            height: 200px;
+        }
+
+        .green_box {
+            padding: 20px;
+            background-color: rgb(0, 255, 0);
+            grid-area: green_box;
+            height: 200px;
+        }
+
+        .blue_box {
+            padding: 20px;
+            background-color: rgb(17, 0, 255);
+            grid-area: blue_box;
+            height: 200px;
+        }
+
+        .tomato_box {
+            padding: 20px;
+            background-color: tomato;
+            grid-area: tomato_box;
+            height: 200px;
+        }
+
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 767px) {
+            .main {
+                grid-template-areas: 'yellow_box'
+                    'red_box'
+                    'green_box'
+                    'blue_box'
+                    'tomato_box';
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .main {
+                grid-template-areas: 'yellow_box yellow_box'
+                    'red_box blue_box'
+                    'green_box tomato_box';
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .main {
+                grid-template-areas: 'yellow_box yellow_box yellow_box yellow_box '
+                    'red_box green_box blue_box tomato_box';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="main">
+            <div class="yellow_box">Navigation</div>
+            <div class="red_box">BOX 1</div>
+            <div class="green_box">BOX 2</div>
+            <div class="blue_box">BOX 3</div>
+            <div class="tomato_box">BOX 4</div>
+        </div>
+    </div>
+</body>
+
+</html>

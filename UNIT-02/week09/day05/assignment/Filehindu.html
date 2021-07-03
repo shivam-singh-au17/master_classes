@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the_hindu.html</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.322);
+        }
+
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 90%;
+            margin: auto;
+            height: 700px;
+        }
+
+
+
+        .main {
+            background-color: rgb(240, 240, 239);
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .main>div {
+            background-color: white;
+            margin: 10px;
+        }
+
+        .main {
+            display: grid;
+            grid-template-areas: 'big_box Mybox2'
+                'big_box Mybox3'
+                'big_box Mybox4'
+                'Mybox1 Mybox5';
+        }
+
+        .main>div:nth-child(1) {
+            background-color: #084796;
+            height: 490px;
+        }
+
+        .main>div:nth-child(1)>img {
+            width: 100%;
+            height: 50%;
+        }
+
+        .big_box>div:nth-child(2) {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 15px;
+            color: white;
+        }
+
+        .big_box>div:nth-child(3) {
+            font-size: 16px;
+            padding: 7px 15px;
+            color: white;
+        }
+
+        .big_box>div:nth-child(4) {
+            font-size: 16px;
+            padding: 0px 15px;
+            color: white;
+        }
+
+        .big_box>div:nth-child(5) {
+            font-family: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 0px 15px;
+            color: rgb(223, 221, 221);
+            margin-top: 14px;
+        }
+
+
+        .big_box {
+            grid-area: big_box;
+        }
+
+        .Mybox1 {
+            grid-area: Mybox1;
+        }
+
+        .Mybox2 {
+            grid-area: Mybox2;
+        }
+
+        .Mybox3 {
+            grid-area: Mybox3;
+        }
+
+        .Mybox4 {
+            grid-area: Mybox4;
+        }
+
+        .Mybox5 {
+            grid-area: Mybox5;
+        }
+
+
+
+        .boxA {
+            width: 30%;
+            height: 150px;
+            float: left;
+        }
+
+        .boxA>img {
+            width: 90%;
+            height: 100%;
+        }
+
+        .boxB {
+            width: 100%;
+        }
+
+        .boxB>div:nth-child(1) {
+            font-size: 15px;
+            font-weight: 600;
+            color: #084796;
+            padding-top: 9px;
+            padding-bottom: 3px;
+        }
+
+        .boxB>div:nth-child(2) {
+            letter-spacing: 1px;
+            line-height: 20px;
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 767px) {
+            .main {
+                display: grid;
+                grid-template-areas: 'big_box'
+                    'Mybox1 '
+                    'Mybox2 '
+                    'Mybox3 '
+                    'Mybox4'
+                    'Mybox5';
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .main {
+                display: grid;
+                grid-template-areas: 'big_box big_box'
+                    'big_box big_box'
+                    'Mybox1 Mybox2'
+                    'Mybox3 Mybox4'
+                    'Mybox5 Mybox5';
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .main {
+                display: grid;
+                grid-template-areas: 'big_box Mybox2'
+                    'big_box Mybox3'
+                    'big_box Mybox4'
+                    'Mybox1 Mybox5';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main">
+
+            <div class="big_box">
+                <img src="https://cdn.twistarticle.com/wp-content/uploads/2021/02/Masai-School-Announces-Glide-Program-for-Studetns.jpg"
+                    alt="">
+                <div>Farmers’ protests | No date set for next round of talks as farmer-government meeting ends in
+                    deadlock</div>
+                <div>SHIVAM SINGH MIRZAPUR</div>
+                <DIV>MASAI SCHOOL</DIV>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.. Aspernatur
+                    ipsam voluptatibus! </div>
+
+            </div>
+
+            <div class="Mybox1">
+                <div class="boxA "><img src="http://www.theemergingindia.com/wp-content/uploads/2019/10/4-108.jpg"
+                        alt=""></div>
+                <div class="boxB">
+                    <div>PRODUCTIVITY</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.sit amet consectetur adipisicing elit.
+                        Aspernatur
+                        ipsam voluptatibus! </div>
+                </div>
+
+
+            </div>
+
+            <div class="Mybox2">
+                <div class="boxA "><img
+                        src="https://www.forbesindia.com/media/images/2021/Apr/img_158189_opening_bg.jpg" alt="">
+                </div>
+                <div class="boxB">
+                    <div>COVID-19 FACTS</div>
+                    <div>Lorem ipsum dolor sit amet consecteturdolor sit amet consectetur adipisicing elit. Aspernatur
+                        ipsam voluptatibus! </div>
+                </div>
+
+
+            </div>
+
+            <div class="Mybox3">
+                <div class="boxA "><img src="https://starsunfolded.com/wp-content/uploads/2016/12/Rahul-Kanwal.jpg"
+                        alt=""></div>
+                <div class="boxB">
+                    <div>NATIONAL</div>
+                    <div>Lorem ipsum dolor elit. Aspernaturipsum dolor elit. Aspernaturipsum dolor elit. Aspernatur
+                        ipsam voluptatibus! </div>
+                </div>
+
+
+            </div>
+
+            <div class="Mybox4">
+                <div class="boxA "><img
+                        src="https://designaddict.com/wp-content/uploads/2020/02/1yL5-FBWBGY3AbBLHc2Vgsw.jpeg" alt="">
+                </div>
+                <div class="boxB">
+                    <div>THE HUDDLE</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicingsit amet consectetur adipisicing elit.
+                        Aspernatur
+                        ipsam voluptatibus! </div>
+                </div>
+
+
+            </div>
+
+            <div class="Mybox5">
+                <div class="boxA "><img
+                        src="https://www.allwikibiography.com/wp-content/uploads/2020/05/Neha-Batham.png" alt="">
+                </div>
+                <div class="boxB">
+                    <div>HEALTH</div>
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicingsit amet consectetur adipisicing elit.
+                        Aspernatur
+                        ipsam voluptatibus! </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
