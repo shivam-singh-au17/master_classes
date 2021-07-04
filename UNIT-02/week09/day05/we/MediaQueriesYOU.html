@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #main {
+            color: yellow;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-areas: 'Yellow_box1 Yellow_box1 Yellow_box1'
+                'Red_box1 Red_box1 Green_box1'
+                'Red_box1 Red_box1 Green_box2'
+                'Red_box1 Red_box1 Green_box3';
+        }
+
+        .Red_box1 {
+            background-color: red;
+            height: 500px;
+            padding: 40px;
+            font-size: 40px;
+            font-weight: bolder;
+            color: white;
+            text-align: center;
+            grid-area: Red_box1;
+        }
+
+        .Yellow_box1 {
+            background-color: yellow;
+            padding: 40px;
+            font-size: 40px;
+            height: 50px;
+            font-weight: bolder;
+            color: white;
+            text-align: center;
+            grid-area: Yellow_box1;
+        }
+
+        .Green_box1 {
+            background-color: rgb(8, 253, 0);
+            padding: 40px;
+            font-size: 40px;
+            font-weight: bolder;
+            height: 100px;
+            color: white;
+            text-align: center;
+            grid-area: Green_box1;
+        }
+
+        .Green_box2 {
+            background-color: rgb(8, 253, 0);
+            padding: 40px;
+            font-size: 40px;
+            font-weight: bolder;
+            height: 100px;
+            color: white;
+            text-align: center;
+            grid-area: Green_box2;
+        }
+
+        .Green_box3 {
+            background-color: rgb(8, 253, 0);
+            padding: 40px;
+            font-size: 40px;
+            font-weight: bolder;
+            color: white;
+            height: 100px;
+            text-align: center;
+            grid-area: Green_box3;
+        }
+
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            #main {
+            grid-template-areas: 'Yellow_box1'
+                    'Red_box1 '
+                    'Green_box1'
+                    'Green_box2'
+                    'Green_box3';
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 600px) {
+            #main {
+                grid-template-areas: 'Yellow_box1 Yellow_box1 Yellow_box1'
+                    'Red_box1 Red_box1 Red_box1'
+                    'Green_box1 Green_box2 Green_box3';
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+
+            #main {
+                grid-template-areas: 'Yellow_box1 Yellow_box1 Yellow_box1'
+                    'Red_box1 Red_box1 Green_box1'
+                    'Red_box1 Red_box1 Green_box2'
+                    'Red_box1 Red_box1 Green_box3';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="main">
+            <div class="Red_box1">RED BOX</div>
+            <div class="Yellow_box1">Yellow BOX</div>
+            <div class="Green_box1">GREEN BOX1</div>
+            <div class="Green_box2">GREEN BOX2</div>
+            <div class="Green_box3">GREEN BOX3</div>
+        </div>
+    </div>
+</body>
+
+</html>
