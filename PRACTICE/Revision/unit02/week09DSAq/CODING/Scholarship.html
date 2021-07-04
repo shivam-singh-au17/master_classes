@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Layout</title>
+    <style>
+        #container {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        #upperCont {
+            grid-gap: 30px;
+            display: grid;
+            grid-template-areas: 'upperCont_box1 upperCont_box2 upperCont_box3';
+        }
+
+        #upperCont>div {
+            margin-top: 25px;
+            border-radius: 15px;
+        }
+
+        .upperCont_box1 {
+            background-color: rgb(255, 187, 0);
+            color: white;
+            grid-area: upperCont_box1;
+        }
+
+        #upperCont>div>div:nth-child(1) {
+            float: left;
+        }
+
+        #upperCont>div>div:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        #upperCont>div>div>img {
+            width: 50px;
+            border-radius: 50px;
+            margin: 20px;
+        }
+
+
+        #upperCont>div>div:nth-child(2)>div {
+            font-size: 29px;
+        }
+
+        #upperCont>div>div:nth-child(2)>span {
+            font-size: 18px;
+        }
+
+        .upperCont_box2 {
+            background-color: rgb(72, 72, 221);
+            color: white;
+            grid-area: upperCont_box2;
+        }
+
+        .upperCont_box3 {
+            background-color: rgb(6, 202, 228);
+            color: white;
+            grid-area: upperCont_box3;
+        }
+
+
+
+        #mid_Cont {
+            width: 100%;
+            text-align: center;
+        }
+
+        #mid_Cont>div:nth-child(1) {
+            margin-top: 50px;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgb(2, 2, 87);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #mid_Cont>div:nth-child(2) {
+            padding: 30px;
+        }
+
+        #mid_Cont>div:nth-child(2)>button {
+            text-align: center;
+            font-size: 14px;
+            padding: 6px 18px;
+            border-radius: 5px;
+            color: rgb(2, 2, 87);
+            border-style: none;
+            margin: 4px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #mid_Cont>div:nth-child(2)>button:nth-child(1) {
+            background-color: rgb(6, 202, 228);
+            color: white;
+        }
+
+
+
+
+        #lastCont {
+            margin-top: 30px;
+            grid-gap: 30px;
+            display: grid;
+            grid-template-areas: 'lastCont_box1 lastCont_box2 lastCont_box3';
+        }
+
+        #lastCont>div>div>img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #lastCont>div>div:nth-child(2) {
+            padding: 40px;
+        }
+
+        .lastCont_box1 {
+            grid-area: lastCont_box1;
+        }
+
+        .lastCont_box2 {
+            grid-area: lastCont_box2;
+        }
+
+        .lastCont_box3 {
+            grid-area: lastCont_box3;
+        }
+
+        #lastCont>div>div:nth-child(2)>div:nth-child(1) {
+            font-size: 17px;
+            margin: 10px 0px;
+            color: rgb(2, 2, 24);
+            letter-spacing: 1px;
+        }
+
+        #lastCont>div>div:nth-child(2)>div:nth-child(2) {
+            font-size: 22px;
+            font-weight: 600;
+            color: rgb(2, 2, 39);
+            margin: 20px 0px;
+        }
+
+        #lastCont>div>div:nth-child(2)>div:nth-child(3) {
+            margin: 10px 0px;
+            font-size: 17px;
+            color: rgb(31, 31, 32);
+            letter-spacing: 1px;
+            color: rgb(66, 66, 66);
+        }
+
+        #lastCont>div>div:nth-child(2)>div:nth-child(4)>button {
+            width: 170px;
+            height: 50px;
+            border-radius: 5px;
+            color: rgb(4, 247, 255);
+            border-color: rgb(4, 247, 255);
+            font-size: 20px;
+            margin-top: 25px;
+            background-color: white;
+        }
+
+
+
+
+        @media only screen and (max-width: 780px) {
+            #upperCont {
+                grid-template-areas: 'upperCont_box1'
+                    'upperCont_box2'
+                    'upperCont_box3';
+            }
+
+            #mid_Cont>div:nth-child(2) {
+                display: grid;
+            }
+
+            #lastCont {
+                grid-template-areas: 'lastCont_box1'
+                    'lastCont_box2'
+                    'lastCont_box3';
+            }
+        }
+
+
+        @media (min-width: 780px) and (max-width: 1100px) {
+            #upperCont {
+                grid-template-areas: 'upperCont_box1 upperCont_box2'
+                    'upperCont_box3 upperCont_box3';
+            }
+
+            #lastCont {
+                grid-template-areas: 'lastCont_box1 lastCont_box2'
+                    ' lastCont_box3 lastCont_box3';
+            }
+        }
+
+
+        @media only screen and (min-width: 1100px) {
+            #upperCont {
+                grid-template-areas: 'upperCont_box1 upperCont_box2 upperCont_box3';
+            }
+
+            #lastCont {
+                grid-template-areas: 'lastCont_box1 lastCont_box2 lastCont_box3';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main">
+
+            <div id="upperCont">
+
+                <div class="upperCont_box1">
+                    <div>
+                        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/icon_circle.png"
+                            alt="">
+                    </div>
+                    <div>
+                        <div>Scholarship</div>
+                        <span>Available</span>
+                    </div>
+                </div>
+                <div class="upperCont_box2">
+                    <div>
+                        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/icon_circle.png"
+                            alt="">
+                    </div>
+                    <div>
+                        <div>Scholarship</div>
+                        <span>Available</span>
+                    </div>
+                </div>
+                <div class="upperCont_box3">
+                    <div>
+                        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/icon_circle.png"
+                            alt="">
+                    </div>
+                    <div>
+                        <div>Scholarship</div>
+                        <span>Available</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="mid_Cont">
+                <div>Popular Program</div>
+                <div>
+                    <button>Graduata</button>
+                    <button>Postgrraduate</button>
+                    <button>PHD Scholarships</button>
+                    <button>Training</button>
+                </div>
+            </div>
+
+
+
+            <div id="lastCont">
+                <div class="lastCont_box1">
+                    <div>
+                        <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg" alt="">
+                    </div>
+                    <div>
+                        <div>Agriculture</div>
+                        <div>Chemical engneering</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis accusantium
+                            temporibus deserunt, .</div>
+                        <div><button>APPLY NOW</button></div>
+                    </div>
+                </div>
+                <div class="lastCont_box2">
+                    <div>
+                        <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg" alt="">
+                    </div>
+                    <div>
+                        <div>Agriculture</div>
+                        <div>full Stack Development</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis accusantium
+                            temporibus deserunt, .
+                        </div>
+                        <div><button>APPLY NOW</button></div>
+                    </div>
+                </div>
+                <div class="lastCont_box3">
+                    <div>
+                        <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg" alt="">
+                    </div>
+                    <div>
+                        <div>Agriculture</div>
+                        <div>Mechanical engneering</div>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis accusantium
+                            temporibus deserunt, .
+                        </div>
+                        <div><button>APPLY NOW</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

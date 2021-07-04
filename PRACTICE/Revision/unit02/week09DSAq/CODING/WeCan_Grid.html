@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #first_row {
+            background-color: rgb(245, 243, 243);
+            padding: 30px;
+            display: grid;
+            grid-template-areas: 'first_row_box1 first_row_box2 first_row_box3';
+        }
+
+        .first_row_box1 {
+            grid-area: first_row_box1;
+        }
+
+        .first_row_box2 {
+            grid-area: first_row_box2;
+        }
+
+        .first_row_box3 {
+            grid-area: first_row_box3;
+        }
+
+
+        .first_row_img {
+            margin-right: 10px;
+            float: left;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .first_row_hp {
+            width: 80%;
+        }
+
+        .first_row_h {
+            font-size: 17px;
+            line-height: 30PX;
+        }
+
+        .first_row_p {
+            font-size: 15px;
+            padding-right: 15PX;
+            letter-spacing: 1PX;
+            line-height: 20PX;
+        }
+
+        .first_row_btn {
+            width: 80%;
+            height: 50px;
+            border-radius: 8px;
+            border-style: none;
+            color: white;
+            letter-spacing: 2.5px;
+            background-color: yellowgreen;
+        }
+
+        #mid_heading {
+            clear: both;
+            margin: 50px 0px;
+            text-align: center;
+        }
+
+        #mid_heading h1 {
+            font-size: 40px;
+            line-height: 90px;
+        }
+
+        #mid_heading p {
+            font-size: 20px;
+            font-weight: 600;
+            color: yellowgreen;
+            letter-spacing: 2px;
+            line-height: 20px;
+        }
+
+
+
+        #last_row {
+            margin-bottom: 40px;
+            text-align: center;
+            display: grid;
+            grid-template-areas: 'last_row_box1 last_row_box2 last_row_box3 last_row_box4';
+        }
+
+
+        .last_row_box1 {
+            grid-area: last_row_box1;
+        }
+
+        .last_row_box2 {
+            grid-area: last_row_box2;
+        }
+
+        .last_row_box3 {
+            grid-area: last_row_box3;
+        }
+
+        .last_row_box4 {
+            grid-area: last_row_box4;
+        }
+
+        .last_row_img {
+            border-radius: 50%;
+            width: 25%;
+            margin: 28px 0px;
+        }
+
+        .last_row_h {
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 30px;
+        }
+
+        .last_row_p {
+            letter-spacing: 1.5px;
+            padding: 10px 30px;
+            color: rgb(87, 87, 87);
+            line-height: 25px;
+        }
+
+
+        @media only screen and (max-width: 752px) {
+            #first_row {
+                grid-template-areas: 'first_row_box1'
+                    'first_row_box2'
+                    'first_row_box3';
+            }
+
+
+            .first_row_box1,
+            .first_row_box2 {
+                margin-bottom: 30px;
+            }
+
+
+            #mid_heading h1 {
+                line-height: 40px;
+                font-size: 25px;
+            }
+
+            #mid_heading p {
+                font-size: 19px;
+            }
+
+            #last_row {
+                grid-template-areas: 'last_row_box1'
+                    'last_row_box2'
+                    'last_row_box3'
+                    'last_row_box4';
+            }
+
+            .last_row_box1,
+            .last_row_box2,
+            .last_row_box3,
+            .last_row_box4 {
+                margin-bottom: 50px;
+            }
+        }
+
+
+        @media (min-width: 753px) and (max-width: 1000px) {
+            #first_row {
+                grid-template-areas: 'first_row_box1 first_row_box2'
+                    'first_row_box3 first_row_box3';
+            }
+
+            .first_row_btn {
+                margin-top: 40px;
+            }
+
+            #mid_heading h1 {
+                font-size: 30px;
+            }
+
+            #last_row {
+                grid-template-areas: 'last_row_box1 last_row_box2'
+                    'last_row_box3 last_row_box4';
+            }
+        }
+
+
+        @media only screen and (min-width: 1000px) {
+            #first_row {
+                grid-template-areas: 'first_row_box1 first_row_box2 first_row_box3';
+            }
+
+            #last_row {
+                grid-template-areas: 'last_row_box1 last_row_box2 last_row_box3 last_row_box4';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="main">
+
+
+
+            <div id="first_row">
+
+                <div class="first_row_box1">
+                    <img src="https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com" alt=""
+                        class="first_row_img">
+                    <div class="first_row_hp">
+                        <h4 class="first_row_h">Call us: +12 234 456 7890</h4>
+                        <p class="first_row_p">198 West 21th Street, Suite 721 New York NY 10016</p>
+                    </div>
+                </div>
+
+                <div class="first_row_box2">
+                    <img src="https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com" alt=""
+                        class="first_row_img">
+                    <div class="first_row_hp">
+                        <h4 class="first_row_h">Opening Hours</h4>
+                        <p class="first_row_p">Mon - Sat 7:00 AM - 8:00 PM / Sunday</p>
+                    </div>
+                </div>
+
+                <div class="first_row_box btn_box3">
+                    <button class="first_row_btn">MARK AN APPOINTMENT</button>
+                </div>
+            </div>
+
+
+
+            <div id="mid_heading">
+                <h1>We can help you in different situations</h1>
+                <p>WE OFFER SERVICES</p>
+            </div>
+
+
+
+            <div id="last_row">
+
+                <div class="last_row_box1">
+                    <img src="https://via.placeholder.com/150/000000/FFFFFF/?text=IPaddress.net" alt=""
+                        class="last_row_img">
+                    <h2 class="last_row_h">Career & Business</h2>
+                    <p class="last_row_p">Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost
+                        unorthographic</p>
+                </div>
+
+                <div class="last_row_box2">
+                    <img src="https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com" alt=""
+                        class="last_row_img">
+                    <h2 class="last_row_h">Mentel & Physical Care</h2>
+                    <p class="last_row_p">Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost
+                        unorthographic</p>
+                </div>
+
+                <div class="last_row_box3">
+                    <img src="https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com" alt="" class="last_row_img">
+                    <h2 class="last_row_h">People & Relationships</h2>
+                    <p class="last_row_p">Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost
+                        unorthographic</p>
+                </div>
+
+                <div class="last_row_box4">
+                    <img src="https://via.placeholder.com/150/0011FF/808080%20?Text=Digital.com" alt=""
+                        class="last_row_img">
+                    <h2 class="last_row_h">Life coaching</h2>
+                    <p class="last_row_p">Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost
+                        unorthographic</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

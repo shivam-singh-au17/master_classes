@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 85%;
+            margin: auto;
+        }
+
+        #upper_box {
+            text-align: center;
+        }
+
+        #upper_box img {
+            padding: 5px;
+            background-color: rgb(255, 71, 5);
+            margin: 30px 0px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        #upper_box div {
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            width: 70%;
+            margin: auto;
+        }
+
+        .stars {
+            text-align: center;
+            font-size: 60px;
+            letter-spacing: 4px;
+            color: rgb(255, 136, 0);
+            line-height: 90px;
+            font-weight: bolder;
+        }
+
+        .clint_name {
+            text-align: center;
+            color: rgb(4, 4, 58);
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .Clint_span {
+            font-size: 20px;
+            color: rgb(48, 48, 71);
+            font-family: none;
+        }
+
+        .blog {
+            text-align: center;
+            margin: 35px 0px;
+            color: rgb(4, 4, 58);
+            font-size: 27px;
+        }
+
+        #last_box {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-areas: 'last_box1 last_box2 last_box3';
+        }
+
+        #last_box img {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .last_box1 {
+            grid-area: last_box1;
+        }
+
+        .last_box2 {
+            grid-area: last_box2;
+        }
+
+        .last_box3 {
+            grid-area: last_box3;
+        }
+
+        .box_txt>div:nth-child(1) {
+            float: left;
+            background-color: rgb(199, 117, 16);
+            width: 20%;
+            border-radius: 5px;
+            height: 10px;
+            padding: 8px 4px 13px 4px;
+            text-align: center;
+            color: white;
+            margin: 20px 0px 30px 20px;
+        }
+
+        .box_txt>div:nth-child(2) {
+            margin: 20px 30px 30px 20px;
+            color: rgb(117, 115, 115);
+            float: right;
+            font-size: 20px;
+            font-weight: bolder;
+
+        }
+
+        .box_txt>div:nth-child(2) span {
+            color: rgb(199, 117, 16);
+        }
+
+        #last_box>div>div:nth-child(3) {
+            clear: both;
+            font-size: 18px;
+            margin: 20px 0px 0px 20px;
+            font-weight: 600;
+            line-height: 30px;
+            color: rgb(5, 5, 44);
+        }
+
+        .digin_box>div:nth-child(1) {
+            float: left;
+            color: rgb(175, 162, 162);
+            width: 27%;
+            border-radius: 5px;
+            height: 10px;
+            padding: 8px 4px 13px 4px;
+            text-align: center;
+            font-size: 15px;
+            margin: 20px 0px 30px 20px;
+            font-weight: bolder;
+        }
+
+        .digin_box>div:nth-child(2) {
+            margin: 27px 30px 30px 20px;
+            color: rgb(175, 162, 162);
+            float: right;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="main">
+
+            <div id="upper_box">
+                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQF8icfBJ3-7dA/profile-displayphoto-shrink_200_200/0/1624518672164?e=1630540800&v=beta&t=OKGiPVXERNUfChkhcrNVkQ7NEZApZMRfR4Dsfup4F2g"
+                    alt="">
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing els deserunt error doloet consectetur
+                    adipisicing elit. molestiae expedita quia, eos similique? Ullam, fuga quo. Eum culpa fugi nostrum
+                    harum odit, delectus qui ipsum?</div>
+            </div>
+
+            <div class="stars">*****</div>
+
+            <div class="clint_name">SHIVAM SINGH,<span class="Clint_span">Regular Client</span></div>
+
+            <div class="blog">
+                <h1>Our Blog</h1>
+            </div>
+
+            <div id="last_box">
+
+                <div class="last_box1">
+                    <img src="https://via.placeholder.com/350x250/0000FF/808080%20?Text=Digital.com" alt="">
+                    <div class="box_txt">
+                        <div>NEWS</div>
+                        <div>by<span> Jhon Guru</span></div>
+                    </div>
+                    <div>5 Simple Tricks for Getting Steller Hotal Service Wherever You Are</div>
+                    <div class="digin_box">
+                        <div>Feb 28, 2020</div>
+                        <div>M,3</div>
+                    </div>
+                </div>
+
+                <div class="last_box2">
+                    <img src="https://via.placeholder.com/350x250/FF0000/FFFFFF?Text=Down.com" alt="">
+                    <div class="box_txt">
+                        <div>NEWS</div>
+                        <div>by<span> Jhon Guru</span></div>
+                    </div>
+                    <div>5 Simple Tricks for Getting Steller Hotal Service Wherever You Are</div>
+                    <div class="digin_box">
+                        <div>Feb 28, 2020</div>
+                        <div>M,3</div>
+                    </div>
+                </div>
+
+                <div class="last_box3">
+                    <img src="https://via.placeholder.com/350x250/FFFF00/000000?Text=WebsiteBuilders.com" alt="">
+                    <div class="box_txt">
+                        <div>NEWS</div>
+                        <div>by<span> Jhon Guru</span></div>
+                    </div>
+                    <div>5 Simple Tricks for Getting Steller Hotal Service Wherever You Are</div>
+                    <div class="digin_box">
+                        <div>Feb 28, 2020</div>
+                        <div>M,3</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
