@@ -1,18 +1,32 @@
 
+
 function SuchPairReturns(arr, k) {
-    var res = 0;
-    var temp = arr[0]
-    var count = 0
-    for (var i = 1; i <= arr.length; i++) {
-        if ((arr[i] + temp) == k) {
-            count++;
-        } else {
-            res = count;
-            temp = arr[i]
-            // count = 0
+
+    arr.sort(function (a, b) { return a - b });
+    
+    var p1 = 0;
+    var p2 = arr.length - 1;
+    var temp = 0
+    while (p2 > p1) {
+        if ((arr[p1] + arr[p2]) > k) {
+            p2 -= 1;
+        }
+        else if
+            ((arr[p1] + arr[p2]) < k) {
+            p1 += 1;
+        }
+        else {
+            temp = 1;
+            break;
         }
     }
-    return res;
+
+    if (temp == 1) {
+        return 1;
+    } else {
+        return -1;
+    }
+
 }
 
 
@@ -23,10 +37,8 @@ function runProgram(input) {
 
     for (var i = 1; i <= testCases; i++) {
         var nAndK = Input[i * 2 - 1].trim().split(" ").map(Number);
-        var k = nAndK[1]
-        console.log('k:', k)
+        var k = nAndK[1];
         var arr = Input[i * 2].trim().split(" ").map(Number);
-        console.log('arr:', arr)
 
         var ans = SuchPairReturns(arr, k);
         console.log(ans);
@@ -36,8 +48,8 @@ function runProgram(input) {
 
 if (process.env.USERNAME === "shiva") {
     runProgram(`1
-5 11
-3 4 0 2 7`);
+10 -13
+-7 -6 4 10 -5 0 -3 1 -6 5`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
