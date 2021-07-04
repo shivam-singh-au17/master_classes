@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table (Selectors & Combinators)</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #cntr>div:nth-child(2) {
+            width: 17.7%;
+            float: left;
+            margin-left: 10px;
+            height: 455px;
+        }
+
+        #first>div {
+            width: 30%;
+            height: 57px;
+            margin: 1.1%;
+            border: 1px solid black;
+            float: left;
+        }
+
+        #second>div {
+            width: 98%;
+            height: 230px;
+            margin-top: 6px;
+        }
+
+        .mid2>div {
+            width: 30%;
+            height: 160px;
+            font-size: xx-large;
+            background-color: rgb(177, 240, 95);
+            border: 2px solid black;
+            margin: 6px;
+        }
+
+        .mid2>div h1 {
+            float: left;
+            margin-left: 10px;
+        }
+
+        #second>div:nth-child(1) {
+            height: 182px;
+
+        }
+
+        #therd>div {
+            width: 15%;
+            height: 58px;
+            margin: 0.5%;
+            border: 1px solid black;
+            float: right;
+        }
+
+        #therd>div:nth-child(1),
+        #therd>div:nth-child(2),
+        #therd>div:nth-child(8),
+        #therd>div:nth-child(14),
+        #therd>div:nth-child(20),
+        #therd>div:nth-child(26) {
+            background-color: yellow;
+        }
+
+        #therd>div:nth-child(32),
+        #therd>div:nth-child(33),
+        #therd>div:nth-child(34),
+        #therd>div:nth-child(35),
+        #therd>div:nth-child(36),
+        #therd>div:nth-child(37) {
+            background-color: rgb(59, 54, 37);
+        }
+
+        #therd>div:nth-child(3),
+        #therd>div:nth-child(9),
+        #therd>div:nth-child(15),
+        #therd>div:nth-child(21),
+        #therd>div:nth-child(27) {
+            background-color: rgb(248, 0, 62);
+        }
+
+        #therd>div:nth-child(4),
+        #therd>div:nth-child(10),
+        #therd>div:nth-child(16),
+        #therd>div:nth-child(5),
+        #therd>div:nth-child(11),
+        #therd>div:nth-child(6) {
+            background-color: rgb(11, 197, 11);
+        }
+
+        #therd>div:nth-child(13),
+        #therd>div:nth-child(19),
+        #therd>div:nth-child(25),
+        #therd>div:nth-child(31),
+        #therd>div:nth-child(24),
+        #therd>div:nth-child(30),
+        #therd>div:nth-child(29) {
+            background-color: rgb(255, 145, 0);
+        }
+
+        #therd>div:nth-child(7),
+        #therd>div:nth-child(12),
+        #therd>div:nth-child(18),
+        #therd>div:nth-child(17),
+        #therd>div:nth-child(23),
+        #therd>div:nth-child(22),
+        #therd>div:nth-child(28) {
+            background-color: rgb(90, 0, 75);
+        }
+
+        .mid2>div>div:nth-child(1) {
+            float: right;
+            margin-right: 10px;
+
+
+        }
+
+        .mid2>div>div:nth-child(2) {
+            float: left;
+            margin: auto;
+            font-size: 59px;
+            clear: both;
+            margin-left: 10px;
+        }
+
+        .mid2>div>div:nth-child(3) {
+            float: left;
+            clear: both;
+            margin-left: 10px;
+        }
+
+        .mid>div {
+            width: 10%;
+            height: 59px;
+            margin: 0.3%;
+            border: 1px solid black;
+            background-color: blue;
+            float: right;
+        }
+
+        #first>div:nth-child(1),
+        #first>div h3 {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+
+        #first>div:nth-child(2),
+        #first>div:nth-child(4),
+        #first>div:nth-child(6),
+        #first>div:nth-child(8),
+        #first>div:nth-child(10),
+        #first>div:nth-child(13) {
+            background-color: yellowgreen;
+        }
+
+        #first>div:nth-child(3),
+        #first>div:nth-child(5),
+        #first>div:nth-child(7),
+        #first>div:nth-child(9),
+        #first>div:nth-child(11),
+        #first>div:nth-child(14) {
+            background-color: orangered;
+        }
+
+        #first>div:nth-child(12),
+        #first>div:nth-child(15) {
+            background-color: palegoldenrod;
+        }
+
+        #first>div:nth-child(2),
+        #first>div:nth-child(4),
+        #first>div:nth-child(6),
+        #first>div:nth-child(8),
+        #first>div:nth-child(10),
+        #therd>div:nth-child(2) {
+            clear: both;
+        }
+
+        #first>div:nth-child(12),
+        #first>div:nth-child(15) {
+            border: 2px solid black;
+        }
+
+        #cntr>div:nth-child(3) {
+            width: 47.7%;
+            float: left;
+            height: 455px;
+        }
+
+        #cntr>div:nth-child(4) {
+            width: 32.7%;
+            float: left;
+            height: 455px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+
+        .forth1,
+        .forth2 {
+            width: 48%;
+            height: 50px;
+            clear: both;
+            margin: auto;
+        }
+
+        .forth1>div {
+            margin-top: 30px;
+            width: 6.7%;
+            color: white;
+            height: 48px;
+            background-color: rgb(16, 53, 18);
+            float: left;
+            border: 1.4px solid black;
+        }
+
+        .forth2>div {
+            width: 6.7%;
+            height: 48px;
+            background-color: rgb(59, 236, 68);
+            float: left;
+            border: 1.4px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cntr">
+        <h2>THE PERIODIC TABLE OF ELEMENTS</h2>
+
+
+
+        <div id="first">
+            <div>
+                <h3>H</h3>
+            </div>
+            <div></div>
+            <div>
+                <p>4</p>
+            </div>
+            <div></div>
+            <div>
+                <p>12</p>
+            </div>
+            <div></div>
+            <div>
+                <p>20</p>
+            </div>
+            <div></div>
+            <div>
+                <p>38</p>
+            </div>
+            <div></div>
+            <div>
+                <p>56</p>
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+                <p>88</p>
+            </div>
+            <div></div>
+        </div>
+        <div id="second">
+            <div class="mid2">
+                <div>
+                    <!-- <p>14</p>
+                    <p>Si</p>
+                    <p>Silicon</p> -->
+                    <div>14</div>
+                    <div>Si</div>
+                    <div>Silicon</div>
+                    <!-- <div><p>14</p></div>
+                   <div><p>Si</p></div>
+                   <div><p>Silicon</p></div> -->
+                </div>
+            </div>
+            <div class="mid">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="therd">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="forth1">
+            <div>
+                <p>La</p>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="forth2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+                <p>Am</p>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+                <p>No</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
