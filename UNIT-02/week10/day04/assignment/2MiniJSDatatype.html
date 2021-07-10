@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js datatype learning app</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        #container {
+            max-width: 70%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: rgb(0, 5, 54);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #container button {
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(255, 0, 128);
+            border-style: none;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+            font-weight: bolder;
+
+        }
+
+        #container button:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 128);
+            background-color: white;
+        }
+
+        h1 {
+            color: yellow;
+            padding: 10px;
+        }
+
+        #mainIntro {
+            max-width: 80%;
+            margin: auto;
+            padding: 20px;
+            font-size: 26px;
+            letter-spacing: 1px;
+            line-height: 35px;
+            text-align: left;
+            color: rgb(0, 255, 242);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Js datatype learning app</h1>
+        <button id="objects">Objects</button>
+        <button id="arrays">Arrays</button>
+        <button id="functions">Functions</button>
+        <button id="strings">Strings</button>
+        <button id="number">Numbers</button>
+        <button id="null">Null</button>
+        <button id="undefined">Undefined</button>
+        <div id="mainIntro">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var obj = document.getElementById("objects");
+    var arr = document.getElementById("arrays");
+    var fun = document.getElementById("functions");
+    var str = document.getElementById("strings");
+    var num = document.getElementById("number");
+    var nul = document.getElementById("null");
+    var und = document.getElementById("undefined");
+
+    var objIntro = document.getElementById("mainIntro");
+
+
+    function objectsIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "OBJECTS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "In JavaScript, objects are king. If you understand objects, you understand JavaScript.";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "In JavaScript, almost everything is an object.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "All JavaScript values, except primitives, are objects.";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "Object values are written as name : value pairs (name and value separated by a colon)";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "A JavaScript object is a collection of named values";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "Objects are mutable: They are addressed by reference, not by value.";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "Spaces and line breaks are not important. An object definition can span multiple lines:";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+
+    function arraysIntro() {
+        var ul = document.createElement("ul");
+        var span = document.createElement("span");
+        span.innerHTML = "ARRAYS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "JavaScript arrays are used to store multiple values in a single variable.";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "An array is a special variable, which can hold more than one value at a time.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "An array can hold many values under a single name, and you can access the values by referring to an index number.";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "Using an array literal is the easiest way to create a JavaScript Array.";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "You access an array element by referring to the index number:";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "With JavaScript, the full array can be accessed by referring to the array name:";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "Arrays are a special type of objects. The typeof operator in JavaScript returns object for arrays.";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+
+
+
+
+
+    function functionsIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "FUNCTIONS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "A JavaScript function is a block of code designed to perform a particular task.";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "A JavaScript function is executed when something invokes it (calls it).";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "The parentheses may include parameter names separated by commas:";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "The code to be executed, by the function, is placed inside curly brackets: {}";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "Function parameters are listed inside the parentheses () in the function definition.";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+    
+
+
+
+    function stringsIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "STRINGS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "Primitive values, like 'John Doe', cannot have properties or methods (because they are not objects).";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "The length property returns the length of a string:";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "slice() extracts a part of a string and returns the extracted part in a new string.";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "The method takes 2 parameters: the start position, and the end position (end not included).";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "If a parameter is negative, the position is counted from the end of the string.";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "If you omit the second parameter, the method will slice out the rest of the string:";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+
+
+
+
+
+    function numberIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "NUMBERS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "The Number() function converts the object argument to a number that represents the object's value.";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "If the value cannot be converted to a legal number, NaN is returned.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "If the parameter is a Date object, the Number() function returns the number of milliseconds since midnight January 1, 1970 UTC.";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "A Number. Returns different object values to their numbers. If the value cannot be converted to a legal number, NaN is returned. If no argument is provided, it returns 0.";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "If the value cannot be converted to a legal number, NaN is returned.";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "A Number. Returns different object values to their numbers.";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "The Number() function converts the object argument to a number that represents the object's value.";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+
+
+
+
+
+    function nullIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "NULLS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "The value null represents the intentional absence of any object value.";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "It is one of JavaScript's primitive values and is treated as falsy for boolean operations.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "The value null is written with a literal: null. null is not an identifier for a property of the global object,";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "like undefined can be. Instead, null expresses a lack of identification, indicating that a variable points to no object.";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "In APIs, null is often retrieved in a place where an object can be expected but no object is relevant. ";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "When checking for null or undefined, beware of the differences between equality (==) and identity (===) operators, as the former performs type-conversion.";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "The value null represents the intentional absence of any object value.";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+
+
+
+    function undefinedIntro() {
+        var ul = document.createElement("ul");
+
+        var span = document.createElement("span");
+        span.innerHTML = "UNDEFINEDS:"
+
+        var li1 = document.createElement("li");
+        li1.textContent = "The global undefined property represents the primitive value undefined. It is one of JavaScript's";
+
+        var li2 = document.createElement("li");
+        li2.textContent = "undefined is a property of the global object. That is, it is a variable in global scope. The initial value of undefined is the primitive value undefined.";
+
+        var li3 = document.createElement("li");
+        li3.textContent = "In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property, per the ECMAScript 5 specification. (Even when this is not the case, avoid overriding it.)";
+
+        var li4 = document.createElement("li");
+        li4.textContent = "A variable that has not been assigned a value is of type undefined. ";
+
+        var li5 = document.createElement("li");
+        li5.textContent = "A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.";
+
+        var li6 = document.createElement("li");
+        li6.textContent = "While you can use undefined as an identifier (variable name) in any scope other than the global scope (because undefined is not a reserved word), doing so is a very bad idea that will make your code difficult to maintain and debug.";
+
+        var li7 = document.createElement("li");
+        li7.textContent = "A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.";
+
+        ul.appendChild(span);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(li5);
+        ul.appendChild(li6);
+        ul.appendChild(li7);
+
+        objIntro.innerHTML = null;
+        objIntro.appendChild(ul);
+
+    }
+
+
+    obj.addEventListener("click", objectsIntro);
+    arr.addEventListener("click", arraysIntro);
+    fun.addEventListener("click", functionsIntro);
+    str.addEventListener("click", stringsIntro);
+    num.addEventListener("click", numberIntro);
+    nul.addEventListener("click", nullIntro);
+    und.addEventListener("click", undefinedIntro);
+
+</script>

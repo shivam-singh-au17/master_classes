@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        #container {
+            max-width: 70%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: rgb(0, 5, 54);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #container button {
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(255, 0, 128);
+            border-style: none;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+            font-weight: bolder;
+
+        }
+
+        #container button:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 128);
+            background-color: white;
+        }
+
+        h1 {
+            color: yellow;
+            padding: 10px;
+        }
+
+        #dice {
+            max-width: 10%;
+            font-size: 80px;
+            font-weight: bolder;
+            margin: auto;
+            padding: 80px;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 2px solid black;
+            background-color: rgb(116, 114, 112);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>DICE GAME</h1>
+        <button id="throdDice">Throw Dice</button>
+    </div>
+
+    <div id="dice">0
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var throwBtn = document.getElementById("throdDice");
+
+    function random(number) {
+        return Math.ceil(Math.random() * number);
+    }
+
+    function randamNumber() {
+        var div = document.getElementById("dice");
+        div.innerHTML = `${random(6)}`;
+
+        var value = Number(div.innerHTML.trim());
+
+        if (value == 1) {
+            div.style.color = "red";
+            div.style.background = "rgb(209, 91, 91)";
+
+        }else if(value == 6){
+            div.style.color = "green";
+            div.style.background = "rgb(109, 226, 115)";
+        }else{
+            div.style.color = "yellow";
+            div.style.background = "rgb(116, 114, 112)";
+        }
+
+    }
+
+    throwBtn.addEventListener("click", randamNumber)
+    
+</script>

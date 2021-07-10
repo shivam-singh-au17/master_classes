@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a copy</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    function CopyArr(arr) {
+
+        var myArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            myArr.push(arr[i])
+        }
+        return myArr;
+
+    }
+
+    var arr = [2, 3, 56, 89, 54, 23];
+    console.log('arr:', arr)
+    var arrRes = CopyArr(arr);
+    console.log('arrRes:', arrRes)
+
+
+
+
+    function CopyObj(obj) {
+
+        var myObj = {};
+        myObj.CopyName = obj.name;
+        myObj.CopyAge = obj.age;
+        return myObj;
+
+    }
+
+    var obj = {
+        name: "shivam",
+        age: 23
+    }
+    console.log('obj:', obj)
+    var objRes = CopyObj(obj);
+    console.log('objRes:', objRes)
+
+
+</script>
