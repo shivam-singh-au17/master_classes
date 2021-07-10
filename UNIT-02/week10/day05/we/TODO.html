@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <style>
+        .done {
+            color: rgb(106, 212, 0);
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>TODO LIST</h1>
+
+    <input type="text" id="inp">
+
+    <button onclick="addTask()">Add Task</button>
+
+    <div id="tasks"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var mytasks = document.getElementById("tasks")
+
+    var id = 0;
+    function addTask() {
+
+        var div = document.createElement("div")
+
+        var task = document.getElementById("inp").value;
+        id = id + 1;
+
+        if (task.length > 0) {
+
+            div.innerHTML = `<p id = ${id}>${task}</p><button onclick="Done(${id})">Done</button><button onclick="Remove(${id})">Remove</button>`;
+
+            mytasks.append(div);
+
+        }
+
+
+    }
+
+    function Done(i) {
+        var cliked_p = document.getElementById(i)
+        cliked_p.setAttribute("class", 'done')
+    }
+
+    function Remove(i) {
+        var cliked_rem = document.getElementById(i)
+        var div = cliked_rem.parentElement
+        div.remove()
+    }
+
+
+
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Status of Task</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 31);
+        }
+
+        #cont {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(129, 129, 129);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 60%;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-decoration:underline;
+        }
+
+        #cont button:nth-child(1) {
+            font-size: 30px;
+            color: white;
+            background-color: rgb(0, 183, 255);
+            border-radius: 10px;
+            border-style: none;
+            width: 45%;
+            margin: 5%;
+            height: 60px;
+            font-weight: 700;
+        }
+
+        #cont button:nth-child(2) {
+            margin: 5%;
+            font-size: 30px;
+            color: white;
+            background-color: rgb(255, 0, 0);
+            border-radius: 10px;
+            border-style: none;
+            width: 45%;
+            height: 60px;
+            font-weight: 700;
+        }
+
+        #cont button:nth-child(1):hover {
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-variant: small-caps;
+            width: 47%;
+        }
+
+        #cont button:nth-child(2):hover {
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-variant: small-caps;
+            width: 47%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+        <h1>Toggle Status of Task</h1>
+        <div>
+            <button id="btn01">Submit</button>
+            <button id="btn02">Pending</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var Submitbt1 = document.getElementById("btn01")
+    var Pendingbt2 = document.getElementById("btn02")
+
+    function ResetSubmission() {
+        Submitbt1.innerHTML = "Submitted"
+        Pendingbt2.innerHTML = "Reset Submission";
+        Submitbt1.style.background = "green"
+        Pendingbt2.style.background = "rgb(0, 183, 255)"
+    }
+
+    function Submitted() {
+        Submitbt1.innerHTML = "Submit"
+        Pendingbt2.innerHTML = "Pending";
+        Submitbt1.style.background = "rgb(0, 183, 255)"
+        Pendingbt2.style.background = "red"
+    }
+
+    Submitbt1.addEventListener("click", ResetSubmission)
+    Pendingbt2.addEventListener("click", Submitted)
+</script>

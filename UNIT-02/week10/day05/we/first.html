@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUCTOR FUNCTION</title>
+</head>
+
+<body>
+    <h1>Create a newspaper factory</h1>
+</body>
+
+</html>
+
+
+<script>
+
+    /*
+
+        let obj = {};
+        obj.name = "shose";
+        obj.price = 1200;
+        console.log('obj:', obj)
+
+        let obj2 = {};
+        obj2.name = "football";
+        obj2.price = 1000;
+        console.log('obj2:', obj2)
+
+    */
+
+
+
+    /*
+    
+        function product(n, p) {
+    
+            let obj = {};
+            obj.name = n;
+            obj.price = p;
+            return obj;
+    
+        }
+    
+        let prod01 = product("Shose", 2300);
+        console.log('prod01:', prod01)
+    
+        let prod02 = product('FootBall', 1000)
+        console.log('prod02:', prod02)
+    
+    */
+
+
+    /*
+
+        function product(n, p, d) {
+
+            this.name = n;
+            this.price = p;
+            this.dic = d;
+
+        }
+
+        let prod01 = new product("Shose", 2300, 'shivam');    // this = prod01
+        console.log('prod01:', prod01)
+
+        let prod02 = new product('FootBall', 1000, 'singh')     // this = prod02
+        console.log('prod02:', prod02)
+
+    */
+
+
+
+
+    /*
+
+// Create a newspaper factory pblishin newspapers
+// timestamp, random id 1 -10, day of news, name of publisher
+
+
+function NewsPaper(h){
+    this.data = new Date();
+    this.publication = "Times Of India";
+    this.hedline = h;
+}
+
+for(let i=0;i<10;i++){
+    var n1 = new NewsPaper("Petrol 120");
+    console.log('n1:', n1);
+}
+
+*/
+
+
+    /*
+    
+        // call 
+    
+        function Person(n, a) {
+    
+            this.name = n;
+            this.age = a;
+    
+        }
+    
+    
+        function Teacher(n, a, s) {
+    
+            Person.call(this, n, a);
+            this.subject = s;
+    
+        }
+    
+        var t1 = new Teacher("raj", 24, "js")
+        console.log('t1:', t1)
+    
+    
+        function Player(n, a, s) {
+    
+            Person.call(this, n, a)
+            this.sport = s;
+        }
+    
+        var t2 = new Player("shivam", 23, "FootBall");
+        console.log('t2:', t2)
+    
+    */
+
+
+
+/*
+
+    // apply 
+
+    function Person(n, a) {
+
+        this.name = n;
+        this.age = a;
+
+    }
+
+
+    function Teacher(n, a, s) {
+
+        Person.apply(this, [n, a]);
+        this.subject = s;
+
+    }
+
+    var t1 = new Teacher("raj", 24, "js")
+    console.log('t1:', t1)
+
+
+    function Player(n, a, s) {
+
+        Person.apply(this, [n, a])
+        this.sport = s;
+    }
+
+    var t2 = new Player("shivam", 23, "FootBall");
+    console.log('t2:', t2)
+
+*/
+
+
+
+</script>
