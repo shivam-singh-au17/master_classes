@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+</head>
+
+<body>
+
+    <h1>Prison Securoty System</h1>
+
+    <button onclick="ClickHere('Main Door Breach')">Main Door Breach</button>
+
+    <button onclick="ClickHere('Shivam Singh')">Name</button>
+
+    <button onclick="ClickHere('Mirzapur')">District</button>
+
+    <button onclick="ClickHere('231301')">Pin Code</button>
+
+    <button onclick="ClickHere('India')">Contry</button>
+
+
+    <input type="text" id="CustamMSG" placeholder="Enter Custam Alert">
+
+    <button onclick="CustamAlert()">Show Msg</button>
+
+    <div id="msgDiv"></div>
+
+   
+
+    <input type="number" id="ageUser">
+
+    <button onclick="MyAge()">See Age</button>
+
+    <div id="ageDiv"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function ClickHere(msg) {
+        alert(msg);
+    }
+
+    function CustamAlert() {
+        var div = document.getElementById("msgDiv")
+        var msg = document.getElementById("CustamMSG").value
+
+        var h1 = document.createElement("h1");
+
+        div.innerHTML = null;
+
+        h1.textContent = msg
+
+        div.appendChild(h1);
+
+        // div.innerHTML = msg;
+    }
+
+    function MyAge(){
+        var div = document.getElementById("ageDiv")
+        var msg = document.getElementById("ageUser").value
+
+         div.innerHTML = null;
+
+
+        var h1 = document.createElement("h1");
+
+        h1.textContent = msg
+
+        div.appendChild(h1);
+    }
+
+</script>

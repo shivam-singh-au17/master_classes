@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leaderboard.html</title>
+    <style>
+
+        body{
+            background-color: black;
+        }
+        #container {
+            color: white;
+            max-width: 50%;
+            margin: auto;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #main {
+            background-color: rgb(0, 6, 56);
+        }
+
+        .firstRow {
+            text-align: center;
+            display: flex;
+        }
+
+        .firstRow>div {
+            font-size: 30px;
+            width: 100%;
+            margin: 5%;
+        }
+
+        .firstRow>div:nth-child(1)>div:nth-child(1) {
+            border: 2px solid black;
+            background-color: rgb(255, 0, 0);
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .firstRow>div:nth-child(2)>div:nth-child(1) {
+            border: 2px solid black;
+            background-color: rgb(51, 179, 0);
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .secondRow {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .secondRow>div:nth-child(2) {
+            background-color: rgb(73, 73, 73);
+            width: 70%;
+            height: 40px;
+            margin: auto;
+            padding: 50px;
+            border: 2px solid black;
+        }
+
+        .numberBtn {
+            width: 60%;
+            margin: auto;
+        }
+
+
+        #num1,
+        #num3,
+        #num7,
+        #num9 {
+            background-color: #668100;
+        }
+
+        #num2,
+        #num4,
+        #num6,
+        #num8,
+        #num5 {
+            background-color: #fe6600;
+        }
+
+        #num0 {
+            background-color: #800065;
+        }
+
+        #num10 {
+            border: none;
+            background-color: rgb(0, 6, 56);
+        }
+
+        .numberBtn>div {
+            margin-top: 40px;
+            display: grid;
+            grid-gap: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+            grid-template-columns: auto auto auto;
+        }
+
+        .numberBtn>div>div {
+            border: 2px solid black;
+            background-color: chartreuse;
+            padding: 17px 10px 10px 6px;
+            text-align: center;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        #Enter {
+            width: 60%;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        #Enter button {
+            color: white;
+            margin-bottom: 30px;
+            width: 100%;
+            height: 80px;
+            font-size: 40px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="main">
+            <div class="firstRow">
+                <div>
+                    <div>
+                        <h2 id="minValue"></h2>
+                    </div>
+                    <div>MIN</div>
+                </div>
+
+                <div>
+                    <div>
+                        <h2 id="maxValue"></h2>
+                    </div>
+                    <div>MAX</div>
+                </div>
+            </div>
+
+
+            <div class="secondRow">
+                <div>SCORE</div>
+                <div id="screen">
+                </div>
+            </div>
+
+
+            <div class="numberBtn">
+                <div>
+                    <div id="num1" onclick="enter1()">1</div>
+                    <div id="num2" onclick="enter2()">2</div>
+                    <div id="num3" onclick="enter3()">3</div>
+                    <div id="num4" onclick="enter4()">4</div>
+                    <div id="num5" onclick="enter5()">5</div>
+                    <div id="num6" onclick="enter6()">6</div>
+                    <div id="num7" onclick="enter7()">7</div>
+                    <div id="num8" onclick="enter8()">8</div>
+                    <div id="num9" onclick="enter9()">9</div>
+                    <div id="num10"></div>
+                    <div id="num0" onclick="enter0()">0</div>
+                    <div id="num10"></div>
+                </div>
+            </div>
+
+            <div id="Enter"><button onclick="enterBtn()">ENTER</button></div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var minValue = document.getElementById("minValue")
+    minValue.innerHTML = 50;
+
+    var maxValue = document.getElementById("maxValue")
+    maxValue.innerHTML = 2021;
+
+
+    function enter1() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 1;
+        input.appendChild()
+    }
+
+    function enter2() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 2;
+        input.appendChild()
+    }
+
+    function enter3() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 3;
+        input.appendChild()
+    }
+
+    function enter4() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 4;
+        input.appendChild()
+    }
+
+    function enter5() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 5;
+        input.appendChild()
+    }
+
+    function enter6() {
+        var input = document.getElementById("screen");
+        console.log(input.textContent);
+        input.textContent = input.textContent + 6;
+        input.appendChild()
+    }
+
+    function enter7() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 7;
+        input.appendChild()
+    }
+
+    function enter8() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 8;
+        input.appendChild()
+    }
+
+    function enter9() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 9;
+        input.appendChild()
+    }
+
+    function enter0() {
+        var input = document.getElementById("screen");
+        input.textContent = input.textContent + 0;
+        input.appendChild();
+    }
+
+
+    function enterBtn() {
+
+
+        var valueMain = document.getElementById("screen")
+        var value = valueMain.innerHTML
+
+        var minNum = document.getElementById("minValue")
+        var minStore = minNum.innerHTML
+
+        var maxNum = document.getElementById("maxValue")
+        var maxStore = maxNum.innerHTML
+
+        valueMain.innerHTML = null
+
+
+        if (Number(value.trim()) < Number(minStore.trim())) {
+
+            minNum.innerHTML = value.trim();
+
+        } else if (Number(value.trim()) > Number(maxStore.trim())) {
+
+            maxNum.innerHTML = value.trim();
+
+        } else {
+            alert("This number not matches any condition please enter another number.")
+        }
+
+    }
+
+
+</script>

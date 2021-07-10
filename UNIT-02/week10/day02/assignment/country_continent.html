@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Continent</title>
+    <style>
+        body {
+            margin: 40px 0;
+        }
+
+        #container {
+            background-color: rgb(228, 228, 228);
+            margin: auto;
+            border: 1px solid black;
+            max-width: 55%;
+            border-radius: 10px;
+            height: 200PX;
+            text-align: center;
+        }
+
+        #continent_select {
+            border-radius: 10px;
+            padding: 10PX;
+            width: 60%;
+            font-size: 25px;
+            height: 60px;
+        }
+
+        button {
+            border-radius: 10px;
+            background-color: white;
+            width: 35%;
+            font-size: 25px;
+            height: 60px;
+        }
+
+        H1 {
+            padding: 10PX;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h1>Continents For Each Country</h1>
+
+
+        <select id="continent_select">
+            <option id="C1" value="India"> India </option>
+            <option id="C2" value="United States of America"> United States of America </option>
+            <option id="C3" value="China"> China </option>
+            <option id="C4" value="Nepal"> Nepal </option>
+            <option id="C5" value="Australia"> Australia </option>
+            <option id="C6" value="France"> France </option>
+            <option id="C7" value="Germany"> Germany </option>
+            <option id="C8" value="South Africa"> South Africa </option>
+            <option id="C9" value="Nigeria"> Nigeria </option>
+            <option id="C10" value="Mexico"> Mexico </option>
+            <option id="C11" value="Argentina"> Argentina </option>
+            <option id="C12" value="Brazil"> Brazil </option>
+            <option id="C13" value="Canada"> Canada </option>
+            <option id="C14" value="Singapore"> Singapore </option>
+            <option id="C15" value="Sweden"> Sweden </option>
+        </select>
+        <button onclick="submit()">Continent </button>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function submit() {
+        var contry = document.getElementById("continent_select");
+
+        switch (contry.value) {
+            case "India":
+                alert(document.getElementById("C1").value = "The continent is: ASIA");
+                break;
+            case "United States of America":
+                alert(document.getElementById("C2").value = "The continent is: North America");
+                break;
+            case "China":
+                alert(document.getElementById("C3").value = "The continent is: ASIA");
+                break;
+            case "Nepal":
+                alert(document.getElementById("C4").value = "The continent is: ASIA");
+                break;
+            case "Australia":
+                alert(document.getElementById("C5").value = "The continent is: Oceania");
+                break;
+            case "France":
+                alert(document.getElementById("C6").value = "The continent is: Europe");
+                break;
+            case "Germany":
+                alert(document.getElementById("C7").value = "The continent is: Europe");
+                break;
+            case "South Africa":
+                alert(document.getElementById("C8").value = "The continent is: Republic of Sauth Africa");
+                break;
+            case "Nigeria":
+                alert(document.getElementById("C9").value = "The continent is: Africa");
+                break;
+            case "Mexico":
+                alert(document.getElementById("C10").value = "The continent is: North America");
+                break;
+            case "Argentina":
+                alert(document.getElementById("C11").value = "The continent is: Sauth America");
+                break;
+            case "Brazil":
+                alert(document.getElementById("C12").value = "The continent is: Sauth America");
+                break;
+            case "Canada":
+                alert(document.getElementById("C13").value = "The continent is: North America");
+                break;
+            case "Singapore":
+                alert(document.getElementById("C14").value = "The continent is: The continent is: ASIA");
+                break;
+            case "Sweden":
+                alert(document.getElementById("C15").value = "The continent is: Europe");
+                break;
+            default:
+                alert(document.getElementById("C16").value = "No Contry Found");
+                break;
+        }
+    }
+
+</script>

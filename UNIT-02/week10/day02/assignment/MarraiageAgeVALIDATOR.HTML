@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Validator</title>
+    <style>
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(224, 224, 224);
+            padding: 50px;
+            font-size: 40px;
+            margin: 50px 50px;
+            border-radius: 20px;
+        }
+
+        #container input {
+            font-size: 40px;
+        }
+
+        #container select {
+            font-size: 40px;
+        }
+
+        #container button {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        Enter Your Name: <input type="text" id="name"> <br> <br>
+        Enter Your DOBirth: <input type="number" id="DOB"> <br> <br>
+        Select Your Gender: <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select> <br> <br>
+        <button onclick="submit()">Submit</button>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function submit() {
+
+        var userName = document.getElementById("name").value
+
+        var dateOB = document.getElementById("DOB").value
+
+        var userGender = document.getElementById("gender").value
+
+        var validAge = 2021 - dateOB;
+
+
+        if (userGender == 'Male') {
+            if (validAge >= 23) {
+                alert(`Yes, ${userName} You Are Eligible To Be Married`)
+            } else {
+                alert(`No, ${userName} You Are Not Eligible To Be Married.`)
+            }
+        } else if (userGender == 'Female') {
+            if (validAge >= 21) {
+                alert(`Yes, ${userName} You Are Eligible To Be Married.`)
+            } else {
+                alert(`No, ${userName} You Are Not Eligible To Be Married.`)
+            }
+        }
+
+
+    }
+
+</script>
