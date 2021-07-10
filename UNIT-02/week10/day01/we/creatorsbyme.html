@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creators.html</title>
+</head>
+
+<body>
+    <div id="result">
+
+    </div>
+
+    <ul id="myList">
+
+    </ul>
+
+    <button onclick="createh1()">Click Here</button>
+
+    <button onclick="deleteList()"> remove masai </button>
+
+    <button onclick="createList()">my hobbies</button>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    function createh1() {
+
+        var myH1 = document.createElement("h1");
+
+        var myDiv = document.getElementById("result")
+
+        // myH1.textContent = 'MASAI';
+        // myH1.innerHTML = 'MASAI';
+        myH1.innerText = 'MASAI';
+
+        myH1.id = "masaiH1"
+
+        myDiv.append(myH1);
+    }
+
+
+    function deleteList() {
+
+        var removeh = document.getElementById("result");
+
+        // var h1 = document.getElementById("masaiH");
+
+        var h1 = document.querySelector("h1");
+
+        removeh.removeChild(h1)
+
+    }
+
+
+
+    function createList() {
+
+        var hoobesList = document.getElementById("myList");
+
+        var hobbies = ['coding', 'dsa', 'css'];
+
+
+        for (var i = 0; i < hobbies.length; i++) {
+
+            var li = document.createElement("li")
+
+            // li.innerHTML = `<h1> ${hobbies[i]} </h1>`;
+
+            li.innerText = hobbies[i];
+
+            // hoobesList.append(li);
+            hoobesList.appendChild(li);
+        }
+
+    }
+
+
+</script>

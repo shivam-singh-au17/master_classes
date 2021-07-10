@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Deletions</title>
+</head>
+
+<body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <div id="headings">
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+    </div>
+    <div id="cont">
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+    </div>
+    <hr />
+    <button onclick="RemoveH1()">Remove H1</button>
+    <button onclick="RemoveH3()">Remove H3</button>
+    <button onclick="RemoveH5()">Remove H5</button>
+    <button onclick="RemoveGreen()">Remove Green</button>
+    <button onclick="RemoveDIVS()">Remove DIVS</button>
+    <script>
+    </script>
+</body>
+
+</html>
+
+<script>
+
+    function RemoveH1() {
+        var h1 = document.querySelectorAll("h1");
+
+        for (var i = 0; i < h1.length; i++) {
+            h1[i].remove();
+        }
+
+    }
+
+
+    function RemoveH3() {
+
+        var h3 = document.querySelector("h3");
+        h3.remove();
+
+    }
+
+
+    function RemoveH5() {
+
+        var div = document.getElementById("headings");
+        var h5 = div.querySelectorAll("h5");
+        for (var i = 0; i < h5.length; i++) {
+            h5[i].remove();
+        }
+
+    }
+
+
+    function RemoveGreen() {
+
+        var div = document.getElementById("cont");
+        var green = div.querySelectorAll("#cont > .green");
+        for (var i = 0; i < green.length; i++) {
+            green[i].remove();
+        }
+
+    }
+
+
+    function RemoveDIVS() {
+
+        var div = document.getElementById("cont");
+        var allDivs = div.querySelectorAll("div");
+        for (var i = 0; i < allDivs.length; i++) {
+            allDivs[i].remove();
+        }
+        
+    }
+
+
+
+</script>

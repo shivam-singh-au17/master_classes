@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Creators</title>
+</head>
+
+<body>
+    <div id="headings">
+    </div>
+    <div id="cont">
+    </div>
+
+    <ul id="hobbies">
+        <li>Coding</li>
+    </ul>
+
+    <div id="copyright"></div>
+    <button onclick="CreateH1()">Create H1</button>
+    <button onclick="Create2H3()">Create 2 H3</button>
+    <button onclick="CreateParagraphs()">Create Paragraphs</button>
+    <button onclick="AddHobbies()">Add Hobbies</button>
+    <button onclick="AddCopyright()">Add Copyright</button>
+
+</body>
+
+</html>
+
+<script>
+
+    function CreateH1() {
+
+        var h1 = document.createElement("h1");
+        var div = document.getElementById("headings");
+        h1.textContent = "Shivam Singh";
+        h1.id = "firstH1"
+
+        div.appendChild(h1)
+    }
+
+
+    function Create2H3() {
+
+        var h3_1 = document.createElement("h3");
+        var h3_2 = document.createElement("h3");
+        var div = document.getElementById("headings");
+        h3_1.textContent = "Address: Rajauli Mirzapur"
+        h3_2.textContent = "City: Mirzapur,State: Uttar Pradesh"
+        h3_1.id = "firstH3"
+        h3_2.id = "secondH3"
+
+        div.appendChild(h3_1)
+        div.appendChild(h3_2)
+    }
+
+
+    function CreateParagraphs() {
+
+        var div = document.getElementById("cont");
+        for (var i = 1; i <= 10; i++) {
+            var p = document.createElement("p");
+            p.textContent = `Paragraphs ${i}`;
+
+            div.appendChild(p);
+        }
+    }
+
+
+    function AddHobbies() {
+
+        var ul = document.getElementById("hobbies")
+        var Hobbies = ['Cricket', 'Sleeping', 'Traveling'];
+        for (var i = 0; i < Hobbies.length; i++) {
+            var li = document.createElement("li");
+            li.innerText = Hobbies[i];
+
+            ul.appendChild(li)
+        }
+    }
+
+
+    function AddCopyright() {
+        // TODO: 
+        var div = document.getElementById("copyright");
+        var p = document.createElement("p");
+        p.textContent = "@ masai 2019";
+
+        div.appendChild(p)
+    }
+
+</script>

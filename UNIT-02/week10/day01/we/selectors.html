@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Selectors</title>
+</head>
+
+<body>
+    <h1 id="firsth1">First H1</h1>
+    <h1>Second H1</h1>
+    <h3 class="H3">First H3</h3>
+    <h3 class="H3">Second H3</h3>
+    <h5 class="H5">First H5</h5>
+    <h5 class="H5">Second H5</h5>
+    <h5 class="H5">Third H5</h5>
+    <div class="purple">First DIV</div>
+    <div class="yellow">Second DIV</div>
+    <div class="orange">Third DIV</div>
+    <p class="purple">First P</p>
+    <p class="yellow">Second P</p>
+    <p class="orange">Third P</p>
+    <hr />
+    <button onclick="greenBtn()">Change H1</button>
+    <button onclick="changeh3()">Change H3</button>
+    <button onclick="changeh5()">Change H5</button>
+    <button onclick="ChangePurple()">Change Purple</button>
+    <button onclick="ChangeYellow()">Change Yellow</button>
+    <button onclick="ChangeOrange()">Change Orange</button>
+    <script>
+    </script>
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    function greenBtn() {
+
+        var myFirsth1 = document.getElementById('firsth1');
+
+        myFirsth1.style.color = 'green'
+
+    }
+
+
+    function changeh3() {
+
+        var myFirsth3 = document.querySelectorAll('H3');
+
+        for (var i = 0; i < myFirsth3.length; i++) {
+            myFirsth3[i].style.color = 'blue'
+        }
+
+    }
+
+
+
+
+    function changeh5() {
+
+        var myFirst_h5 = document.querySelectorAll('H5');
+
+        for (var i = 0; i < myFirst_h5.length; i++) {
+            myFirst_h5[i].style.color = 'red'
+        }
+
+    }
+
+
+
+    function ChangePurple() {
+
+        var purpleCol = document.getElementsByClassName('purple');
+
+        for (var i = 0; i < purpleCol.length; i++) {
+            purpleCol[i].style.color = 'purple'
+        }
+
+    }
+
+
+    function ChangeYellow() {
+
+        var yellowCol = document.getElementsByClassName('yellow');
+
+        for (var i = 0; i < yellowCol.length; i++) {
+            yellowCol[i].style.color = 'yellow'
+        }
+
+    }
+
+
+    function ChangeOrange() {
+
+        var orangeCol = document.getElementsByClassName('orange');
+
+        for (var i = 0; i < orangeCol.length; i++) {
+            orangeCol[i].style.color = 'orange'
+        }
+
+    }
+
+
+
+
+</script>

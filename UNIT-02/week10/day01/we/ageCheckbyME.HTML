@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age_check.html</title>
+</head>
+
+<body>
+    <div id="container">
+        Year: <input type="number" name="year" id="myInp">
+        <button onclick="CheckAge()">Submit</button>
+
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function CheckAge() {
+        var myInputData = document.getElementById('myInp').value
+        console.log('myInputData:', myInputData)
+
+        var userAge = 2021 - myInputData;
+
+        var myhtag = document.createElement("h1");
+
+        var MyDiv = document.getElementById('result');
+
+
+        MyDiv.innerHTML = null;
+
+        if (userAge > 18) {
+            myhtag.textContent = " You can drive in India!"
+            // alert(" You can drive in India!");
+        } else if (userAge < 18) {
+            myhtag.textContent = "You can't drive in India!"
+            // alert("You can't drive in India!");
+        } else {
+            myhtag.textContent = " You are just old enough to drive in India!"
+            // alert(" You are just old enough to drive in India!");
+        }
+
+        MyDiv.append(myhtag);
+    }
+
+</script>
