@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix</title>
+    <style>
+    
+        #btnBoxPage {
+            max-width: 15%;
+            text-align: center;
+            margin: auto;
+        }
+
+        #btnBoxPage button {
+            width: 200px;
+            height: 50px;
+            font-size: 25px;
+            font-weight: 700;
+            color: white;
+            border-style: none;
+            border-radius: 10px;
+            font-weight: bolder;
+            background-color: rgb(255, 0, 149);
+        }
+
+        #btnBoxPage button:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 0);
+            background-color: rgb(9, 255, 0);
+            border: 1px solid black;
+        }
+
+        #box1 {
+            margin-left: 470px
+        }
+
+        #linus_box {
+            background-color: rgb(211, 211, 228);
+            margin-top: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+            font-size: 25px;
+            letter-spacing: 1px;
+            line-height: 10px;
+            text-align: center;
+            height: 310px;
+        }
+
+        #linus_img {
+            margin-top: 30px;
+            width: 110px;
+        }
+
+        #linus_text {
+            font-weight: bolder;
+            font-size: 30px;
+            letter-spacing: 1px;
+            line-height: 20px;
+            color: rgb(0, 0, 117);
+        }
+
+
+        #box2 {
+            margin-top: 50px;
+            margin-left: 350px;
+        }
+
+        #sal_box1 {
+            float: left;
+        }
+
+        #sal_box1_img {
+            width: 100px;
+            margin-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        #sal_box2 {
+            width: 700px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 20px;
+        }
+
+        #sal_box2_img {
+            font-weight: bolder;
+            font-size: 27px;
+            color: rgb(196, 0, 0);
+            padding: 1px;
+        }
+
+        #sal_box2_text {
+            margin-top: 20px;
+        }
+
+
+        #last_box {
+            clear: both;
+            height: 170px;
+            width: 1200px;
+            background-color: rgb(194, 79, 3);
+            margin-left: 70px;
+            margin-bottom: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 20px;
+            letter-spacing: 1px;
+        }
+
+        #last_box_box1 {
+            float: left;
+            width: 520px;
+            height: 130px;
+            margin-left: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #last_box_box1A {
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 35px;
+            color: white;
+        }
+
+        #last_box_box1B {
+            clear: right;
+            font-weight: 600;
+        }
+
+        #last_box_boxA {
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        #last_box_boxB {
+            font-weight: 600;
+        }
+
+        #last_box_box2 {
+            float: left;
+            width: 10px;
+            background-color: rgb(0, 0, 0);
+            height: 130px;
+            margin-left: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #last_box_box3 {
+            float: left;
+            width: 520px;
+            height: 130px;
+            margin-left: 50px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        #last_box_box3A {
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 35px;
+            float: right;
+            color: white;
+        }
+
+        #last_box_box3B {
+            clear: right;
+            float: right;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btnBoxPage"><button id="CreatePage">Create Page</button></div>
+    <div id="container"></div>
+</body>
+
+</html>
+
+<script>
+
+    var myBtn = document.getElementById("btnBoxPage");
+    var createPageBtn = document.getElementById("CreatePage");
+    var ContBtn = document.getElementById("container");
+
+    function CreateMyPage() {
+
+        var divBx1 = document.createElement("div");
+        divBx1.id = "box1";
+
+        var divLin = document.createElement("div");
+        divLin.id = "linus_box";
+
+        var LinImg = document.createElement("img");
+        LinImg.id = "linus_img";
+        var url = "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg";
+
+        var LinP = document.createElement("p");
+        LinP.id = "linus_text";
+
+        var span = document.createElement("span");
+        span.innerHTML = "The creator of Linux and Git";
+
+        LinImg.setAttribute("src", url);
+        LinP.innerHTML = "Linus Torwalds"
+
+        divLin.appendChild(LinImg);
+        divLin.appendChild(LinP);
+        divLin.appendChild(span);
+
+        divBx1.appendChild(divLin);
+
+        ContBtn.appendChild(divBx1);
+
+
+
+
+
+
+        var divBx2 = document.createElement("div");
+        divBx2.id = "box2";
+
+        var divSalBx1 = document.createElement("div");
+        divSalBx1.id = "sal_box1";
+
+        var divSalImg = document.createElement("img");
+        divSalImg.id = "sal_box1_img";
+        var url = "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg";
+        divSalImg.setAttribute("src", url);
+
+        var divSalBx2 = document.createElement("div");
+        divSalBx2.id = "sal_box2";
+
+        var salbox2 = document.createElement("div");
+        salbox2.id = "sal_box2_img";
+        salbox2.innerHTML = "Sal Khan";
+
+        var salP = document.createElement("p");
+        salP.id = "sal_box2_text";
+        salP.innerHTML = "Salman Khan is the founder of the Khan Academy which has a mission of providing a free world - class education for anyone, anywhere."
+
+
+        divSalBx1.appendChild(divSalImg);
+        divSalBx2.appendChild(salbox2);
+        divSalBx2.appendChild(salP);
+        divBx2.appendChild(divSalBx1);
+        divBx2.appendChild(divSalBx2);
+        ContBtn.appendChild(divBx2);
+
+
+
+
+        var lastbox = document.createElement("div");
+        lastbox.id = "last_box";
+
+        var lastboxbox1 = document.createElement("div");
+        lastboxbox1.id = "last_box_box1";
+
+        var lastboxbox1A = document.createElement("div");
+        lastboxbox1A.id = "last_box_box1A";
+        lastboxbox1A.innerHTML = "Ken Thompson";
+
+        var lastboxbox1B = document.createElement("div");
+        lastboxbox1B.id = "last_box_box1B";
+        lastboxbox1B.innerHTML = "Designed and Implemented the <br> original Unix operating system";
+
+        var lastboxbox2 = document.createElement("div");
+        lastboxbox2.id = "last_box_box2";
+
+        var lastboxbox3 = document.createElement("div");
+        lastboxbox3.id = "last_box_box3";
+
+        var lastboxbox3A = document.createElement("div");
+        lastboxbox3A.id = "last_box_box3A";
+        lastboxbox3A.innerHTML = "Dennis Ritchie";
+
+        var lastboxbox3B = document.createElement("div");
+        lastboxbox3B.id = "last_box_box3B";
+        lastboxbox3B.innerHTML = "The creator of C Programming Language";
+
+        lastboxbox1.appendChild(lastboxbox1A);
+        lastboxbox1.appendChild(lastboxbox1B);
+
+        lastboxbox3.appendChild(lastboxbox3A);
+        lastboxbox3.appendChild(lastboxbox3B);
+
+        lastbox.appendChild(lastboxbox1);
+        lastbox.appendChild(lastboxbox2);
+        lastbox.appendChild(lastboxbox3);
+
+        ContBtn.appendChild(lastbox);
+
+        myBtn.innerHTML = null
+        createPageBtn.removeEventListener("click", CreateMyPage)
+    }
+
+    createPageBtn.addEventListener("click", CreateMyPage)
+</script>

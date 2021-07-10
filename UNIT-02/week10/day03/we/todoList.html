@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <style>
+        body{
+            background-color: rgb(1, 1, 41);
+        }
+        #cont {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(133, 225, 228);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        #cont input:nth-child(1) {
+            font-size: 30px;
+            width: 55%;
+            margin: 2%;
+            height: 50px;
+        }
+
+        #cont input:nth-child(2) {
+            font-size: 30px;
+            width: 25%;
+            height: 50px;
+        }
+
+        #cont table,
+        tr,
+        td,
+        button {
+            margin: auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+        <h1>TODO List</h1>
+        <div>
+            <form>
+                <input type="text" placeholder="Item Name" id="item">
+                <input type="Submit" value="Add Item" id="AddItem">
+            </form>
+        </div>
+        <table>
+            <!-- <tr>
+                <td>#Item</td>
+                <td><button>Mark Complite</button></td>
+                <td><button>Delete</button></td>
+            </tr> -->
+        </table>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    var addItemBtn = document.getElementById("AddItem")
+    var table = document.querySelector("table");
+
+
+    function MarkComplited(event) {
+        var target = event.target;
+        target.textContent = "Complited "
+        target.style.background = "green"
+        target.style.padding = "10px"
+        target.style.color = "white"
+
+        target.removeEventListener("click", MarkComplited);
+    }
+
+    function MarkDeleted(event) {
+        var target = event.target;
+        target.parentNode.parentNode.remove();
+    }
+
+
+    function addItems(event) {
+
+        event.preventDefault();
+
+        var listItem = document.getElementById("item").value
+
+            var tr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+
+            var btn1 = document.createElement("button");
+            var btn2 = document.createElement("button");
+
+            td1.textContent = listItem;
+            btn1.textContent = "Mark Complited";
+            btn2.textContent = "Delete";
+
+            td1.style.padding = "10px"
+            td1.style.background = "#f0e80a"
+            btn1.style.padding = "11px"
+            btn1.style.background = "#bcc0eb"
+            btn2.style.padding = "10px"
+            btn2.style.background = "#f50000"
+
+            td2.appendChild(btn1);
+            td3.appendChild(btn2);
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+
+            table.appendChild(tr);
+
+            document.getElementById("item").value = null;
+
+            btn1.addEventListener("click", MarkComplited)
+            btn2.addEventListener("click", MarkDeleted)
+
+
+    }
+
+    addItemBtn.addEventListener("click", addItems)
+
+
+</script>

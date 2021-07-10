@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        #products {
+            display: grid;
+            padding: 5%;
+            grid-template-columns: repeat(4, 20%);
+            gap: 5%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Online Store</h1>
+
+    <form id="myForm">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="URL" id="url">
+        <input type="text" placeholder="Price" id="price">
+
+        <input type="submit" />
+
+    </form>
+
+    <div id="products"></div>
+</body>
+
+</html>
+
+<script>
+
+    var products = document.getElementById("products");
+
+    var form = document.getElementById("myForm");
+
+    function addProduct(event) {
+
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;   //get value
+        var p = document.createElement("p");   // create element
+        p.innerHTML = name;    //set value
+
+
+        var url = document.getElementById("url").value;
+        var image = document.createElement("img");
+        image.setAttribute('src', url);
+
+
+        var price = document.getElementById("price").value;
+        var proPrice = document.createElement("p");
+        proPrice.innerText = price;
+
+
+        var div = document.createElement("div");
+
+        div.append(image, p, price);
+
+        products.append(div);
+
+    }
+
+
+    form.addEventListener("submit", addProduct)
+</script>
+
+

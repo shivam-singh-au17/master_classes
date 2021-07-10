@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the buttons text color random value</title>
+    <style>
+        *{
+            max-width: 80%;
+            margin: auto;
+        }
+        #cont{
+            width: 100%;
+            background-color: teal;
+            margin-top: 50px;
+            text-align: center;
+            padding: 60px;
+            border-radius: 10px;
+
+        }
+        button{
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div id="cont">
+        <button id="boubleClick">Click here to change my color</button>
+   </div>
+</body>
+</html>
+
+<script>
+
+var btn = document.getElementById("boubleClick");
+
+var h1 = document.querySelector("h1")
+
+function random(number) {
+    return Math.floor(Math.random() * number);
+}
+
+function createH1(){
+    
+    var body = document.querySelector("body")
+    
+    // var h1 = document.createElement(`h${random(5)}`);  // for randam h1 genretar
+
+    var h1 = document.createElement("h1");
+    h1.innerHTML = "My color should change when I double click the button!"
+    h1.style.color = `${'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'}`;
+    
+    body.appendChild(h1)
+}
+
+btn.addEventListener("dblclick", createH1 )
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTA ALBUM</title>
+    <style>
+
+        *{
+            text-align: center;
+        }
+
+        #album{
+            display: grid;
+            padding: 5%;
+            grid-template-columns: repeat(4, 20%);
+            gap: 5%;
+        }
+
+        img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>My Phota Album</h1>
+
+    <input type="text" name="" id="url">
+
+    <button id="AddImgBtn">addImage</button>
+
+    <div id="album"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var btn = document.getElementById("AddImgBtn");
+
+function addImage(){
+
+    var url = document.getElementById("url").value;
+
+    var img = document.createElement("img");
+
+    img.setAttribute("src", url);
+
+    var div = document.getElementById("album");
+
+    div.append(img);
+
+    document.getElementById("url").value = null
+
+}
+
+btn.addEventListener("click", addImage);
+
+</script>

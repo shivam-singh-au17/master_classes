@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the buttons text color</title>
+    <style>
+        * {
+            max-width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        body {
+            background-color: rgb(5, 0, 46);
+        }
+
+        #cont {
+            background-color: wheat;
+            border-radius: 10px;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 50px;
+        }
+
+        button {
+            font-size: 30px;
+            font-weight: bolder;
+            padding: 15px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        h1 {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+        <h1>Change the buttons text color random value</h1>
+        <button id="changeColor">Click here to change my color</button>
+        <button id="changeArrColor">Click me to change my color to an array value!</button>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+    var changeButton = document.getElementById('changeColor');
+
+    function random(number) {
+        return Math.floor(Math.random() * number);
+    }
+
+    function switchColor() {
+        var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        changeButton.style.color = randomColor;
+    }
+
+    changeButton.addEventListener('click', switchColor);
+
+
+
+
+    var chngArrBtn = document.getElementById('changeArrColor');
+
+    function changeColerArr() {
+        var colors = ["red", "blue", "green"];
+        chngArrBtn.style.background = `${colors[random(colors.length)]}`;
+
+    }
+
+    chngArrBtn.addEventListener('click', changeColerArr);
+
+</script>

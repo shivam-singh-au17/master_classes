@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            max-width: 90%;
+            margin: auto;
+            color: white;
+            background-color: rgb(0, 0, 24);
+            text-align: center;
+        }
+
+        #container {
+            font-size: 40px;
+            font-weight: 900;
+            display: grid;
+            grid-template-columns: 45% 45%;
+            gap: 5%;
+            /* padding: 5%; */
+        }
+
+        #contry {
+            padding: 70px;
+            border-radius: 10px;
+            background-color: rgb(255, 0, 0);
+            height: 80px;
+            border: 1px solid black;
+        }
+
+        h1{
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>World Map Guide</h1>
+    <div id="container">
+        <div id="contry">India</div>
+        <div id="contry">USA</div>
+        <div id="contry">Australia</div>
+        <div id="contry">Brazil</div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function addListner() {
+
+        var contries = document.querySelectorAll("#contry");
+
+        for (let i = 0; i < contries.length; i++) {
+            
+            contries[i].addEventListener("mouseover", function(){
+
+                alert(`You are in ${contries[i].innerHTML}`)
+
+            });
+
+        }
+
+    }
+
+    addListner()
+
+</script>

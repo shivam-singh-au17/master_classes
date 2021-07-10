@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUSE GAME</title>
+    <style>
+        * {
+            max-width: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    var body = document.querySelector("body");
+    var div = document.createElement("div");
+    var btn = document.createElement("button");
+
+    btn.textContent = "SUBMIT";
+
+    div.appendChild(btn);
+    body.appendChild(div);
+
+    body.style.textAlign = "center"
+    body.style.background = "#010224"
+    div.style.width = "450px"
+    div.style.height = "250px"
+    div.style.background = "#03fcf4"
+    div.style.borderRadius = "10px"
+    div.style.marginTop = "200px"
+    btn.style.width = "150px"
+    btn.style.height = "50px"
+    btn.style.borderRadius = "10px"
+    btn.style.borderStyle = "none"
+    btn.style.float = "right"
+    btn.style.marginTop = "180px"
+    btn.style.marginRight = "20px"
+    btn.style.background = "#17fc03"
+    btn.style.fontWeight = "900"
+    btn.style.letterSpacing = "1px"
+    btn.style.fontSize = "15px"
+
+
+    function changeColor() {
+        btn.style.background = "#8a2700"
+        // div.removeEventListener("mouseover", changeColor);
+    }
+
+    function changeColorBack() {
+        btn.style.background = "#17fc03"
+    }
+    
+    
+    div.addEventListener("mouseover", changeColor);
+    div.addEventListener("mouseleave", changeColorBack);
+
+
+</script>
