@@ -1,42 +1,33 @@
 
-function StringReversal(str) {
-
-    var start = 0;
-    var end = str.length - 1;
-    var temp = null;
-
-    while (start < end) {
-
-        temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
+function ThePeakPoint(arr) {
+    var peak = 0;
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]) {
+            peak = i;
+        }
     }
-    return str;
+    return peak;
 }
 
-function printResult(str) {
-    var res = "";
-    for (var i = 0; i < str.length; i++) {
-        res += str[i];
-    }
-    return res;
-}
 
 function runProgram(input) {
 
-    var str = input.split("");
-
-    var ans = StringReversal(str)
-    var res = printResult(ans)
-
-    console.log(res)
+    var data = input.split("\n");
+    var testCases = Number(data[0]);
+    for (var i = 1; i <= testCases; i++) {
+        var newData = data[i * 2].split(" ").map(Number);
+        var ans = ThePeakPoint(newData);
+        console.log(ans)
+    }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`masaischool`);
+    runProgram(`2
+3
+10 20 11
+5
+1 3 6 5 4`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

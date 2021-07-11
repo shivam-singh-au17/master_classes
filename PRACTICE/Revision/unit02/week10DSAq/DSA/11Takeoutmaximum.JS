@@ -1,42 +1,37 @@
 
-function StringReversal(str) {
+function TakeOutMaximum(arr, k) {
 
-    var start = 0;
-    var end = str.length - 1;
-    var temp = null;
-
-    while (start < end) {
-
-        temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
+    var kSum = 0;
+    for (var i = 0; i < k; i++) {
+        kSum += arr[i];
     }
-    return str;
+
+    var sum = kSum;
+    for (var i = k; i < arr.length; i++) {
+        kSum += arr[i] - arr[i - k];
+        sum = Math.max(sum, kSum);
+
+    }
+    return sum;
 }
 
-function printResult(str) {
-    var res = "";
-    for (var i = 0; i < str.length; i++) {
-        res += str[i];
-    }
-    return res;
-}
 
 function runProgram(input) {
 
-    var str = input.split("");
+    var Input = input.split("\n");
 
-    var ans = StringReversal(str)
-    var res = printResult(ans)
+    var nAndK = Input[0].trim().split(" ").map(Number);
+    var k = nAndK[1];
+    var arr = Input[1].trim().split(" ").map(Number);
 
-    console.log(res)
+    var ans = TakeOutMaximum(arr, k);
+    console.log(ans);
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`masaischool`);
+    runProgram(`10 3
+-1 -1 -2 1 -2 4 1 9 3 9`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -55,4 +50,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-

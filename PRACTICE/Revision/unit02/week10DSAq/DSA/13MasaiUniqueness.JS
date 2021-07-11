@@ -1,42 +1,43 @@
 
-function StringReversal(str) {
 
-    var start = 0;
-    var end = str.length - 1;
-    var temp = null;
+function MasaiUniqueness(str) {
 
-    while (start < end) {
-
-        temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
-    }
-    return str;
-}
-
-function printResult(str) {
-    var res = "";
+    var obj = {};
     for (var i = 0; i < str.length; i++) {
-        res += str[i];
+        var key = str[i];
+        if (obj[key] == undefined) {
+            obj[key] = 1;
+        } else {
+            var prev = obj[key];
+            obj[key] = prev + 1;
+        }
     }
-    return res;
+ 
+    var temp = true;
+    for (key in obj) {
+        if (obj[key] == 2) {
+            temp = false;
+            break;
+        }
+    }
+
+    if (temp == true) {
+        return "Yes"
+    } else {
+        return "No"
+    }
 }
+
 
 function runProgram(input) {
 
-    var str = input.split("");
-
-    var ans = StringReversal(str)
-    var res = printResult(ans)
-
-    console.log(res)
+   var ans = MasaiUniqueness(input)
+   console.log(ans)
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`masaischool`);
+    runProgram(`masi`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -55,4 +56,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
