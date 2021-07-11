@@ -9,7 +9,7 @@
 
  <hr>
 
-<h3>Connect with me 🏡:<h3>
+<h4>Connect with me 🏡:<h4>
 <p>
    <a href="https://twitter.com/SHIVAMSINGH4458">
     <img align="left" src="https://image.flaticon.com/icons/svg/733/733579.svg" width="32px"  />
