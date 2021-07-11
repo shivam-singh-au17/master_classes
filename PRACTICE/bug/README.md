@@ -23,21 +23,25 @@
     <img align="left" src="https://image.flaticon.com/icons/svg/174/174857.svg" width="28px" />
   </a>
   <a href="https://leetcode.com/shivam-singh-au17/">
-    <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/LeetCode_logo_white_no_text.svg/102px-LeetCode_logo_white_no_text.svg.png" width="26px"  />
+    <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/LeetCode_logo_white_no_text.svg/102px-LeetCode_logo_white_no_text.svg.png" width="24px"  />
   </a>
 </p>
 <br>
 
 
-
-### I know more about- 
-
-![HTML5](https://img.shields.io/badge/html-HTML5-yellow)
-![CSS3](https://img.shields.io/badge/css-CSS3-brightgreen)
-![JavaScript](https://img.shields.io/badge/JS-Javascript-red)
-![React](https://img.shields.io/badge/React-React-blue)
-![Express](https://img.shields.io/badge/express-Express-blueviolet)
-![Mongodb](https://img.shields.io/badge/Mongodb-mongodb-brightgreen)
+ <hr>
+<h4> 🔭<samp> Tech Stack...</samp></h4>
+<p >
+ <img src="https://img.shields.io/badge/html5%20-%23e34f26.svg?&style=for-the-badge&logo=html5&logoColor=white" />&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" />&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/javascript%20-%23F7DF1.svg?&style=for-the-badge&logo=javascript&logoColor=white" />&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/react%20-%2361DAFB.svg?&style=for-the-badge&logo=react&logoColor=white" />&nbsp;&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/react%20redux%20-%23c21325.svg?&style=for-the-badge&logo=redux&logoColor=white" />&nbsp;&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/python%20-%23329993.svg?&style=for-the-badge&logo=python&logoColor=white" />&nbsp;&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/mysql%20-%23db7023.svg?&style=for-the-badge&logo=mysql&logoColor=white" />&nbsp;&nbsp;&nbsp;
+ <img src="https://img.shields.io/badge/Flask%20-%23c21378.svg?&style=for-the-badge&logo=flask&logoColor=white" />&nbsp;&nbsp;&nbsp;
+</p>
+<hr>
 
 <!-- 
 <h3 align="left">Languages and Tools:</h3>
