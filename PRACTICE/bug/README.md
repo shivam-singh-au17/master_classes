@@ -9,7 +9,7 @@
 
  <hr>
 
-<h3>Connect with me:<h3>
+<h3>Connect with me🏡:<h3>
 <p>
    <a href="https://twitter.com/SHIVAMSINGH4458">
     <img align="left" src="https://image.flaticon.com/icons/svg/733/733579.svg" width="32px"  />
@@ -33,11 +33,7 @@
  <img src="https://img.shields.io/badge/html5%20-%23e34f26.svg?&style=for-the-badge&logo=html5&logoColor=white" />&nbsp;&nbsp;
  <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" />&nbsp;&nbsp;
  <img src="https://img.shields.io/badge/javascript%20-%23F7DF1.svg?&style=for-the-badge&logo=javascript&logoColor=white" />&nbsp;&nbsp;
- <img src="https://img.shields.io/badge/react%20-%2361DAFB.svg?&style=for-the-badge&logo=react&logoColor=white" />&nbsp;&nbsp;&nbsp;
- <img src="https://img.shields.io/badge/react%20redux%20-%23c21325.svg?&style=for-the-badge&logo=redux&logoColor=white" />&nbsp;&nbsp;&nbsp;
  <img src="https://img.shields.io/badge/python%20-%23329993.svg?&style=for-the-badge&logo=python&logoColor=white" />&nbsp;&nbsp;&nbsp;
- <img src="https://img.shields.io/badge/mysql%20-%23db7023.svg?&style=for-the-badge&logo=mysql&logoColor=white" />&nbsp;&nbsp;&nbsp;
- <img src="https://img.shields.io/badge/Flask%20-%23c21378.svg?&style=for-the-badge&logo=flask&logoColor=white" />&nbsp;&nbsp;&nbsp;
 </p>
 <hr>
 
