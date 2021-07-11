@@ -7,9 +7,7 @@
 - 👯 I’m looking to collaborate on: **Contribute more to Open Source projects.**
 - ⚡ I’m looking for **full stack web developer role**.
 
-
-
-# *I am willing to collaborate as a team player building better code.*
+ <hr>
 
 <h3>Connect with me:<h3>
 <p>
