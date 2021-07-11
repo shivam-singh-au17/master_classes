@@ -1,5 +1,5 @@
 <img src ="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" align="right" width="230" height="250" />
-<h2><samp><strong>Hey there :raising_hand_boy:,	I'm Shivam Singh </strong></samp></h2> 
+<h2><samp><strong>Hey there :raising_hand_man:,	I'm Shivam Singh </strong></samp></h2> 
 </br></br></br>
 
 
