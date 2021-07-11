@@ -40,6 +40,11 @@
 <hr>
 
 
+<p align='left'>
+  <img src="https://github-readme-stats.vercel.app/api?username=shivam-singh-au17&theme=tokyonight&show_icons=true&count_private=true" height="207px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivam-singh-au17&theme=tokyonight"/>
+</P>
+
 <p><img align="left" width="47%" src="https://github-readme-stats.vercel.app/api/top-langs?username=shivam-singh-au17&show_icons=true&locale=en&layout=compact" alt="nilpatil7744" /></p>
 
 <p>&nbsp;<img align="right" width="47%" src="https://github-readme-stats.vercel.app/api?username=shivam-singh-au17&show_icons=true&locale=en" alt="nilpatil7744"  /></p>
