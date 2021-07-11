@@ -1,6 +1,5 @@
-### <h2>नमस्ते (Namaste)🙏🏻, I'm Nilesh!
-  </br>
-<img align="right" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQUNSzPxe2kJ1-4e_tvJadE8OWtkekzKbkbg&usqp=CAU" width="300" height="200"/>
+<img src ="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" align="right" width="230" height="250" />
+<h2><samp><strong>Hey there :raising_hand_man:,	I'm Gunjan Mahajan </strong></samp></h2> 
 </br></br></br>
 
 
