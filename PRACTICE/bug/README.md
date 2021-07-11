@@ -46,4 +46,4 @@
 <p align='left'>
   <img src="https://github-readme-stats.vercel.app/api?username=shivam-singh-au17&theme=tokyonight&show_icons=true&count_private=true" height="207px" /></P>
 
-<p align="left" ><img src="https://github-readme-streak-stats.herokuapp.com/?user=shivam-singh-au17&theme=tokyonight" height="250px" /></p>
+<p align="left" ><img src="https://github-readme-streak-stats.herokuapp.com/?user=&theme=tokyonight" height="250px" /></p>
