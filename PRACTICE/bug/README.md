@@ -1,7 +1,7 @@
 <img src ="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" align="right" width="230" height="250" />
 <h2><samp><strong>Hey there :raising_hand_man:,	I'm Shivam Singh </strong></samp></h2> 
 <hr>
-### About me:
+<h2> About me: </h2>
 
 - 🧠 I’m currently persuing **full stack web developer course**.
 - 👯 I’m looking to collaborate on: **Contribute more to Open Source projects.**
@@ -9,7 +9,7 @@
 
  <hr>
 
-<h3>Connect with me 🏡:<h3>
+<h2>Connect with me 🏡:<h2>
 <p>
    <a href="https://twitter.com/SHIVAMSINGH4458">
     <img align="left" src="https://image.flaticon.com/icons/svg/733/733579.svg" width="32px"  />
