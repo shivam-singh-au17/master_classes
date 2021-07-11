@@ -1,31 +1,38 @@
 
-function PatternPrint(num) {
-
-    for (var i = num; i > 0; i--) {
-        var res = "";
-        for (var j = 1; j <= num; j++) {
-            if (j <= i) {
-                res += "*" + " ";
-            } else if (j == num) {
-                res += " ";
-            } else {
-                res += "  ";
-            }
-
-        }
-        console.log(res);
+function findSum(arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
     }
+    return sum;
 }
+
+function SubarrayUnderCondition(arr) {
+
+    for (var i = 0; i < arr.length; i++) {
+        var subArr = [];
+        for (var j = i; j < arr.length; j++) {
+            subArr.push(arr[j]);
+
+            if (findSum(subArr) == 0) {
+                console.log(i, j);
+            }
+        }
+    }
+
+}
+
 
 function runProgram(input) {
 
-    var num = Number(input);
-    PatternPrint(num)
+    var arr = input.trim().split(" ").map(Number);
+
+    SubarrayUnderCondition(arr);
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5`);
+    runProgram(`6 3 -1 -3 4 -2 2 4 6`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

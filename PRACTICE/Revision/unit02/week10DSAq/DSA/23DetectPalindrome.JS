@@ -1,31 +1,33 @@
+function revNumArr(numArr) {
+    var res = "";
+    for (var i = numArr.length - 1; i >= 0; i--) {
+        res += numArr[i];
+    }
+    return res;
+}
 
-function PatternPrint(num) {
-
-    for (var i = num; i > 0; i--) {
-        var res = "";
-        for (var j = 1; j <= num; j++) {
-            if (j <= i) {
-                res += "*" + " ";
-            } else if (j == num) {
-                res += " ";
-            } else {
-                res += "  ";
-            }
-
-        }
-        console.log(res);
+function printResult(res, input) {
+    if (res == input) {
+        return "Yes";
+    } else {
+        return "No"
     }
 }
 
 function runProgram(input) {
 
-    var num = Number(input);
-    PatternPrint(num)
+    var Input = input.split("\n");
+    var numArr = Input[0].split("").map(Number);
+
+    var revFunction = revNumArr(numArr);
+    var ans = printResult(revFunction, input)
+    console.log(ans)
 
 }
 
+
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5`);
+    runProgram(`1221`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -44,4 +46,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
