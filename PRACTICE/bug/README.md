@@ -11,10 +11,20 @@
 
 # *I am willing to collaborate as a team player building better code.*
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/nilesh-kokate-566174207" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="nilesh-kokate-566174207" height="30" width="40" /></a>
-<a href="https://medium.com/@nilp7744" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@nilp7744" height="30" width="40" /></a>
+<h3>Connect with me:<h3>
+<p>
+   <a href="https://twitter.com/SHIVAMSINGH4458">
+    <img align="left" src="https://image.flaticon.com/icons/svg/733/733579.svg" width="32px"  />
+  </a>
+  <a href="mailto:shivamsingh4458@gmail.com">
+    <img align="left" src="https://image.flaticon.com/icons/svg/732/732200.svg" width="32px"  />
+  </a>
+  <a href="https://https://www.linkedin.com/in/shivamsingh4458/">
+    <img align="left" src="https://image.flaticon.com/icons/svg/174/174857.svg" width="28px" />
+  </a>
+  <a href="https://leetcode.com/shivam-singh-au17/">
+    <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LeetCode_Logo_black_with_text.svg/458px-LeetCode_Logo_black_with_text.svg.png" width="28px"  />
+  </a>
 </p>
 
 
