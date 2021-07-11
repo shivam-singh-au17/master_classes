@@ -1,15 +1,11 @@
 <img src ="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" align="right" width="230" height="250" />
 <h2><samp><strong>Hey there :raising_hand_man:,	I'm Shivam Singh </strong></samp></h2> 
-</br>
-
-
 
 ### About me:
 
-- 🔭 I’m currently persuing **full stack web developer course at Masai**.
-- 👯 I’m looking to collaborate on: **Developing new and intriguing open-source projects, with the community, for the community**
-- 🤔 I’m looking for **full stack web developer role**.
-- 😄 Pronouns: he/him
+- 🧠 I’m currently persuing **full stack web developer course**.
+- 👯 I’m looking to collaborate on: **Contribute more to Open Source projects.**
+- ⚡ I’m looking for **full stack web developer role**.
 
 
 
