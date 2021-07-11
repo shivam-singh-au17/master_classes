@@ -23,7 +23,7 @@
     <img align="left" src="https://image.flaticon.com/icons/svg/174/174857.svg" width="28px" />
   </a>
   <a href="https://leetcode.com/shivam-singh-au17/">
-    <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/LeetCode_logo_white_no_text.svg/102px-LeetCode_logo_white_no_text.svg.png" width="100px"  />
+    <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/LeetCode_logo_white_no_text.svg/102px-LeetCode_logo_white_no_text.svg.png" width="32px"  />
   </a>
 </p>
 <br>
