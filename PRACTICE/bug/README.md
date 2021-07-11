@@ -45,4 +45,4 @@
 <p>&nbsp;<img align="right" width="47%" height="250px" src="https://github-readme-stats.vercel.app/api?username=shivam-singh-au17&show_icons=true&locale=en" alt="nilpatil7744"  /></p>
 
 
-<p><img align="center" width="60%" height="250px" clear="both" src="https://github-readme-streak-stats.herokuapp.com/?user=shivam-singh-au17&" alt="nilpatil7744" /></p>
+<p><img align="center" width="100%" height="250px" clear="both" src="https://github-readme-streak-stats.herokuapp.com/?user=shivam-singh-au17&" alt="nilpatil7744" /></p>
