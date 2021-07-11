@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* 1. CSS for Scholarship Row  */
+
+#ScholarshipRow {
+  display: flex;
+}
+
+#ScholarshipRow > div {
+  width: 30%;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+#ScholarshipRow > div:nth-child(1) {
+  background-color: #f1c316;
+}
+
+#ScholarshipRow > div:nth-child(2) {
+  background-color: #365ed8;
+}
+
+#ScholarshipRow > div:nth-child(3) {
+  background-color: #00c4dc;
+}
+
+.FirstRowbox > div:nth-child(1) {
+  float: left;
+  text-align: center;
+}
+
+.FirstRowbox > div:nth-child(1) img {
+  border-radius: 50%;
+  width: 60px;
+  padding: 10px;
+}
+
+.FirstRowbox > div:nth-child(2) {
+  float: left;
+  padding: 10px;
+}
+
+/* 2. CSS for mid Row  */
+
+#midRow {
+  text-align: center;
+}
+
+#midRow > div:nth-child(1) {
+  font-family: none;
+  font-size: 30px;
+}
+
+#midRow > div:nth-child(1) h1 {
+  margin: 40px 0px;
+  color: #0a3466;
+}
+
+#midRow > div:nth-child(2) {
+  font-size: 20px;
+}
+
+#midRow > div:nth-child(2) > span {
+  margin: 15px;
+  padding: 10px;
+  color: #0a3466;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+#midRow > div:nth-child(2) > span:nth-child(1) {
+  background-color: turquoise;
+  color: white;
+}
+
+#midRow > div:nth-child(2) > span:hover {
+  background-color: turquoise;
+  color: white;
+  cursor: pointer;
+}
+
+/* 2. CSS for Program Row  */
+
+#ProgramRow {
+  max-width: 97%;
+  margin: auto;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-areas: "lastRowBox1 lastRowBox2 lastRowBox3";
+}
+
+#ProgramRow div {
+  margin-top: 40px;
+  /* margin-bottom: 20px; */
+}
+
+#ProgramRow div > div:nth-child(2) {
+  padding: 15px 30px 30px 30px;
+}
+
+#ProgramRow div > div:nth-child(2) > p:nth-child(1) {
+  margin: 0px 0px 15px 0px;
+  color: #011733;
+}
+
+#ProgramRow div > div:nth-child(2) h2 {
+  margin: 0px 0px 15px 0px;
+  color: #011a3a;
+}
+
+#ProgramRow div > div:nth-child(2) > p:nth-child(3) {
+  margin: 0px 0px 20px 0px;
+  color: rgb(109, 109, 109);
+  line-height: 23px;
+  letter-spacing: 1px;
+}
+
+#ProgramRow div > div:nth-child(2) div {
+  width: 60%;
+  color: rgb(0, 255, 229);
+  font-size: 20px;
+  border: 2px solid rgb(0, 255, 229);
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+#ProgramRow div > div:nth-child(2) div:hover {
+  background-color: turquoise;
+  color: white;
+  cursor: pointer;
+}
+
+.lastRowBox1 {
+  grid-area: lastRowBox1;
+}
+
+.lastRowBox2 {
+  grid-area: lastRowBox2;
+}
+
+.lastRowBox3 {
+  grid-area: lastRowBox3;
+}
+
+#ProgramRow > div > div img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* 4. Media queries  */
+
+@media only screen and (max-width: 700px) {
+  #ScholarshipRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #ScholarshipRow > div {
+    width: 95%;
+  }
+
+  #midRow > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #ProgramRow {
+    grid-template-areas:
+      "lastRowBox1"
+      "lastRowBox2"
+      "lastRowBox3";
+  }
+
+  #ProgramRow div:nth-child(3) {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 950px) {
+  #ScholarshipRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #ScholarshipRow > div {
+    width: 92%;
+  }
+  #midRow > div:nth-child(2) {
+    display: grid;
+    grid-template-areas:
+      "span1 span2"
+      "span3 span4";
+  }
+
+  .span1 {
+    grid-area: span1;
+  }
+
+  .span2 {
+    grid-area: span2;
+  }
+
+  .span3 {
+    grid-area: span3;
+  }
+
+  .span4 {
+    grid-area: span4;
+  }
+
+  #ProgramRow div:nth-child(3) {
+    margin-bottom: 60px;
+  }
+
+  #ProgramRow {
+    grid-template-areas: "lastRowBox1 lastRowBox2" "lastRowBox3 lastRowBox3";
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  #ProgramRow {
+    grid-template-areas: "lastRowBox1 lastRowBox2 lastRowBox3";
+  }
+}
