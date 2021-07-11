@@ -1,4 +1,5 @@
 
+
 // TODO:
 function PatternPrint(num) {
 

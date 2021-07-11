@@ -1,28 +1,37 @@
 
-// TODO:
 function StringReversal(str) {
 
     var start = 0;
-    var end = str.length;
+    var end = str.length - 1;
+    var temp = null;
 
     while (start < end) {
 
-        str[start] = String.fromCharCode(str[start].charCodeAt(0) ^ str[end].charCodeAt(0));
-        str[end] = String.fromCharCode(str[end].charCodeAt(0) ^ str[start].charCodeAt(0));
-        str[start] = String.fromCharCode(str[start].charCodeAt(0) ^ str[end].charCodeAt(0));
-
-        ++start;
-        --end;
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
     }
-    return (str).join("");
+    return str;
+}
 
+function printResult(str) {
+    var res = "";
+    for (var i = 0; i < str.length; i++) {
+        res += str[i];
+    }
+    return res;
 }
 
 function runProgram(input) {
 
-    var str = input;
+    var str = input.split("");
+
     var ans = StringReversal(str)
-    console.log('ans:', ans)
+    var res = printResult(ans)
+
+    console.log(res)
 
 }
 
