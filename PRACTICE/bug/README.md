@@ -9,7 +9,7 @@
 
  <hr>
 
-<h3>Connect with me🏡:<h3>
+<h3>Connect with me 🏡:<h3>
 <p>
    <a href="https://twitter.com/SHIVAMSINGH4458">
     <img align="left" src="https://image.flaticon.com/icons/svg/733/733579.svg" width="32px"  />
@@ -28,7 +28,7 @@
 
 
  <hr>
-<h4> 🔭<samp> Tech Stack...</samp></h4>
+<h4> 🔭<samp> Technologies and Tools:</samp></h4>
 <p >
  <img src="https://img.shields.io/badge/html5%20-%23e34f26.svg?&style=for-the-badge&logo=html5&logoColor=white" />&nbsp;&nbsp;
  <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" />&nbsp;&nbsp;
