@@ -1,0 +1,209 @@
+<script>
+
+    /*
+    
+        // why objects?
+    
+        const animal = {
+            isHuuman: false,
+            canCode: false,
+            canEat: true,
+            name: 'shera'
+        }
+    
+    
+        
+        const dog = {
+            namee: 'dog',
+            legs : 4
+        }
+        
+        const dog = {
+            namee: 'cat',
+            legs : 4
+        }
+        
+       
+    
+        const dog = Object.create(animal) // blueprint, prototype
+    
+        dog.name = 'tomy'
+    
+        console.log('dog:', dog)  //  properties are not added to child object
+    
+    
+        const parent = {
+            father: 'shivam',
+            mother: 'priya'
+        }
+    
+        const son = Object.create(parent);
+        son.name ='raj'
+        console.log('son:', son)
+    
+        const daughter = Object.create(parent);
+        daughter.name='soni'
+        console.log('daughter:', daughter)
+    
+    
+        const admin = {
+            user: 'shivam',
+            pass: 'priya'
+        }
+    
+        Object.freeze(admin);
+    
+
+    const admin = {
+        pass: 'shivam'
+    }
+
+    Object.defineProperty(admin, 'username', { value: 'singh', writable: false })
+
+    admin.username = 'xyz'
+    console.log('admin:', admin)
+
+     */
+
+
+
+
+    /*
+   
+   // Create a cat ecosystem. Tiger, Lion, cheetah, object.create()
+
+
+   const cat = {
+       type: 'cat',
+       legs: 4,
+       tail: true,
+       canFly: false
+   }
+
+
+   let tiger = Object.create(cat)
+   tiger.name = 'Tiger';
+   console.log('tiger:', tiger)
+
+
+   let lion = Object.create(cat)
+   lion.name = 'Lion';
+   console.log('lion:', lion)
+
+
+   let leopard = Object.create(cat)
+   leopard.name = 'Leopard';
+   console.log('leopard:', leopard)
+
+
+   // Prototype chain
+
+   const amar = { money: 1000 }
+
+   const akbar = Object.create(amar) // proto of amar
+
+   const anthony = Object.create(akbar) // proro of akbar
+
+   anthony.money = 2000 // we can not change amar propertise
+
+   console.log('anthony:', anthony)
+
+
+
+   // prtotype of akabr
+
+  console.log(Object.getPrototypeOf(akbar));
+
+
+   const aksh = {money:1000}
+
+   const khaan = {}
+   
+   Object.setPrototypeOf(khaan, aksh)
+   console.log('khaan:', khaan)
+
+
+   console.log(khaan.hasOwnProperty('money'));
+
+
+   */
+
+
+    /*
+ 
+     function Parent() {
+ 
+         this.mother = 'priya'
+         this.father = 'rohan'
+ 
+     }
+ 
+     var son = { name: 'raj' }
+     Parent.call(son)
+ 
+     console.log('son:', son)
+ 
+ 
+ 
+     var daughter = {name:'priti'}
+     Parent.call(daughter)
+ 
+     console.log('daughter:', daughter)
+ 
+ 
+   */
+
+
+    /*
+
+    function son(n) {
+        this.name = n
+    }
+
+    var Parent = {
+
+        mother: 'priya',
+        father: 'rohan'
+    }
+
+    son.prototype = Parent
+
+    var s = new son("jhon")
+
+    console.log('s:', s)
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

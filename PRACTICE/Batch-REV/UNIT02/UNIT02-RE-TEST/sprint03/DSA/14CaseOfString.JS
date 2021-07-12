@@ -1,28 +1,17 @@
 
-// TODO:
 
-function MakeItOdd(arr) {
-    let start = 0;
-    let end = 1;
-    var temp = true;
-    while (start < arr.length && end < arr.length) {
-        if ((arr[start] + arr[end]) % 2 == 1) {
-            start++;
-            end++;
-        }
-        else {
-            temp = false;
-            break;
+function CaseOfString(str) {
 
+    var result = "";
+    for (var i = 0; i < str.length; i++) {
+        if (str.charCodeAt(i) > 96) {
+            result += String.fromCharCode(str.charCodeAt(i) - 32);
+        } else if (str.charCodeAt(i) < 123) {
+            result += String.fromCharCode(str.charCodeAt(i) + 32);
         }
     }
-    if (temp == true) {
-        return "Yes"
-    } else {
-        return "No"
-    }
+    return result;
 }
-
 
 
 function runProgram(input) {
@@ -32,27 +21,20 @@ function runProgram(input) {
 
     for (var i = 1; i <= testCases; i++) {
 
-        var arr = Input[i * 2].trim().split(" ").map(Number);
+        var str = Input[i * 2].trim();
+        var ans = CaseOfString(str);
+        console.log(ans)
 
-        var ans = MakeItOdd(arr);
-        console.log(ans);
     }
 
 }
 
-
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
+    runProgram(`2
 5
-1 1 1 1 1
-4
-1 1 1 1
-5
-1 1 1 1 2
-5
-0 1 1 0 0
-1
-1`);
+abPKi
+6
+ShIvAm`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -71,9 +53,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
-// YES
-// NO
-// YES
-// YES
-// YES

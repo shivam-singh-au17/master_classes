@@ -2,13 +2,11 @@
 
 
 
-
 function findTwoEqualStr(arr) {
 
     var obj = {};
     for (var i = 0; i < arr.length; i++) {
-
-        var key = arr.charCodeAt(i);
+        var key = arr[i];
 
         if (obj[key] == undefined) {
             obj[key] = 1;
@@ -17,7 +15,6 @@ function findTwoEqualStr(arr) {
             obj[key] = prev + 1;
         }
     }
-    // console.log(obj);
     var temp = true
     for (key in obj) {
         if (obj[key] >= 2) {
@@ -32,13 +29,13 @@ function findTwoEqualStr(arr) {
 function DistinctSubstrings(str) {
     var count = 0;
     for (var i = 0; i < str.length; i++) {
-        var subStr = "";
+        var subStr = [];
         for (var j = i; j < str.length; j++) {
-            subStr += str[j];
+            subStr.push(str[j]);
+
             if (findTwoEqualStr(subStr) == true) {
                 count++;
             }
-            // console.log(subStr);
         }
     }
     return count;
@@ -56,18 +53,32 @@ function runProgram(input) {
 
         var ans = DistinctSubstrings(str);
         console.log(ans);
-
-        // findTwoEqualStr(str)
     }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`2
-5
-abcde
-3
-aaa`);
+    runProgram(`10
+24
+mcoyjrmvuobmhxtivueknmvh
+30
+yqspeseiidscqqwfrmoriwoebyrpuy
+70
+wrooyishswcunvtupgkipjwvlxndvoxugmjhwcppbtmopjmipwqhgpdtnsaljxgsmpamur
+28
+vmrnebamsyfdhuielcewleeeqvhf
+44
+yirncfufhhxinbpkktvoatceajxvqdrrnjgrqdwakvia
+25
+alluhcwbhcbqcajfrdvdjnvol
+22
+ajeckenwbxbybidfyffkmy
+65
+ieawapivrrctcikbmidljnqopvvaiwqrbrodhybbqfuuohybpcocrfshbpiloydss
+95
+vcsadlfbhtigwykldeqvmtlwgdxlvrittbtanabwvjftkrfnvymisafbdepyxxvryprorunohsktkrkjqwtmwapbgfcgdxa
+29
+qstipiywbjroecauytjxvaycfeklc`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -86,6 +97,5 @@ aaa`);
         process.exit(0);
     });
 }
-
 
 

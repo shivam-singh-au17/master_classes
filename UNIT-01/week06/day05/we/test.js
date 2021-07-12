@@ -1,47 +1,49 @@
 // //  rotate arr left to right by k  
 
-var arr = [1, 2, 5, 4, 0, 6];  // 0 6 1 2 5 4
-var k = 9;
-var n = arr.length;
+// FIXME:
 
-if (k > n) {
-    k = k % n;
-    var rotateArr = []
-    for (var i = 0; i < n; i++) {
-        rotateArr.push(arr[(n + i - k + 2) % n])
-    }
-    console.log(rotateArr);
-} else {
-    var rotateArr = []
-    for (var i = 0; i < n; i++) {
-        rotateArr.push(arr[(n + i - k + 2) % n])
-    }
-    console.log(rotateArr);
-}
-
-
-
-
-// //  rotate arr right to left by k 
-
-// var arr = [7, 1, 4, 2, 8];
-// var k = 8;
+// var arr = [1, 2, 3];  // 0 6 1 2 5 4
+// var k = 1;
 // var n = arr.length;
 
 // if (k > n) {
 //     k = k % n;
 //     var rotateArr = []
 //     for (var i = 0; i < n; i++) {
-//         rotateArr.push(arr[(n + i - k) % n])
+//         rotateArr.push(arr[(n + i - k + 2) % n])
 //     }
 //     console.log(rotateArr);
 // } else {
 //     var rotateArr = []
 //     for (var i = 0; i < n; i++) {
-//         rotateArr.push(arr[(n + i - k) % n])
+//         rotateArr.push(arr[(n + i - k + 2) % n])
 //     }
 //     console.log(rotateArr);
 // }
+
+
+
+
+// //  rotate arr right to left by k 
+
+var arr = [1, 2, 3, 4];
+var k = 1;
+var n = arr.length;
+
+if (k > n) {
+    k = k % n;
+    var rotateArr = []
+    for (var i = 0; i < n; i++) {
+        rotateArr.push(arr[(n + i - k) % n])
+    }
+    console.log(rotateArr);
+} else {
+    var rotateArr = []
+    for (var i = 0; i < n; i++) {
+        rotateArr.push(arr[(n + i - k) % n])
+    }
+    console.log(rotateArr);
+}
 
 
 

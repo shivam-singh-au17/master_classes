@@ -2,6 +2,7 @@
 // TODO:
 
 
+
 function main() {
     let t, n, a;
     cin >> t;
@@ -14,5 +15,7 @@ function main() {
         }
         cout << a + n << endl;
     }
+
     return 0;
+    
 }

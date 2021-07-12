@@ -1,29 +1,30 @@
 
-// TODO:
 
-function MakeItOdd(arr) {
-    let start = 0;
-    let end = 1;
-    var temp = true;
-    while (start < arr.length && end < arr.length) {
-        if ((arr[start] + arr[end]) % 2 == 1) {
-            start++;
-            end++;
-        }
-        else {
-            temp = false;
-            break;
+function TwoSortedArrays(arr1, arr2, n) {
 
+    arr1.sort(function (a, b) { return a - b });
+    arr2.sort(function (a, b) { return a - b });
+
+    var i = 0;
+    var j = 0;
+    var count = 0;
+
+    while (i < n && j < n) {
+
+        if (arr1[i] == arr2[j]) {
+            count++
+            i++;
+            j++;
+        } else if (arr1[i] < arr2[j]) {
+            i++
+        } else {
+            j++;
         }
     }
-    if (temp == true) {
-        return "Yes"
-    } else {
-        return "No"
-    }
+
+    return count;
+
 }
-
-
 
 function runProgram(input) {
 
@@ -32,27 +33,21 @@ function runProgram(input) {
 
     for (var i = 1; i <= testCases; i++) {
 
-        var arr = Input[i * 2].trim().split(" ").map(Number);
+        var arr1 = Input[i * 2 + i - 1].trim().split(" ").map(Number);
+        var arr2 = Input[i * 2 + i].trim().split(" ").map(Number);
+        var n = Number(Input[i * 2 + i - 2])
 
-        var ans = MakeItOdd(arr);
+        var ans = TwoSortedArrays(arr1, arr2, n);
         console.log(ans);
     }
 
 }
 
-
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
-5
-1 1 1 1 1
-4
-1 1 1 1
-5
-1 1 1 1 2
-5
-0 1 1 0 0
-1
-1`);
+    runProgram(`1
+6
+1 2 2 3 4 5
+4 4 3 2 1 1`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -71,9 +66,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
-// YES
-// NO
-// YES
-// YES
-// YES

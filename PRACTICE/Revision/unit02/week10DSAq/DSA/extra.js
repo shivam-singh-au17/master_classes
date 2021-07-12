@@ -1,5 +1,6 @@
 
 
+
 function countSubstrings(str, K) {
     var N = str.length;
 
@@ -40,11 +41,7 @@ function countSubstrings(str, K) {
     return answer;
 }
 
-// Driver code
-// string str
+
 var str = "abcc";
-// integer K
 var K = 2;
-// Print the count of K length
-// substrings with k distinct characters
 console.log(countSubstrings(str, K));

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0142)https://masai-course.s3.ap-south-1.amazonaws.com/users/992/submissions/100678/239767/3c566169d966dd550a81a10f96421f15/todoListConstructor.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #inputDiv{
+            display: grid;
+            grid-template-columns: repeat(2,auto);
+            grid-template-rows: repeat(1,auto);
+            width: 97%;
+           border: solid 1px black;
+      
+        }
+        .firstDiv{
+         
+            height:850px;
+            width: 400px;
+            background-color: plum;
+            font-family: sans-serif;
+            border: 1px solid rgb(246, 250, 0);
+            
+            
+
+        }
+        #secondDiv{
+         
+         height:850px;
+         width:1570px;
+         background-color: rgb(98, 12, 72);
+         font-family: sans-serif;
+         display: grid;
+        grid-template-columns: repeat(4,auto);
+        grid-template-rows: repeat(2,auto);
+        gap: 30px;
+        overflow: hidden;
+
+         
+
+     }
+        .firstDiv>h1{
+            margin-left: 10px;
+            margin-top: 50px;
+          
+        }
+        .firstDiv>input{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            
+        }
+
+        #submit{
+            background-color: rgb(52, 4, 100);
+            color: white;
+        
+        
+        }
+        
+        #submit:hover{
+            background-color: blueviolet;
+        }
+        .secondDivchild{
+            height: 300px;
+            width: 280px;
+            background-color: pink;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        
+            font-size: 20px;
+            border-radius: 25% 10%;
+        }
+        .secondDivchild>button{
+            margin:50px 20px;
+            font-size:x-large;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            background-color: rgb(255, 0, 128);
+            color: white;
+            border-radius: 10px;
+           
+        }
+        .secondDivchild>button:hover{
+            background-color: palevioletred;
+        }
+       #body{
+           text-align: center;
+           font-family: sans-serif;
+           margin: 20px;
+       }
+      
+      
+    </style>
+</head>
+<body>
+    <div id="body">
+    <h1>TO-DO LIST</h1>
+</div>
+    <div id="inputDiv">
+    
+    <div class="firstDiv">
+        <h1>ADD ITEM</h1>
+        <input type="text" id="name">
+         
+        <br><br>
+        <h1 id="count">LIST NO 1</h1>
+        <br><br>
+        <input type="submit" value="ADD-LIST" id="submit" onclick="submit()">
+    </div>
+    <div id="secondDiv">
+
+    </div>
+  <h2></h2><h2></h2><h2></h2><h2></h2><h2></h2></div>
+
+
+
+<script>
+    var btn=document.getElementById("submit");
+    btn.addEventListener("click",submit)
+    var count=1;
+    function submit(e){
+     e.preventDefault();
+    //  e.preventDefault();
+
+
+     var name1=document.getElementById("name");
+     var date=new Date();
+    
+   
+    function Const(name1){
+     
+        this.name=name1;
+        this.date=date;
+        this.status=true;
+
+    }
+    var message=document.getElementById("count")
+    message.innerHTML=`LIST NO ${count}`
+    var item= new Const(name1.value,date);
+     var FirstDiv=document.getElementById("inputDiv")
+     var p=document.createElement("h2");
+     
+    FirstDiv.appendChild(p);
+    // p.innerHTML=`<h2>LIST NO-${count}</h2>`
+    var secondDiv=document.getElementById("secondDiv")
+    var div1=document.createElement("div")
+    secondDiv.appendChild(div1);
+  
+    div1.setAttribute("class","secondDivchild")
+      div1.innerHTML=` <li>${item.name}</li><br> <li>${item.date} </li><br><li>${item.status}</li>`
+    // var toggleBtn=document.createElement("button")
+    // toggleBtn.innerText="toggleStatus"
+    // div1.appendChild(toggleBtn);
+    // toggleBtn.addEventListener("click",function toggle(n){
+    //     n.preventDefault();
+    //     item.status=!(item.status)
+    //   div1.innerHTML=`<li>${item.name}</li> <li>${item.date} </li><li>${item.status}</li>`
+    // })
+    var done=document.createElement("button");
+      done.textContent="done"
+      div1.appendChild(done);
+      done.addEventListener('click',function done(){
+          div1.style.background="green"
+          div1.style.color="white"
+      })
+      var remove=document.createElement("button");
+      remove.textContent="remove"
+      div1.appendChild(remove);
+      remove.addEventListener('click',function remove(e){
+       
+        message.innerHTML=`LIST NO ${count-=1}`
+     
+        
+          div1.remove()
+  
+         
+      })
+      count++;
+
+    }
+</script>
+</body></html>

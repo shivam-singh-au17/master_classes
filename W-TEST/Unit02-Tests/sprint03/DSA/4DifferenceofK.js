@@ -1,28 +1,31 @@
 
-// TODO:
 
-function MakeItOdd(arr) {
-    let start = 0;
-    let end = 1;
-    var temp = true;
-    while (start < arr.length && end < arr.length) {
-        if ((arr[start] + arr[end]) % 2 == 1) {
-            start++;
-            end++;
+function DifferenceOfK(arr, k) {
+
+    var p1 = 0;
+    var p2 = 1;
+    var temp = false;
+
+    while (p1 < arr.length && p2 < arr.length) {
+        if (p1 != p2 && arr[p2] - arr[p1] == k) {
+            temp = true;
+            break;
+        }
+        else if (arr[p2] - arr[p1] < k) {
+            p2++;
         }
         else {
-            temp = false;
-            break;
-
+            p1++;
         }
     }
-    if (temp == true) {
-        return "Yes"
-    } else {
-        return "No"
-    }
-}
 
+    if (temp == true) {
+        return "Yes";
+    } else {
+        return 'No';
+    }
+
+}
 
 
 function runProgram(input) {
@@ -31,28 +34,22 @@ function runProgram(input) {
     var testCases = Number(Input[0]);
 
     for (var i = 1; i <= testCases; i++) {
-
+        var nAndK = Input[i * 2 - 1].trim().split(" ").map(Number);
+        var k = nAndK[1];
         var arr = Input[i * 2].trim().split(" ").map(Number);
 
-        var ans = MakeItOdd(arr);
+        var ans = DifferenceOfK(arr, k);
         console.log(ans);
     }
 
 }
 
-
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
-5
-1 1 1 1 1
-4
-1 1 1 1
-5
-1 1 1 1 2
-5
-0 1 1 0 0
-1
-1`);
+    runProgram(`2
+5 3
+1 2 3 4 5
+5 8
+1 2 3 4 5 `);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -72,8 +69,3 @@ if (process.env.USERNAME === "shiva") {
     });
 }
 
-// YES
-// NO
-// YES
-// YES
-// YES

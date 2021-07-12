@@ -1,28 +1,16 @@
 
-// TODO:
 
-function MakeItOdd(arr) {
-    let start = 0;
-    let end = 1;
-    var temp = true;
-    while (start < arr.length && end < arr.length) {
-        if ((arr[start] + arr[end]) % 2 == 1) {
-            start++;
-            end++;
-        }
-        else {
-            temp = false;
-            break;
+function colamNum(str) {
 
-        }
+    var res = 0;
+    for (let i = 0; i < str.length; i++) {
+        res *= 26;
+        res += str[i].charCodeAt(0) - 'A'.charCodeAt(0) + 1;
+
     }
-    if (temp == true) {
-        return "Yes"
-    } else {
-        return "No"
-    }
+
+    return res;
 }
-
 
 
 function runProgram(input) {
@@ -32,27 +20,19 @@ function runProgram(input) {
 
     for (var i = 1; i <= testCases; i++) {
 
-        var arr = Input[i * 2].trim().split(" ").map(Number);
+        var str = Input[i ];
 
-        var ans = MakeItOdd(arr);
+        var ans = colamNum(str);
         console.log(ans);
     }
 
 }
 
-
 if (process.env.USERNAME === "shiva") {
-    runProgram(`5
-5
-1 1 1 1 1
-4
-1 1 1 1
-5
-1 1 1 1 2
-5
-0 1 1 0 0
-1
-1`);
+    runProgram(`3
+A
+AB
+ZY`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -71,9 +51,3 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
-
-// YES
-// NO
-// YES
-// YES
-// YES
