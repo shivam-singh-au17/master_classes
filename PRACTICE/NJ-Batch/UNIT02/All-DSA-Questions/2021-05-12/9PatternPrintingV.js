@@ -1,12 +1,17 @@
 
-
-// TODO:
 function PatternPrint(num) {
 
-    for (var i = num-1; i >= 0 ; i--) {
+    for (var i = num; i > 0; i--) {
         var res = "";
-        for (var j = 0; j <= num; j++) {
-           
+        for (var j = 1; j <= num; j++) {
+            if (j <= i) {
+                res += "*" + " ";
+            } else if (j == num) {
+                res += " ";
+            } else {
+                res += "  ";
+            }
+
         }
         console.log(res);
     }
