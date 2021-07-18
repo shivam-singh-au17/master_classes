@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localstorage</title>
+</head>
+
+<body>
+    <h1>Localstorage,JSON,Clint-Server Modal</h1>
+    <!-- <input type="text" id="name"> -->
+    <!-- <button onclick="addName()">Submit</button> -->
+</body>
+
+</html>
+
+<script>
+
+    // function addName() {
+
+    //     var friend = document.getElementById("name").value
+
+    //     var p = document.createElement("p");
+    //     p.innerHTML = friend;
+
+    //     document.body.append(p)
+
+    // }
+
+
+
+
+
+
+
+
+
+    // localStorage.setItem('name', 'Shivam')
+
+    // var name2 = 'Singh';
+    // localStorage.setItem('name2', name2)
+
+
+    // var myNmae2 = localStorage.getItem('name2')
+    // console.log('myNmae2:', myNmae2)
+
+    // localStorage.removeItem('name')
+
+    // localStorage.removeItem('name2')
+
+    // localStorage.clear()
+
+
+
+
+    var arr = [1, 2, 3, 4, 5, 6, 7];
+
+    localStorage.setItem('myArr', arr);
+
+    var myData = localStorage.getItem('myArr');
+    console.log('myData:', myData)
+
+
+
+
+    var obj = {
+        name: 'shivam',
+        age: 23
+    };
+
+    localStorage.setItem('myobj', obj);
+
+    var myData = localStorage.getItem('myobj');
+    console.log('myData:', myData)
+
+
+
+
+
+
+    var person = {
+        name: "Sidharth",
+        age: 100,
+        height: "6 Ft 12 In",
+        gender: "Female",
+        hobbies: ["Coding", "Weight Lifting", "Running", "Eating"]
+    }
+
+    var json = JSON.stringify(person)
+
+    console.log(json)
+
+    var regularObject = JSON.parse(json)
+
+    console.log(regularObject)
+
+
+
+
+</script>

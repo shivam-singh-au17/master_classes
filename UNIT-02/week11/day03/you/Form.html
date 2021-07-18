@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Commerce-I</title>
+    <style>
+        body {
+            background-color: darkblue;
+        }
+
+        #container {
+            color: rgb(255, 0, 128);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: auto;
+            text-align: center;
+            background-color: burlywood;
+            padding: 40px;
+            margin-top: 100px;
+        }
+
+        #myForm {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: auto;
+        }
+
+        #myForm input {
+            font-weight: 700;
+            color: rgb(255, 0, 128);
+            height: 35px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Create new products and add them to local storage.</h1>
+
+        <form id="myForm">
+
+            <input type="text" id="name" placeholder=" Enter Product Name">
+            <input type="number" id="price" placeholder=" Enter Product Price">
+            <input type="text" id="image" placeholder=" Enter Product Image URL">
+            <input type="submit" name="" id="btn" placeholder="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let btn = document.getElementById('btn')
+
+    function addUserProducts(event) {
+
+        event.preventDefault();
+
+        let prodName = document.getElementById("name").value
+        let prodPrice = document.getElementById("price").value
+        let prodImage = document.getElementById("image").value
+
+        // let myLocation = {
+        //     NAME: prodName,
+        //     PRICE: prodPrice,
+        //     IMAGE: prodImage
+        // }
+
+        let myLocation = {
+            prodName,
+            prodPrice,
+            prodImage
+        }
+
+        let myArr = localStorage.getItem("myLocalStorage")
+
+        if (myArr == null) {
+            
+            myArr = []
+        }else{
+            myArr = JSON.parse(localStorage.getItem("myLocalStorage"))
+        }
+
+        myArr.push(myLocation)
+
+        localStorage.setItem("myLocalStorage", JSON.stringify(myArr))
+
+
+
+
+        
+    }
+
+    btn.addEventListener("click", addUserProducts)
+
+</script>

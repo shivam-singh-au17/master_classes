@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+
+        img{
+            width: 70%;
+        }
+        #data{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            gap: 5%;
+        }
+    </style>
+</head>
+
+<body>
+<h1>My Tour Manger</h1>
+
+<form id="myForm">
+
+<input type="text" id="name" placeholder="Name">
+<input type="number" id="rating" placeholder="Rating">
+<input type="text" id="image" placeholder="Image">
+
+</form>
+
+<button onclick="storageLocation()">Add Location</button>
+<button onclick="showVisited()">Show Visited</button>
+
+
+<div id="data"></div>
+</body>
+
+</html>
+
+<script src="/UNIT-02/week11/day03/we/second.js"></script>
+
+
+

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Commerce-II</title>
+    <style>
+        body {
+            background-color: rgb(0, 6, 61);
+        }
+
+        #container {
+            color: rgb(49, 4, 27);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: auto;
+            text-align: center;
+            background-color: rgb(211, 206, 206);
+            padding: 10px;
+            margin-top: 30px;
+        }
+        h1,h4,p{
+            margin: 0;
+        }
+        h4{
+            padding: 10px;
+        }
+
+        #myForm {
+            max-width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 49% 49%;
+            grid-template-rows: 45% 45%;
+            gap: 2%;
+        }
+
+        #myForm input {
+            font-weight: 700;
+            color: rgb(255, 0, 128);
+            height: 45px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 20px;
+            height: 45px;
+            margin-top: 12px;
+            width: 96%;
+        }
+
+        #itemData {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 24% 24% 24% 24%;
+            gap: 1.5%;
+        }
+
+        #data {
+            border: 1px solid black;
+            background-color: rgb(235, 234, 230);
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #data img {
+            width: 95%;
+            border-radius: 10px;
+            padding: 5px;
+            height: 200px;
+            background-color: rgb(255, 51, 0);
+        }
+
+        #cartBtn {
+            border-radius: 10px;
+            max-width: 70%;
+            margin: auto;
+            margin-top: 5px;
+        }
+
+        #myItemCartBtn {
+            border-radius: 5px;
+            max-width: 40%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Create new products and add them to local storage.</h1>
+
+        <form id="myForm">
+
+            <input type="text" id="name" placeholder=" Enter Product Name">
+            <input type="number" id="price" placeholder=" Enter Product Price">
+            <input type="text" id="image" placeholder=" Enter Product Image URL">
+            <button id="btn">Add Item</button>
+
+        </form>
+
+        <button id="myItemCartBtn">Show Cart</button>
+    </div>
+
+    <div id="itemData">
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let btn = document.getElementById('btn')
+
+    function addUserProducts(event) {
+
+        event.preventDefault();
+
+        let prodName = document.getElementById("name").value
+        let prodPrice = document.getElementById("price").value
+        let prodImage = document.getElementById("image").value
+
+        let myLocation = {
+            prodName,
+            prodPrice,
+            prodImage
+        }
+
+        let myArr = localStorage.getItem("myLocalStorage")
+
+        if (myArr == null) {
+
+            myArr = []
+        } else {
+            myArr = JSON.parse(localStorage.getItem("myLocalStorage"))
+        }
+
+        myArr.push(myLocation)
+
+        localStorage.setItem("myLocalStorage", JSON.stringify(myArr))
+
+        var count = 0;
+        for (var i = 0; i < myArr.length; i++) {
+            if (myArr[i].prodName == myLocation.prodName) {
+                count++;
+            }
+        }
+
+        if (count >= 2) {
+            alert(" You've Already Added This Stuff to Your Cart. ")
+        }
+
+
+        showMyDataLocation()
+
+    }
+
+    btn.addEventListener("click", addUserProducts)
+
+
+
+
+
+    let mainDiv = document.getElementById("itemData")
+
+    function addMyAllData(el) {
+
+        let prod_div = document.createElement("div")
+        prod_div.id = "data"
+
+        let prod_p = document.createElement("p")
+        prod_p.innerHTML = el.prodName
+
+        let prod_h4 = document.createElement("h4")
+        prod_h4.innerHTML = `Price:${el.prodPrice}₹`
+
+        let prod_img = document.createElement("img")
+        prod_img.src = el.prodImage
+
+        let prod_btn = document.createElement("button")
+        prod_btn.id = "cartBtn"
+        prod_btn.innerHTML = "Add to Cart"
+
+        prod_btn.addEventListener("click", function () {
+
+            myVisitedItems(el);
+
+        });
+
+        prod_div.appendChild(prod_p)
+        prod_div.appendChild(prod_h4)
+        prod_div.appendChild(prod_img)
+        prod_div.appendChild(prod_btn)
+
+        mainDiv.appendChild(prod_div)
+
+
+    }
+
+
+
+
+    function showMyDataLocation() {
+
+        let myOneItemData = JSON.parse(localStorage.getItem("myLocalStorage"))
+
+        mainDiv.innerHTML = null;
+
+        myOneItemData.forEach(function (el) {
+
+            addMyAllData(el)
+
+        })
+    }
+
+    showMyDataLocation()
+
+
+
+
+
+
+
+
+
+    function myVisitedItems(obj) {
+
+
+
+        let myVisitedArr = localStorage.getItem("myAddedItems")
+
+        if (myVisitedArr == null) {
+
+            myVisitedArr = []
+        } else {
+            myVisitedArr = JSON.parse(localStorage.getItem("myAddedItems"))
+        }
+
+        myVisitedArr.push(obj)
+
+        localStorage.setItem("myAddedItems", JSON.stringify(myVisitedArr))
+
+        alert('Your item has been added successfully.')
+
+
+
+    }
+
+
+
+
+
+    let showBtn = document.getElementById("myItemCartBtn");
+
+    function showVisitedItem() {
+
+        window.location.href = "Cart.html"
+    }
+
+    showBtn.addEventListener("click", showVisitedItem)
+
+</script>

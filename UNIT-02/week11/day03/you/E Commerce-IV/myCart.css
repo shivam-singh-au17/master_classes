@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #ff0048, #02ffff, #6fff00);
+}
+
+#myh1 {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: aliceblue;
+  background: linear-gradient(45deg, #ff0048, #008080, #ff00ff);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1.5px;
+}
+
+#container {
+  max-width: 98%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#main {
+  display: flex;
+}
+
+#mainBox1 {
+  /* background-color: aqua; */
+  width: 29.5%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#mainBox2 {
+  /* background-color: aqua; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width: 69.5%;
+  margin-left: 1%;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+#myForm {
+    color: #ff0048;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  font-weight: 600;
+  flex-direction: column;
+}
+
+#myForm input {
+  border-style: none;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+}
+
+#btnPromo {
+  border-style: none;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  font-weight: 600;
+  color:rgb(6, 0, 94);
+  background-color: rgb(30, 255, 0);
+}
+
+#btnCheckout {
+  border-style: none;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  font-weight: 600;
+  color:rgb(6, 0, 94);
+  background-color: rgb(30, 255, 0);
+}
+
+#myh2 {
+  padding: 10px;
+}
+
+#backToHomeBtn {
+    width: 87%;
+    background-color: rgb(30, 255, 0);
+    border-radius: 5px;
+    color:rgb(6, 0, 94);
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#backToHomeBtn:hover,#btnPromo:hover,#btnCheckout:hover {
+  background-color: rgb(255, 0, 64);
+  cursor: pointer;
+  color: rgb(0, 255, 234);
+}
+
+#myForm > p {
+  font-size: 30px;
+  padding: 10px;
+}
+
+#myForm > div {
+  font-size: 20px;
+  padding: 10px;
+}
+
+span {
+  color: rgb(8, 1, 70);
+}
+
+#itemData {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1%;
+  margin: 10px;
+}
+
+#data {
+  border: 1px solid rgb(170, 170, 170);
+  background-color: rgb(235, 234, 230);
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#data img {
+  width: 95%;
+  border-radius: 10px;
+  padding: 3px;
+  height: 180px;
+  background-color: rgb(214, 213, 216);
+}
+
+#data h4 {
+  padding: 5px;
+}
+
+#cartBtn {
+  width: 120px;
+  border-style: none;
+  background-color: rgb(76, 214, 88);
+  color: rgb(253, 0, 0);
+  border-radius: 6px;
+  height: 30px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#cartBtn:hover {
+  background-color: antiquewhite;
+  color: rgb(0, 68, 255);
+}
