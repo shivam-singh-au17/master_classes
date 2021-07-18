@@ -1,20 +1,27 @@
 
 function XSubarrays(arr, k, x) {
 
-    var kNum = true;
-    for (var i = 0; i < k; i++) {
-        if (arr[i] > x) {
-            kNum += false;
+    let p1 = 0
+    let p2 = p1 + x - 1
+    let flag = 0
+    let ctr = 0
+    while (p2 < arr.length) {
+        flag = 0
+        for (var i = p1; i < (p2 + 1); i++) {
+            if (arr[i] > k) {
+                flag = 1
+                break;
+            }
         }
+        p1 += 1
+        p2 += 1
+        if (flag == 1) {
+            continue;
+        }
+        ctr += 1
     }
 
-    var temp = kNum;
-    for (var i = k; i < arr.length; i++) {
-        kNum += arr[i] - arr[i - k];
-        temp = Math.max(temp, kNum);
-
-    }
-    return temp;
+    return ctr;
 }
 
 
@@ -38,7 +45,7 @@ function runProgram(input) {
 if (process.env.USERNAME === "shiva") {
     runProgram(`1
 5 3 2
-1 3 2 5 1`);
+1 3 2 3 1`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
