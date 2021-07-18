@@ -1,44 +1,41 @@
 
 
+
+function lNextGreaterElement(arr) {
+    var next, i, j;
+    let store = ""
+    for (i = 0; i < arr.length; i++) {
+        next = -1;
+        for (j = i + 1; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+                next = arr[j];
+                break;
+            }
+        }
+        store += next + " ";
+    }
+    console.log(store);
+}
+
+
 function runProgram(input) {
 
-    var input = input.split("\n");
-    var testCases = Number(input[0]);
+    var Input = input.split("\n");
+    var testCases = Number(Input[0]);
 
-    var stack = [];
     for (var i = 1; i <= testCases; i++) {
 
-        var data = input[i].split(" ").map(Number);
+        var arr = Input[i * 2].trim().split(" ").map(Number);
 
-        if (data[0] == 1) {
-            stack.push(data[1])
-        }
-        if (data[0] == 2) {
-            if (stack.length > 0) {
-                stack.pop()
-            }
-        }
-        if (data[0] == 3) {
-            if (stack.length == 0) {
-                console.log("Empty!");
-            }
-            else {
-                console.log(stack[stack.length - 1]);
-            }
-        }
-
+        lNextGreaterElement(arr)
     }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`6
-1 15
-1 20
-2
-3
-2
-3`);
+    runProgram(`1
+4
+1 3 2 4`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
