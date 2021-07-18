@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0c111b;
+        }
+
+        #navBar {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 100%;
+            padding: 10px;
+            margin: auto;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #left {
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 85%;
+        }
+
+        #left span:hover {
+            cursor: pointer;
+        }
+
+        #right {
+            width: 20%;
+            margin-top: 10px;
+        }
+
+        #right span {
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        #right span:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 64);
+        }
+
+
+        #sortBtn button {
+            font-size: 20px;
+            padding: 7px;
+            font-weight: 600;
+            color: white;
+            background-color: #0e1422;
+            border-style: none;
+            width: 20%;
+            margin: 0px 0px 0px 250px;
+        }
+
+        #sortBtn button:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 64);
+        }
+
+
+
+        #mystudent {
+            padding-bottom: 130px;
+            padding-top: 50px;
+            padding-left: 35px;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 22%);
+            gap: 3%;
+            margin: 3%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        #mystudent img {
+            width: 85%;
+            padding: 5px;
+            background-color: #101a2e;
+        }
+
+        #mystudent div {
+            display: grid;
+            justify-items: center;
+        }
+
+        #mystudent P {
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navBar">
+        <div id="main">
+            <div id="left">
+                <span onclick="BigStarPage()">BigStar*</span>
+            </div>
+            <div id="right">
+                <span onclick="HomePage()">Home</span>
+                <span onclick="LoginPage()">Login</span>
+                <span onclick="SignUpPage()">SignUp</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="sortBtn">
+        <button onclick="sortLH()">Sort by low rating to high</button>
+        <button onclick="sortHL()">Sort by High rating to low</button>
+    </div>
+
+    <div id="mystudent">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="/UNIT-02/week11/day04/you/MovieWebsite-IV/Home-m.js"></script>

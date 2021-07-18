@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        #slidShow {
+            padding: 2%;
+        }
+
+        #slidShow img {
+            width: 100%;
+            object-fit: cover;
+            height: 600px;
+        }
+
+        #mystudent {
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            gap: 3%;
+            margin: 3%
+        }
+
+        #mystudent img {
+            width: 50%
+        }
+
+        #mystudent div {
+            display: grid;
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>home</h1> -->
+
+    <div id="slidShow"> </div>
+
+<button onclick="sortLH()">Sort: Low to High</button>
+<button onclick="sortHL()">Sort: High to Low</button>
+
+    <div id="mystudent"> </div>
+
+</body>
+
+</html>
+
+<script src="/UNIT-02/week11/day04/we/home.js"></script>
