@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0134)https://masai-course.s3.ap-south-1.amazonaws.com/users/992/submissions/103636/245478/56c3a61087221bb6d3f71d15741dc9d5/ECommerce-I.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="Product Name" id="name"><br><br>
+        <input type="number" placeholder="Product price" id="price"><br><br>
+        <input type="text" placeholder="Product Image" id="image"><br><br>
+        
+    </form>
+    <button onclick="add()">AddItem</button>
+    
+
+<script>
+    function add(){
+    var form=document.getElementById("form");
+    var name=form.name.value;
+    var price=form.price.value;
+    var image=form.image.value;
+    let location={
+        name,
+        price,
+        image
+    }
+    let arr;
+    arr=localStorage.getItem("location");
+    if(arr==null){
+        arr=[]
+    }
+    else{
+        arr=JSON.parse(arr);
+    }
+    arr.push(location);
+    localStorage.setItem("location",JSON.stringify(arr));
+}
+</script>
+</body></html>

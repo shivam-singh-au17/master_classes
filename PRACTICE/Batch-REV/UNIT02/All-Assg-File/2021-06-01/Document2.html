@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0135)https://masai-course.s3.ap-south-1.amazonaws.com/users/992/submissions/103636/245479/6d361b0012d31f5299c68f5d08845b52/ECommerce-II.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="Product Name" id="name"><br><br>
+        <input type="number" placeholder="Product price" id="price"><br><br>
+        <input type="text" placeholder="Product Image" id="image"><br><br>
+        
+    </form>
+   
+    <button onclick="add()">AddItem</button>
+    <button onclick="showItem()">showItem</button>
+    <div id="parent"></div>
+    
+
+<script>
+    function add(){
+    var form=document.getElementById("form");
+    var name=form.name.value;
+    var price=form.price.value;
+    var image=form.image.value;
+    let location={
+        name,
+        price,
+        image
+    }
+    let arr;
+    arr=localStorage.getItem("location");
+    if(arr==null){
+        arr=[]
+    }
+    else{
+        arr=JSON.parse(arr);
+    }
+    arr.push(location);
+    localStorage.setItem("location",JSON.stringify(arr));
+    }
+function showItem(e){
+ 
+var data=JSON.parse(localStorage.getItem('location'))
+var div=document.createElement("div");
+var parent=document.getElementById("parent");
+data.forEach(element => {
+
+    var name=document.createElement("p")
+    var price=document.createElement("p")
+    var image=document.createElement("img")
+    var button=document.createElement("button");
+    div.append(name,price,image,button)
+    parent.appendChild(div)
+    name.innerHTML=`${element.name}`
+    price.innerHTML=`${element.price}`
+    image.src=element.image
+
+    button.innerHTML="AddTocart"
+    // button.addEventListener("click",function cart(){
+        
+    // })
+    
+});
+
+}
+</script>
+</body></html>
