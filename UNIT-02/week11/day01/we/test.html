@@ -175,25 +175,69 @@
     */
 
 
+    /*
+
+    // Create iPhone
+
+    function iPhone13() {
+
+        this.chip = 'n1'
+        this.camera = '48mp'
+        this.network = '5G'
+
+    }
+
+    iPhone13.prototype.faceID = function () {
+        console.log('Yes, we have that thing');
+    }
+
+    iPhone13.prototype.fourK = function () {
+        console.log('Has a 4K camera');
+    }
+
+
+    var iPhone1 = new iPhone13()
+    // console.log('iPhone1:', iPhone1)
+
+    iPhone1.faceID()
+
+  */
+
+  /*
+
+    //   create string using constructor function
+
+    // var name = 'shivam';
+
+    const name = new String('shivam');
+
+    String.prototype.hacked = 'true';
+
+    // const string2 = "heloo"
+
+    console.log('name:', name.__proto__.__proto__._)
+
+ */
 
 
 
+    //   create array using constructor function
+
+    const myArr = new Array(1,2,3,4,5);
+    const myArr2 = new Array(1,2,3,4,5,7,8,9);
+    // console.log('myArr:', myArr)
 
 
+    // Array.prototype.print=function(){
+    //     console.log(this);
+    // }
 
+    
+    Object.prototype.print=function(){
+        console.log(this);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    myArr2.print()
 
 
 
