@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CustomArray-I</title>
+    <style>
+        * {
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CustomArray-01</h1>
+</body>
+</html>
+
+<script>
+
+    const myArr = new Array(1, 2, 3, 4, 5);
+
+    Array.prototype.print = function () {
+        var arrLen = this.length
+        console.log('Array:', this, 'Array Length:', arrLen);
+    }
+
+    myArr.print();
+
+
+    // function myArray() {
+
+    //     this.length = arguments.length;
+
+    //     for (let i = 0; i < this.length; i++) {
+    //         this[`${i}`] = arguments[i];
+    //     }
+    // }
+
+    // const arr = new myArray(1, 2, 3, 4,);
+    // console.log('arr:', arr)
+
+</script>

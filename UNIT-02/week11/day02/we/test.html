@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<script>
+
+
+
+    /*
+    
+        // Create a cat ecosystem. Tiger, Lion, cheetah, object.create()
+    
+    
+        const cat = {
+            type: 'cat',
+            legs: 4,
+            tail: true,
+            canFly: false,
+            food:'carnivore'
+        }
+    
+        // const myTiger = {
+        //     name:'tigerJi',
+        //     canClimb: false
+        // }
+    
+    
+        const Tiger = Object.setPrototypeOf({
+            name:"tiger",
+            canClimb: false,
+            claws:"blunt",
+        },
+        cat
+        );
+    
+        const lion = Object.create(cat);
+    
+        console.log(Tiger.claws);
+    
+        // let tiger = Object.create(cat)
+        // tiger.name = 'Tiger';
+        // console.log('tiger:', tiger)
+    
+    
+        // let lion = Object.create(cat)
+        // lion.name = 'Lion';
+        // console.log('lion:', lion)
+    
+    
+        // let leopard = Object.create(cat)
+        // leopard.name = 'Leopard';
+        // console.log('leopard:', leopard)
+    
+    
+    
+
+    function iPhone13() {
+
+        this.name = "shivam"
+        this.yesr = 2030
+        this.faceID = 'india'
+    }
+
+
+    const i1 = new iPhone13();
+
+    iPhone13.prototype.buldFaceID = function () {
+        console.log("Face ID Instaled");
+    }
+
+
+    iPhone13.prototype.add5G = function () {
+        this.five_g = true;
+    }
+
+    // i1.buldFaceID();
+
+    iPhone13.prototype.camera="20mp";
+
+    i1.add5G();
+
+
+*/
+
+
+
+
+    //Create our own Array library Librarry, in hindi!
+
+
+    function myArray(x) {
+        this.length = arguments.length;
+        // console.log(arguments);
+
+        for (let i = 0; i < this.length; i++) {
+            this[`${i}`] = arguments[i];
+        }
+    }
+
+    const arr = new myArray(1, 2, 3, 4,);
+
+    myArray.prototype.पुश = function (p) {
+
+        let index = this.length;
+
+        this[index] = p;
+
+        this.length++;
+
+    }
+
+    arr.पुश(45)
+    arr.पुश(55)
+    arr.पुश(66)
+    console.log('arr:', arr)
+
+
+
+
+    myArray.prototype.हटाओ = function () {
+
+        let index = this.length - 1;
+
+        delete this[index];
+
+        this.length--;
+
+    }
+
+    arr.हटाओ()
+    arr.हटाओ()
+    console.log('arr:', Object.values(arr))
+
+
+
+
+
+
+
+
+</script>

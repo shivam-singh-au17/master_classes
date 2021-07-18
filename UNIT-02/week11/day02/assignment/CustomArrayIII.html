@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CustomArray-III</title>
+    <style>
+        *{
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CustomArray-03</h1>
+</body>
+</html>
+
+<script>
+
+    
+        function myArray() {
+
+            this.length = arguments.length;
+
+            for (let i = 0; i < this.length; i++) {
+                this[`${i}`] = arguments[i];
+            }
+
+        }
+
+        const arr = new myArray(1, 2, 3, 4);
+
+        myArray.prototype.arrPush = function (p) {
+
+            let index = this.length;
+
+            this[index] = p;
+
+            this.length++;
+
+        }
+
+        arr.arrPush(45);
+        arr.arrPush(55);
+        console.log('myArray:', arr)
+
+
+
+        myArray.prototype.arrReversing = function () {
+
+            let indexFirst = 0;
+            let indexLast = this.length - 1;
+
+            let temp = this[indexFirst];
+            this[indexFirst] = this[indexLast];
+            this[indexLast] = temp;
+
+            this.indexFirst++;
+            this.indexLast--;
+
+            delete this.length;
+            delete this.indexFirst;
+            delete this.indexLast;
+
+        }
+
+        arr.arrReversing();
+        console.log('arrReversing:', arr)
+
+
+
+
+        myArray.prototype.printArray = function () {
+
+            delete this.length;
+            delete this.indexFirst;
+            delete this.indexLast;
+
+        }
+
+        arr.printArray();
+        console.log('printArray:', Object.values(arr))
+
+
+
+
+        myArray.prototype.firstElementArr = function () {
+
+            let indexFirst = 0;
+
+            console.log("firstElementArr:", this[indexFirst]);
+
+        }
+
+        arr.firstElementArr()
+
+
+    
+
+</script>

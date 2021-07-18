@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inheritance</title>
+    <style>
+        * {
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inheritance</h1>
+    
+</body>
+
+</html>
+
+<script>
+
+
+        const grandparents = {
+
+            Property: true,
+            Surname: true,
+            Degree: 'false'
+
+        }
+
+        const parents = Object.create(grandparents);
+
+        parents.Height = true;
+        parents.FathersProperty = "YES";
+
+        const andAboutMe = Object.create(parents)
+
+        andAboutMe.money = '2000M'
+
+        console.log('andAboutMe:', andAboutMe)
+
+
+
+
+
+
+        // function son(n, a) {
+        //     this.name = n
+        //     this.age = a
+        // }
+
+        // var Parent = {
+
+        //     mother: 'Saraswati',
+        //     father: 'Badri'
+        // }
+
+        // son.prototype = Parent
+
+        // var aboutMe = new son("Shivam", 23)
+
+        // console.log('aboutMe:', aboutMe)
+
+    
+
+</script>
