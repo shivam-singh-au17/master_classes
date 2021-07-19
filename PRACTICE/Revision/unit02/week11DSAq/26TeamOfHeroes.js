@@ -1,30 +1,32 @@
 
 
-function TwoSortedArrays(arr1, arr2, n) {
+function TeamHeroes(arr, k) {
 
-    arr1.sort(function (a, b) { return a - b });
-    arr2.sort(function (a, b) { return a - b });
+    var p1 = 0;
+    var p2 = arr.length - 1;
+    var temp = false;
 
-    var i = 0;
-    var j = 0;
-    var count = 0;
-
-    while (i < n && j < n) {
-
-        if (arr1[i] == arr2[j]) {
-            count++
-            i++;
-            j++;
-        } else if (arr1[i] < arr2[j]) {
-            i++
-        } else {
-            j++;
+    while (p1 < p2) {
+        if (arr[p1] + arr[p2] < k) {
+            p1++;
+        }
+        else if (arr[p1] + arr[p2] > k) {
+            p2--;
+        }
+        else {
+            temp = true;
+            break;
         }
     }
 
-    return count;
+    if (temp == true) {
+        return "Yes";
+    } else {
+        return "No";
+    }
 
 }
+
 
 function runProgram(input) {
 
@@ -32,22 +34,22 @@ function runProgram(input) {
     var testCases = Number(Input[0]);
 
     for (var i = 1; i <= testCases; i++) {
+        var nAndK = Input[i * 2 - 1].trim().split(" ").map(Number);
+        var k = nAndK[1];
+        var arr = Input[i * 2].trim().split(" ").map(Number);
 
-        var arr1 = Input[i * 2 + i - 1].trim().split(" ").map(Number);
-        var arr2 = Input[i * 2 + i].trim().split(" ").map(Number);
-        var n = Number(Input[i * 2 + i - 2])
-
-        var ans = TwoSortedArrays(arr1, arr2, n);
+        var ans = TeamHeroes(arr, k);
         console.log(ans);
     }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`1
-6
-1 2 2 3 4 5
-4 4 3 2 1 1`);
+    runProgram(`2
+5 31
+10 11 13 17 21
+5 44
+10 11 13 17 21`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -66,4 +68,8 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
+
+
+
 
