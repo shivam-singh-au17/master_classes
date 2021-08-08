@@ -27,7 +27,6 @@ function DifferenceOfK(arr, k) {
 
 }
 
-
 function runProgram(input) {
 
     var Input = input.split("\n");

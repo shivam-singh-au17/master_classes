@@ -1,6 +1,4 @@
 
-
-
 function lNextGreaterElement(arr) {
     var next, i, j;
     let store = ""
@@ -54,4 +52,5 @@ if (process.env.USERNAME === "shiva") {
         process.exit(0);
     });
 }
+
 

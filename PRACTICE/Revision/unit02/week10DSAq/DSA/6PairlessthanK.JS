@@ -42,13 +42,8 @@ function runProgram(input) {
 
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`2
-5
-1 2 3 4 5
-7
-3
-30 10 20
-15`);
+    runProgram(`5
+4 5 3 7 1`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
