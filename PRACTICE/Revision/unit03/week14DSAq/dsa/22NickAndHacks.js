@@ -1,14 +1,14 @@
 
 function NickHacks(num, nick) {
-    console.log(nick);
+    
     if (num == nick) {
-        return "Yes";
+        return true;
     }
     if (nick > num) {
-        return "No"
+        return false
     }
     else {
-        return (NickHacks(num, nick * 10) || NickHacks(num, nick * 20))
+        return NickHacks(num, nick * 10) || NickHacks(num, nick * 20)
     }
 }
 
@@ -22,13 +22,18 @@ function runProgram(input) {
 
         let nick = 1;
         let ans = NickHacks(num, nick);
-        console.log(ans);
+        if (ans == true) {
+            console.log("Yes");
+        } else {
+            console.log("No");
+        }
+
     }
 
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`1
+    runProgram(`5
 200
 2
 10
