@@ -1,0 +1,102 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin: 0%;
+}
+
+body {
+  background: rgb(194, 194, 194);
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 4%;
+  background-color: rgb(252, 61, 156);
+  margin-bottom: 50px;
+}
+
+.optinalInput {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.optinalInput input {
+  padding: 2px;
+  width: 300px;
+  font-size: 20px;
+  background: none;
+  color: white;
+  border-style: none;
+}
+
+.optinalInput button {
+  color: rgb(0, 1, 73);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border-style: none;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+::placeholder {
+  color: rgb(0, 1, 73);
+  box-shadow: 1px 1px 3px black;
+}
+
+#sumOptions {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+h3 {
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+ a {
+  color: rgb(0, 1, 73);
+}
+
+#navbar a:hover,
+button:hover {
+  color: white;
+}
+
+h4 {
+  padding: 10px 0px;
+}
+
+#newsBox1 {
+  background: white;
+  max-width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2%;
+  margin-top: 15px;
+  box-shadow: 1px 1px 3px black;
+}
+
+#newsBox1 div {
+  width: 90%;
+  padding: 20px;
+  height: 150px;
+  overflow-x:hidden;
+}
+
+p {
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: black;
+}
+
+#newsBox1 img {
+  width: 100%;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/unit-3/sprint-2/evaluation/style.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+
+
+        <div id="navbar">
+            <h3><a href="/unit-3/sprint-2/evaluation/index.html">Home</a></h3>
+            <div class="optinalInput">
+                <input type="text" id="NewsName" placeholder=" Search News">
+                <button onclick="getNews()">Search</button>
+            </div>
+            <div id="sumOptions">
+                <h3><a href="/unit-3/sprint-2/evaluation/TopStories.html">Top Stories</a></h3>
+                <h3><a href="/unit-3/sprint-2/evaluation/Newsletters.html">Newsletters</a></h3>
+            </div>
+        </div>
+
+
+        <div id="mainNewsBox">
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    async function getNews() {
+
+        let newsNamedata = document.getElementById("NewsName").value;
+        let allnewsData = document.getElementById("mainNewsBox");
+        allnewsData.innerHTML = null
+        
+        try {
+            
+            let res = await fetch(`http://api.mediastack.com/v1/news?access_key=22c2f599bf6cb50b826c959a7c0aa42c&languages=en,-de&categories=${newsNamedata}`)
+            let data = await res.json();
+            console.log('data:', data.data)
+            
+
+            data.data.forEach(({ title, author, description, image, url }) => {
+
+                if (image != null){
+
+                
+                let divBox = document.createElement("div")
+                divBox.id = "newsBox1"
+                let div1 = document.createElement("div")
+                let div2 = document.createElement("div")
+                let div3 = document.createElement("div")
+                let h2 = document.createElement("h2")
+
+                let a1 = document.createElement("a")
+                a1.innerHTML = title
+                a1.setAttribute("href", "./open.html")
+
+                let h4 = document.createElement("h4")
+                h4.innerHTML = author
+
+                let p = document.createElement("p")
+
+                let a2 = document.createElement("a")
+                a2.innerHTML = description
+                a2.setAttribute("href", url)
+
+                let img = document.createElement("img")
+                img.src = image
+
+                h2.append(a1)
+                div1.append(h2, h4)
+                p.append(a2)
+                div2.append(p)
+                div3.append(img)
+
+                divBox.append(div1, div2, div3)
+                allnewsData.append(divBox)
+
+                document.getElementById("NewsName").value = null
+
+                }
+            });
+
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+
+    }
+
+    getNews()
+
+
+</script>
+

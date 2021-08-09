@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPEN Home</title>
+    <link rel="stylesheet" href="/unit-3/sprint-2/evaluation/style.css">
+    <style>
+        #openbox {
+            background: white;
+            max-width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #openbox p {
+            font-size: 22px;
+        }
+
+        #openbox div {
+            margin: 20px;
+            padding: 20px;
+            letter-spacing: 1px;
+            box-shadow: 1px 1px 3px black;
+        }
+
+        #openbox h2 {
+            color: rgb(38, 0, 255);
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+
+        <div id="navbar">
+            <h3><a href="/unit-3/sprint-2/evaluation/index.html">Home</a></h3>
+            <div id="sumOptions">
+                <h3><a href="/unit-3/sprint-2/evaluation/TopStories.html">Top Stories</a></h3>
+                <h3><a href="/unit-3/sprint-2/evaluation/Newsletters.html">Newsletters</a></h3>
+            </div>
+        </div>
+
+        <div id="openpageallnews">
+
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    let mydivdata = document.getElementById("openpageallnews")
+
+    async function getNewsmydata() {
+
+        try {
+
+            let res = await fetch(`http://api.mediastack.com/v1/news?access_key=22c2f599bf6cb50b826c959a7c0aa42c&languages=en,-de&categories=business,sports`)
+            let data = await res.json();
+            console.log('data:', data.data)
+
+
+            data.data.forEach(({ title, description }) => {
+
+                let divBox = document.createElement("div")
+                divBox.id = "openbox"
+                let div1 = document.createElement("div")
+                let h2 = document.createElement("h2")
+                h2.innerHTML = title
+
+                let p = document.createElement("p")
+                p.innerHTML = description
+
+                div1.append(h2, p)
+
+                divBox.append(div1)
+                mydivdata.append(divBox)
+
+
+            });
+
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+
+    }
+
+    getNewsmydata()
+
+
+</script>

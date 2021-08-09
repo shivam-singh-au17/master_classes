@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS PAGE</title>
+    <link rel="stylesheet" href="/unit-3/sprint-2/evaluation/style.css">
+</head>
+
+<body>
+    <div id="navbardiv"></div>
+    <div id="mainNewsBox"></div>
+</body>
+
+</html>
+
+<script type="module">
+
+    import navbarOpen from "./utility/navbar.js"
+    import { getNews, addNewsData } from "./showdata.js"
+    document.getElementById("navbardiv").innerHTML = navbarOpen();
+
+    let responce = getNews(`http://api.mediastack.com/v1/news?access_key=22c2f599bf6cb50b826c959a7c0aa42c&languages=en,-de&categories=sports`)
+
+    responce.then((data) => {
+        let parent = document.getElementById("mainNewsBox");
+        addNewsData(data, parent)
+
+    })
+
+
+</script>
