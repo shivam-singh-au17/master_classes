@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>whether</h1>
+    <input type="text" name="" id="cityname">
+    <button onclick="getWeather()">submit</button>
+    <div id="main"></div>
+</body>
+
+</html>
+
+<script>
+
+    async function getWeather() {
+
+        try {
+
+            let mycity = document.getElementById("cityname").value
+            let myimg = document.getElementById("main")
+
+            
+
+            // let res = await fetch(`http://www.omdbapi.com/?apikey=e46328f8`)
+            // let res = await fetch(`http://www.omdbapi.com/?apikey=e46328f8&t=avengers+&y=2016&plot=full`)
+            let res = await fetch(`http://www.omdbapi.com/?apikey=e46328f8&t=${mycity}&plot=full`)
+            let data = await res.json();
+            console.log('data:', data)
+            console.log('data:', data.Title)
+
+            let img = document.createElement("img")
+            img.src = data.Poster
+
+            myimg.append(img)
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+    }
+
+    // getWeather()
+</script>

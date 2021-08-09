@@ -6,51 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-            text-align: center;
-        }
-
-        #notsBox {
-            display: flex;
-            max-width: 90%;
-            margin: auto;
-        }
-
-        #notsBox div {
-            width: 100%;
-            margin: 2%;
-        }
-
-        select,
-        input {
-            width: 100%;
-            height: 50px;
-        }
-
-        #addnots {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #myAllNots {
-            display: flex;
-        }
-
-        #myAllNots div {
-            width: 23%;
-            margin: 3%;
-            border: 1px solid black;
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="/PRACTICE/Revision/unit03/week14DSAq/coding/test02/style.css">
 </head>
 
 <body>
     <div id="container">
-
 
         <div id="ineerDataShow">
             <h1>Notes App</h1>
@@ -132,8 +92,8 @@
 
         </div>
 
-
     </div>
+    
 </body>
 
 </html>
@@ -145,7 +105,10 @@
     // import noteData from "./componenets/notesdata.JS"
     // myInnerData.innerHTML = noteData();
 
+    let addonData = document.getElementById("dataAded")
+    let dayOndata = document.getElementById("selectDay")
     function AddMyAllData(e) {
+
 
         e.preventDefault();
 
@@ -172,6 +135,9 @@
 
         console.log('myArr:', myArr)
 
+        dayOndata.value = null
+        addonData.value = null
+
     }
 
 
@@ -196,7 +162,7 @@
 
     let mainDiv = document.getElementById("myAllNots")
 
-    function addMyAllData(el) {
+    function addMyNotsData(el) {
 
         let prod_div = document.createElement("div")
 
@@ -225,7 +191,7 @@
         myOneItemData.forEach((el) => {
 
             if (day == el.Day) {
-                addMyAllData(el)
+                addMyNotsData(el)
             }
 
         })

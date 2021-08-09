@@ -9,6 +9,7 @@ function addUserProducts(event) {
     let prodPrice = document.getElementById("price").value
     let prodImage = document.getElementById("image").value
 
+    
     let myLocation = {
         prodName,
         prodPrice,

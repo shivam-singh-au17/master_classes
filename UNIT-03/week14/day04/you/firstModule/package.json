@@ -1,0 +1,11 @@
+{
+  "name": "firstmodule",
+  "version": "1.0.0",
+  "description": "my first module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shivam singh",
+  "license": "ISC"
+}

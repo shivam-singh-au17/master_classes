@@ -37,26 +37,28 @@
 
         let promise = new Promise(function (resolve, reject) {
 
-            if (queue[0] == name) {
-                resolve(`${name}, go take a job now!`);
-            }
-
+            setInterval(function () {
+                if (queue[0] == name) {
+                    resolve(`${name}, go take a jab now!`);
+                }
+            }, 1000)
         });
 
-        promise.then(function (res){
+        promise.then(function (res) {
             alert(res);
         });
 
     }
 
-    function startVaccinarion(){
+    function startVaccinarion() {
 
         queue.shift();
-        if (queue[0] === 0){
+
+        if (queue.length === 0) {
             clearInterval(intervel);
         }
     }
 
-    let intervel = setInterval(startVaccinarion, 2000);
+    let intervel = setInterval(startVaccinarion, 3000);
 
 </script>

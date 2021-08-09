@@ -1,5 +1,4 @@
 
-
 function TheFamousSum(n, k) {
     if (n < 10) {
         return n;

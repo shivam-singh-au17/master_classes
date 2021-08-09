@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewelleryBox</title>
+    <style>
+        * {
+            background-color: #ff006a;
+        }
+
+        #myLoginForm {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 100%;
+            margin: auto;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #left {
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 89%;
+            text-decoration: underline;
+        }
+
+        #left span:hover {
+            cursor: pointer;
+        }
+
+        #right {
+            width: 20%;
+            margin-top: 8px;
+        }
+
+        #right span {
+            padding: 5px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        #right span:hover {
+            cursor: pointer;
+            color: rgb(0, 3, 41);
+            background-color: #fc2a82;
+        }
+
+
+
+
+
+
+
+
+        #body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 75vh;
+            max-width: 120vh;
+            margin: auto;
+            margin-top: 70px;
+            background-color: rgb(0, 255, 255);
+            border-radius: 50%;
+            font-family: sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+            background-color: rgb(64, 62, 65);
+        }
+
+        .cont {
+            position: relative;
+            width: 500px;
+            min-height: 350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+            border-radius: 30px;
+        }
+
+        .form {
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .form h2 {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .form .inputBox {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form .inputBox input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #fff;
+            outline: none;
+            font-size: 18px;
+            color: #fff;
+            padding: 5px 0;
+            font-family: sans-serif;
+        }
+
+        ::placeholder {
+            color: #eee;
+        }
+
+
+        #orderPlas {
+            border-radius: 10px;
+            background: #fff;
+            color: #000;
+            border: none;
+            font-weight: 900;
+            max-width: 230px;
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="myLoginForm">
+        <div id="main">
+            <div id="left">
+                <span onclick="BigStarPage()">|JewelleryBox</span>
+            </div>
+            <div id="right">
+                <span onclick="HomePage()">Products</span>
+                <span onclick="LoginPage()">Login</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="body">
+
+        <div class="cont">
+            <div class="form">
+                <h2>Enter your Card Details</h2>
+                <form id="login" onsubmit="statLogin(event)">
+                    <div class="inputBox">
+                        <input type="number" placeholder="Enter Card number">
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Enter Card CVV">
+                    </div>
+                    <div class="inputBox">
+                        <input type="month" placeholder="Enter Card Expairy Date">
+                    </div>
+                    <div class="inputBox">
+                    </div>
+                </form>
+                <button id="orderPlas" onclick="PlacedOrder()">Place Order</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+<script src="/W-TEST/Unit02-Tests/sprint04/CODING/JewelleryStore/Payments.js"></script>

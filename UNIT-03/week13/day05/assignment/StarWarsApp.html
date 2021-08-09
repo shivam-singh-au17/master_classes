@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        *:focus{
+            outline: none;
+        }
+
+
+
+        input {
+            font-size: 30px;
+            color: yellow;
+            padding-left: 10px;
+            letter-spacing: 2px;
+            width: 400px;
+            height: 50px;
+            border-radius: 10px;
+            border: 4px solid rgb(255, 0, 0);
+            /* background: none; */
+            background-color: rgb(71, 71, 71);
+        }
+
+        #container {
+            width: 100%;
+            margin: auto;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        #container img {
+            width: 100%;
+            height: 692px;
+
+        }
+
+        #subBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #resultBox {
+            max-height: 200px;
+            height: fit-content;
+            width: 410px;
+            border-top: none;
+            overflow: auto;
+            scroll-behavior: smooth;
+
+        }
+
+        ::placeholder{
+            color: rgb(255, 0, 0);
+        }
+
+        #resultBox p {
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: yellow;
+            border-radius: 10px;
+            background-color: rgb(71, 71, 71);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="container">
+        <img src="https://i1.wp.com/i.pinimg.com/originals/95/3c/2a/953c2ab166d899848df750dae06faba4.jpg" alt="">
+        <div id="subBox">
+            <input type="text" name="" id="inputBox" oninput="throttlFunction()" placeholder="Search Here">
+            <div id="main">
+                <div id="resultBox"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<script>
+
+    let movesDiv = document.getElementById("main");
+
+    var timerId;
+
+    async function searchMovie() {
+
+        let myName = document.getElementById("inputBox").value;
+
+        if (myName.length == 0) {
+            return false
+        }
+
+        let res = await fetch(` https://swapi.dev/api/people/?search=${myName}`)
+
+        let data = await res.json();
+        return data.results
+
+    }
+
+    searchMovie()
+
+    function throttlFunction() {
+
+
+        if (timerId) {
+            return false
+        }
+
+        timerId = setTimeout(() => {
+
+            main()
+            timerId = undefined;
+
+        }, 100);
+
+
+    }
+
+    async function main() {
+
+        let movie = await searchMovie();
+        appendMovie(movie)
+
+    }
+
+    function appendMovie(d) {
+
+        let myDiv = document.createElement("div");
+        myDiv.id = "resultBox";
+        movesDiv.innerHTML = null
+
+        d.forEach(({ name }) => {
+
+            let myP = document.createElement("p")
+
+            myP.innerText = name;
+
+            myDiv.append(myP)
+            movesDiv.append(myDiv)
+
+        });
+    }
+
+</script>
+
+

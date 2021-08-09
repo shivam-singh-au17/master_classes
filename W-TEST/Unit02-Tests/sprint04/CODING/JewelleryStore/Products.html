@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewelleryBox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ff006a;
+        }
+
+
+        #navBar {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 100%;
+            padding: 10px;
+            margin: auto;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #left {
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 79%;
+            text-decoration: underline;
+        }
+
+        #left span:hover {
+            cursor: pointer;
+        }
+
+        #right {
+            width: 29%;
+            margin-top: 8px;
+        }
+
+        #right span {
+            padding: 5px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        #right span:hover {
+            cursor: pointer;
+            color: rgb(0, 3, 41);
+            background-color: #fc2a82;
+        }
+
+
+
+
+
+        #myJewellery {
+            padding-bottom: 200px;
+            padding-top: 50px;
+            padding-left: 35px;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 22%);
+            gap: 2%;
+            margin: 3%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        #myJewellery img {
+            width: 85%;
+            height: 200PX;
+            padding: 4px;
+            background-color: #ffffff;
+            margin-top: 15px;
+        }
+
+        #myJewellery div {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+            display: grid;
+            justify-items: center;
+            background-color: rgb(6, 4, 36);
+        }
+
+        #myJewellery P {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 4px;
+            width: 80%;
+        }
+
+        #myJewellery span{
+            font-weight: 600;
+        }
+
+        #myJewellery P:nth-child(2) {
+            margin-top: 10px;
+        }
+
+        #myJewellery P:nth-child(4) {
+            margin-bottom: 15px;
+        }
+
+        #myJewellery button{
+            width: 45%;
+            padding: 6px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-style: none;
+            font-weight: 600;
+        }
+
+        #myJewellery button:hover {
+           color: #fc2a82;
+        }
+
+
+         #sortBtn button {
+            font-size: 20px;
+            padding: 7px;
+            font-weight: 600;
+            color: white;
+            background-color: #0e1422;
+            border-style: none;
+            width: 20%;
+            margin: 0px 0px 0px 250px;
+            margin-top: 20px;
+        }
+
+        #sortBtn button:hover {
+            cursor: pointer;
+            color: rgb(255, 0, 64);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navBar">
+        <div id="main">
+            <div id="left">
+                <span onclick="BigStarPage()">|JewelleryBox</span>
+            </div>
+            <div id="right">
+                <span onclick="CartPage()">MyCart</span>
+                <span onclick="HomePage()">Products</span>
+                <span onclick="LoginPage()">Login</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="sortBtn">
+        <button onclick="sortLH()">Sort by low price to high</button>
+        <button onclick="sortHL()">Sort by High price to low</button>
+    </div>
+
+
+    <div id="myJewellery">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="/W-TEST/Unit02-Tests/sprint04/CODING/JewelleryStore/Products.js"></script>

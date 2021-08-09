@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>API's</h1>
+</body>
+
+</html>
+
+<script>
+
+    /*
+        fetch("https://reqres.in/api/users?page=2")
+    
+            .then(function (res) {
+                res.json().then(function(data){
+                console.log('data:', data)
+                })
+            })
+    
+            .catch(function (res) {
+                console.log('res:', res)
+            })
+            
+    */
+
+
+    /*
+    
+        fetch("https://reqres.in/api/users?page=2")
+    
+            .then(function (res) {
+               return res.json()
+            })
+            .then(function(res){
+                console.log('res:', res)
+            })
+    
+            .catch(function (res) {
+                console.log('res:', res)
+            })
+    
+    */
+
+
+    /*
+
+    async function makeReqest() {
+
+        let response = await fetch("https://reqres.in/api/users?page=2")
+        let data = await response.json();
+        console.log('data:', data)
+
+    }
+
+    makeReqest()
+
+    */
+
+
+    /*
+
+    async function makeReqest() {
+
+        try {
+
+            let response = await fetch("https://reqres.in/api/users?page=2")
+            let data = await response.json();
+            console.log('data:', data)
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+    }
+
+    makeReqest()
+
+    */
+
+
+</script>

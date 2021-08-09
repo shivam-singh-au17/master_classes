@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+
+<body>
+    <h1>ES6</h1>
+    <input type="text" id="search">
+    <button onclick="getData()">SEARCH</button>
+    <div id="myvideo"></div>
+
+
+    
+</body>
+
+</html>
+
+<script>
+
+    let myvideoDiv = document.getElementById("myvideo")
+
+    async function getData() {
+
+        myvideoDiv.innerHTML = null
+
+        // my key => AIzaSyC0xVz4C6a722 - TbM_ON4WLSRw03cHrMvI
+
+        let value = document.getElementById("search").value
+
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${value}&key=AIzaSyC0xVz4C6a722 - TbM_ON4WLSRw03cHrMvI&maxResults=10`)
+
+        let data = await res.json();
+
+        let { items } = data
+
+        items = items.filter((el) =>{
+            return el.id.videoId != undefined;
+        });
+
+        items.forEach(({ id: { videoId } }) => {
+
+
+            let div = document.createElement("div")
+
+            div.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>`
+
+        myvideoDiv.append(div)
+
+        });
+
+    }
+
+
+
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/UNIT-03/week14/day02/assignment/FoodAppI/style/style.css">
+
+</head>
+
+<body>
+    <div id="navbar">
+        <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/index.html">Home</a></h3>
+
+        <div class="optionsInput">
+            <input type="text" name="" id="ReceipeName" placeholder=" Search Receipe By Name Here">
+            <button onclick="getWeather()">Submit</button>
+        </div>
+
+        <div class="options">
+            <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/ReceipeOfTheDay.html">Receipe Of The Day</a></h3>
+            <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/LatestReceipe.html">Latest Receipe</a></h3>
+        </div>
+    </div>
+    <div id="dataMainDiv">
+        <div id="data"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    async function getWeather() {
+
+        let myReceipe = document.getElementById("ReceipeName").value
+        let myalldiv = document.getElementById("data")
+        myalldiv.innerHTML = null
+
+        try {
+
+            let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${myReceipe}`)
+
+            let data = await res.json();
+            console.log('data:', data)
+
+
+            data.meals.forEach(({ strMealThumb, strMeal, strCategory, strArea }) => {
+
+                let div = document.createElement("div");
+                div.id = "mainCont";
+
+                let div2 = document.createElement("div");
+                div2.id = "mainCont2";
+
+                let img = document.createElement("img");
+                img.src = strMealThumb
+
+                let p = document.createElement("p");
+                p.innerHTML = `<span>Receipe Name: </span>${strMeal}`
+
+                let p2 = document.createElement("p");
+                p2.innerHTML = `<span>Receipe Category: </span>${strCategory}`
+
+                let p3 = document.createElement("p");
+                p3.innerHTML = `<span>Receipe Area: </span>${strArea}`
+
+
+                div2.append(p, p2, p3);
+                div.append(img, div2);
+                myalldiv.append(div);
+
+
+                document.getElementById("ReceipeName").value = null
+
+            });
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+    }
+
+    // getWeather()
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewelleryBox</title>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ff006a;
+        }
+
+        #container {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 100%;
+            padding: 10px;
+            margin: auto;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #left {
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family:'Times New Roman', Times, serif;
+            width: 95%;
+            text-decoration: underline;
+        }
+
+        #left span:hover {
+           cursor: pointer;
+        }
+
+        #right {
+            width: 20%;
+            margin-top: 8px;
+        }
+
+        #right span {
+            padding: 5px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 10px;
+        }
+        #right span:hover {
+           cursor: pointer;
+           color: rgb(0, 3, 41);
+           background-color: #fc2a82;
+        }
+
+        #slidShow {
+            padding: 2%;
+        }
+
+        #slidShow img {
+            width: 100%;
+            object-fit: fill;
+            height: 583px;
+        }
+
+        img{
+            border-radius: 5px;
+        }
+    </style> 
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="main">
+            <div id="left">
+                <span onclick="BigStarPage()">|JewelleryBox</span>
+            </div>
+            <div id="right">
+                <span onclick="HomePage()">Products</span>
+                <span onclick="LoginPage()">Login</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="slidShow"> </div>
+
+</body>
+
+</html>
+
+<script src="/W-TEST/Unit02-Tests/sprint04/CODING/JewelleryStore/Index.js"></script>

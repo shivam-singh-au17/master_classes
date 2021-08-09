@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #contain {
+            max-width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 20px;
+            margin: 08px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Masai Auth System</h1>
+
+    <div id="contain">
+
+        <div id="register">
+            <h1>Register</h1>
+            <form onsubmit="Register(event)">
+
+                Name:<input id="Inp1" type="text">
+                Email:<input id="inp2" type="email">
+                Password:<input id="inp3" type="password">
+                Username:<input id="inp4" type="text">
+                Mobile:<input id="inp5" type="number">
+                Discription<input id="inp6" type="text">
+                <input id="inp7" type="submit">
+
+            </form>
+        </div>
+
+
+        <div id="Login">
+            <h1>Login</h1>
+            <form onsubmit="Login(event)">
+
+                Username:<input id="inp8" type="text">
+                Password:<input id="inp9" type="password">
+                <input id="inp10" type="submit">
+
+            </form>
+        </div>
+
+    
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="/UNIT-03/week14/day01/assignment/GoogleI/ES06.js"></script>
+

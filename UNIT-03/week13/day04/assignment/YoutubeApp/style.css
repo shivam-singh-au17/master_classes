@@ -1,0 +1,92 @@
+* {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            background-color: #181818;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        .main {
+            max-width: 100%;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        .left {
+            text-align: left;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 25px;
+            color: rgb(255, 0, 0);
+            letter-spacing: 1px;
+        }
+
+        .right {
+            float: right;
+            display: flex;
+            padding-bottom: 15px;
+        }
+
+        .right input {
+            border-radius: 22px;
+            font-size: 20px;
+            border-style: none;
+            box-shadow: 3px 3px 0px rgb(255, 0, 0);
+            border: 0.1px solid rgb(71, 71, 87);
+            height: 35px;
+            width: 250px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-right: 15px;
+            background-color: #313131;
+            color: white;
+        }
+
+        .foo {
+            padding-left: 12px;
+        }
+
+        .right button {
+            border-radius: 22px;
+            border-style: none;
+            box-shadow: 3px 3px 0px rgb(255, 0, 0);
+            border: 0.1px solid rgb(94, 94, 105);
+            font-size: 15px;
+            width: 125px;
+            height: 36px;
+            font-weight: 600;
+            background-color: #313131;
+            color: white;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .right button:hover {
+            background-color: turquoise;
+            color: white;
+        }
+
+        #poster {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 90%;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        #myvideo {
+            display: grid;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+        }
+
+        #myvideo div {
+            background-color: white;
+            padding: 10px;
+            line-height: 25px;
+            margin: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }

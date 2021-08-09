@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest Receipe Page</title>
+    <link rel="stylesheet" href="/UNIT-03/week14/day02/assignment/FoodAppI/style/style.css">
+    
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script type="module">
+
+    import myNavbar from "./componenets/navBAR2.JS"
+    import { getData, appendData } from "./script/showData.js"
+    document.body.innerHTML = myNavbar();
+
+    let response = getData(`https://www.themealdb.com/api/json/v1/1/search.php?s=potato`)
+    console.log('response:', response)
+
+    response.then((data) => {
+
+        let parent = document.getElementById(`data`)
+        appendData(data, parent);
+
+    });
+
+</script>

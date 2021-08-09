@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #contain {
+            max-width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 20px;
+            margin: 08px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Masai Auth System</h1>
+
+    <div id="contain">
+
+        <div id="register">
+            <h1>Register</h1>
+            <form onsubmit="Register(event)">
+
+                Name:<input id="Inp1" type="text">
+                Email:<input id="inp2" type="email">
+                Password:<input id="inp3" type="password">
+                Username:<input id="inp4" type="text">
+                Mobile:<input id="inp5" type="number">
+                Discription<input id="inp6" type="text">
+                <input id="inp7" type="submit">
+
+            </form>
+        </div>
+
+
+        <div id="Login">
+            <h1>Login</h1>
+            <form onsubmit="Login(event)">
+
+                Username:<input id="inp8" type="text">
+                Password:<input id="inp9" type="password">
+                <input id="inp10" type="submit">
+
+            </form>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function Register(e) {
+
+        e.preventDefault();
+
+        let myFormData = {
+
+            name: document.getElementById("Inp1").value,
+            email: document.getElementById("inp2").value,
+            password: document.getElementById("inp3").value,
+            username: document.getElementById("inp4").value,
+            mobile: document.getElementById("inp5").value,
+            description: document.getElementById("inp6").value,
+
+        };
+
+        myFormData = JSON.stringify(myFormData);
+        console.log('myFormData:', myFormData)
+
+        fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
+
+            method: 'POST',
+            body: myFormData,
+
+            headers: {
+                'Content-Type': "application/json"
+            },
+
+        })
+
+            .then((res) => {
+                return res.json();
+            })
+
+            .then((res) => {
+                console.log('res:', res)
+            })
+
+            .catch((err) => {
+                console.log('err:', err)
+            })
+
+
+    }
+
+
+
+
+    function Login(e) {
+
+        e.preventDefault();
+
+        let myFormData = {
+
+            username: document.getElementById("inp8").value,
+            password: document.getElementById("inp9").value,
+
+        };
+
+        let bodyData = JSON.stringify(myFormData);
+        console.log('bodyData:', bodyData)
+
+        fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+
+            method: 'POST',
+            body: bodyData,
+
+            headers: {
+                'Content-Type': "application/json"
+            },
+
+        })
+
+            .then((res) => {
+                return res.json();
+            })
+
+            .then((res) => {
+                console.log('res:', res)
+                let u = myFormData.username;
+                let t = res.token;
+                getMyLoginData(u, t);
+
+            })
+
+            .catch((err) => {
+                console.log('err:', err)
+            })
+
+
+    }
+
+
+    function getMyLoginData(userName, token) {
+        fetch(`https://masai-api-mocker.herokuapp.com/user/${userName}`, {
+
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+
+
+            .then((res) => {
+                return res.json();
+            })
+
+            .then((res) => {
+                console.log('res:', res)
+            })
+
+            .catch((err) => {
+                console.log('err:', err)
+            })
+    }
+
+</script>

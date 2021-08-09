@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewelleryBox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ff006a;
+        }
+
+
+        #navBar {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 100%;
+            padding: 10px;
+            margin: auto;
+            color: white;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #left {
+            margin-left: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 70%;
+            text-decoration: underline;
+        }
+
+        #left span:hover {
+            cursor: pointer;
+        }
+
+        #right {
+            width: 28%;
+            margin-top: 8px;
+        }
+
+        #right span {
+            padding: 5px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        #right span:hover {
+            cursor: pointer;
+            color: rgb(0, 3, 41);
+            background-color: #fc2a82;
+        }
+
+
+
+
+
+        #myJewellery {
+            padding-bottom: 200px;
+            padding-top: 50px;
+            padding-left: 35px;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 22%);
+            gap: 2%;
+            margin: 3%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        #myJewellery img {
+            width: 85%;
+            padding: 4px;
+            height: 200px;
+            background-color: #ffffff;
+            margin-top: 15px;
+        }
+
+        #myJewellery div {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+            display: grid;
+            justify-items: center;
+            background-color: rgb(6, 4, 36);
+        }
+
+        #myJewellery P {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 4px;
+            width: 80%;
+        }
+
+        #myJewellery span {
+            font-weight: 600;
+        }
+
+        #myJewellery P:nth-child(2) {
+            margin-top: 10px;
+        }
+
+        #myJewellery P:nth-child(4) {
+            margin-bottom: 15px;
+        }
+
+
+        #mainBox1{
+            max-width: 90%;
+            margin: auto;
+        }
+
+
+        #myForm{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            
+        }
+
+        #myForm input{
+           
+            height: 40px;
+        }
+        #myForm p{
+           
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgb(0, 5, 68);
+        }
+
+        #myForm span{
+           
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navBar">
+        <div id="main">
+            <div id="left">
+                <span onclick="BigStarPage()">|JewelleryBox</span>
+            </div>
+            <div id="right">
+                <span onclick="SubmitPage()">Checkout</span>
+                <span onclick="HomePage()">Products</span>
+                <span onclick="LoginPage()">Login</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainBox1">
+        <form id="myForm">
+            <h2 id="myh2">Cart Details</h2>
+            <p>Total Products: <span id="totalProd">0</span></p>
+            <p>Total Price: <span id="totalPrice">0</span><span>₹</span></p>
+            <input type="text" id="PromoCode" placeholder=" Enter Promo Code">
+            <button id="btnPromo">Apply Promo</button>
+        </form>
+    </div>
+
+
+    <div id="myJewellery">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="/W-TEST/Unit02-Tests/sprint04/CODING/JewelleryStore/Cart.js"></script>

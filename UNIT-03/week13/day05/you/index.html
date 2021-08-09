@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 20%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        input {
+            width: 195px;
+        }
+
+        #resultBox {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-top: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <input type="text" name="" id="inputBox" oninput="throttlFunction()">
+    <div id="resultBox"></div>
+</body>
+
+</html>
+
+
+
+<script>
+
+    let movesDiv = document.getElementById("resultBox");
+
+    var timerId;
+
+    async function searchMovie() {
+
+        let myName = document.getElementById("inputBox").value;
+
+        if (myName.length <= 2) {
+            return false
+        }
+
+        let res = await fetch(`http://www.omdbapi.com/?s=${myName}&apikey=e46328f8`)
+
+        let data = await res.json();
+        return data.Search
+
+    }
+
+
+    function throttlFunction() {
+
+
+        if(timerId){
+            return false
+        }
+
+        timerId = setTimeout(() => {
+
+            main()
+            timerId = undefined;
+
+        }, 500);
+
+
+    }
+
+    async function main() {
+
+        let movie = await searchMovie();
+        appendMovie(movie)
+
+    }
+
+    function appendMovie(d) {
+
+        movesDiv.innerHTML = null
+
+        d.forEach(({ Title }) => {
+
+            let myP = document.createElement("p")
+
+            myP.innerText = Title;
+
+            movesDiv.append(myP)
+
+        });
+    }
+
+</script>

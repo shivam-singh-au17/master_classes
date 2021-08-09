@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 2</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 4%;
+            padding-right: 4%;
+            border: solid 1px black;
+            margin-bottom: 50px;
+        }
+
+        .optionsInput {
+            display: flex;
+            padding: 15px;
+            justify-content: center;
+        }
+
+        .optionsInput input {
+            padding: 2px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        .optionsInput button {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .options h3 {
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+
+        #data {
+            display: grid;
+            grid-template-columns: repeat(4, 20%);
+            grid-gap: 4%;
+            justify-content: center;
+        }
+
+        #data div {
+            border: 1px solid rgb(206, 206, 206);
+            padding: 10px;
+        }
+
+        #data div:hover {
+            box-shadow: 1px 5px 10px black;
+            cursor: pointer;
+        }
+
+        #data img {
+            width: 100%;
+            height: 300px;
+        }
+
+        #data img:hover {
+            cursor: pointer;
+        }
+
+        #data p {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            color: rgb(255, 0, 64);
+        }
+
+        #data span {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            color: rgb(255, 0, 64);
+        }
+
+
+
+
+
+
+
+
+
+        #mainCont {
+            padding: 10px;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: repeat(4, 24%);
+            justify-content: center;
+        }
+
+        #main img {
+            max-width: 95%;
+            margin: 2%;
+        }
+
+        p {
+            padding: 5px;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(211, 0, 88);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/index.html">Home</a></h3>
+
+        <div class="optionsInput">
+            <input type="text" name="" id="cityname" placeholder="Search Receipe By Name Here">
+            <button onclick="getWeather()">Submit</button>
+        </div>
+
+        <div class="options">
+            <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/ReceipeOfTheDay.html">Receipe Of The Day</a></h3>
+            <h3><a href="/UNIT-03/week14/day02/assignment/FoodAppI/LatestReceipe.html">Latest Receipe</a></h3>
+        </div>
+    </div>
+    <div id="main"></div>
+</body>
+
+</html>
+
+<script>
+
+    async function getWeather() {
+
+        try {
+
+            let mycity = document.getElementById("cityname").value
+            let myimg = document.getElementById("main")
+
+
+            let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mycity}`)
+
+            let data = await res.json();
+            console.log('data:', data)
+
+
+                data.meals.forEach(({ strMealThumb, strMeal, strCategory }) => {
+                    
+               
+                let div = document.createElement("div");
+                div.id = "mainCont";
+
+                let img = document.createElement("img");
+                img.src = strMealThumb
+
+                let p = document.createElement("p");
+                p.innerHTML = strMeal
+
+                let p2 = document.createElement("p");
+                p2.innerHTML = strCategory
+
+
+                div.append(img, p, p2);
+                myimg.append(div);
+
+                 });
+
+        } catch (err) {
+            console.log('err:', err)
+        }
+
+    }
+
+    // getWeather()
+</script>

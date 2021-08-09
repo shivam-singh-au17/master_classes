@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    class Stack {
+
+        constructor() {
+            this.stack = [];
+            this.length = 0;
+        }
+
+        addInStk(...b) {
+            b.forEach((el) => {
+                this.stack.push(el);
+                this.length++;
+            });
+        }
+
+        delInStk() {
+            if (this.length == 0) {
+                console.log("No Element");
+            } else {
+                this.stack.pop();
+                this.length--;
+            }
+        }
+
+        topInStk() {
+            return this.stack[this.length - 1];
+        }
+
+    }
+
+
+
+    let x = new Stack();
+    x.addInStk("shivam", "singh", "books");
+    x.delInStk();
+    console.log('x:', x.topInStk());
+    console.log('x:', x);
+
+
+
+</script>
