@@ -1,56 +1,30 @@
 
+class Stack {
 
-
-
-function runProgram(input) {
-
-    var input = input.split("\n");
-    var testCases = Number(input[0]);
-
-    var stack = [];
-    for (var i = 1; i <= testCases; i++) {
-
-        var data = input[i].split(" ").map(Number);
-
-        if (data[0] == 0) {
-            stack.push(data[1])
-        }
-        if (data[0] == 1) {
-            console.log(stack[stack.length - 1]);
-        }
-        if (data[0] == 2) {
-            stack.pop()
-        }
-
-
+    constructor() {
+        this.Q1 = new Queue()
+        this.Q2 = new Queue()
     }
-
-}
-
-if (process.env.USERNAME === "shiva") {
-    runProgram(`6
-0 1
-0 2
-0 3
-1
-2
-1`);
-} else {
-    process.stdin.resume();
-    process.stdin.setEncoding("ascii");
-    var read = "";
-    process.stdin.on("data", function (input) {
-        read += input;
-    });
-    process.stdin.on("end", function () {
-        read = read.replace(/\n$/, "");
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-    });
-    process.on("SIGINT", function () {
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-        process.exit(0);
-    });
+    push(value) {
+        this.Q1.push(value);
+    }
+    pop() {
+        while (this.Q1.queue.length > 1) {
+            this.Q2.push(this.Q1.queue.shift())
+        }
+        let poped = this.Q1.queue.shift()
+        this.Q1.queue = this.Q2.queue
+        this.Q2.queue = []
+        return poped
+    }
+    top() {
+        return this.Q1.queue[this.Q1.queue.length - 1]
+    }
+    isEmpty() {
+        if (this.Q1.queue.length == 0)
+            return true;
+        else
+            return false;
+    }
 }
 
