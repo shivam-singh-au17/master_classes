@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #notsBox {
+            display: flex;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        #notsBox div {
+            width: 100%;
+            margin: 2%;
+        }
+
+        select,
+        input {
+            width: 100%;
+            height: 50px;
+        }
+
+        #addnots {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #myAllNots {
+            display: flex;
+        }
+
+        #myAllNots div {
+            width: 23%;
+            margin: 3%;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="ineerDataShow">
+
+
+
+            <div id="notsBox">
+
+
+
+                <div id="addnots">
+                    <h1>Add Nots</h1>
+
+                    <form onsubmit="AddMyAllData(event)">
+
+                        <input id="rendom1" type="text">
+                        <input id="rendom2" type="text">
+                        <input id="inp7" type="submit">
+
+
+                        <!-- <select id="selectDay">
+                                <option value="null">------</option>
+                            
+                                <optgroup label="More Numbers">
+                            
+                                    <option id="opt1" value="1">1</option>
+                                    <option id="opt2" value="2">2</option>
+                            
+                            
+                                </optgroup>
+                                <optgroup label="More Numbers Part 2">
+                                    <option id="opt3" value="3">3</option>
+                                    <option id="opt4" value="4">4</option>
+                                    <option id="opt5" value="5">5</option>
+                                </optgroup>
+                            
+                                <optgroup label="Some Numbers">
+                            
+                                    <option id="op6" value="6">6</option>
+                                    <option id="opt7" value="7">7</option>
+                                </optgroup>
+                            
+                            </select>
+                            <textarea name="" id="dataAded" cols="80" rows="5"></textarea> -->
+
+                    </form>
+
+
+                    <!-- <form onsubmit="AddMyAllData(event)">
+                        <h1>Add Nots</h1>
+                        <input id="rendom1" type="text">
+                        <input id="rendom2" type="text">
+                        <select id="selectDay">
+                            <option value="null">------</option>
+
+                            <optgroup label="More Numbers">
+
+                                <option id="opt1" value="1">1</option>
+                                <option id="opt2" value="2">2</option>
+
+
+                            </optgroup>
+                            <optgroup label="More Numbers Part 2">
+                                <option id="opt3" value="3">3</option>
+                                <option id="opt4" value="4">4</option>
+                                <option id="opt5" value="5">5</option>
+                            </optgroup>
+
+                            <optgroup label="Some Numbers">
+
+                                <option id="op6" value="6">6</option>
+                                <option id="opt7" value="7">7</option>
+                            </optgroup>
+
+                        </select>
+                        <textarea name="" id="dataAded" cols="80" rows="5"></textarea>
+                        <input type="submit" name="" id="" value="Add Nots">
+                    </form> -->
+
+
+
+                </div>
+
+
+
+
+
+                <div id="showNots">
+                    <form onsubmit="ShowData()">
+                        <h1>Show Nots</h1>
+                        <select id="selectDay">
+                            <option value="null">------</option>
+
+                            <optgroup label="More Numbers">
+
+                                <option id="opt1" value="1">1</option>
+                                <option id="opt2" value="2">2</option>
+
+
+                            </optgroup>
+                            <optgroup label="More Numbers Part 2">
+                                <option id="opt3" value="3">3</option>
+                                <option id="opt4" value="4">4</option>
+                                <option id="opt5" value="5">5</option>
+                            </optgroup>
+
+                            <optgroup label="Some Numbers">
+
+                                <option id="op6" value="6">6</option>
+                                <option id="opt7" value="7">7</option>
+                            </optgroup>
+
+                        </select>
+
+                        <input type="submit" name="" id="" value="Show Data">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myAllNots">
+            <div>
+                <h1>day no</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius non odit saepe expedita optio
+                    provident nostrum ex et natus eligendi excepturi illo error fuga suscipit. Et placeat soluta vel</p>
+            </div>
+            <div>
+                <h1>day no</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius non odit saepe expedita optio
+                    provident nostrum ex et natus eligendi excepturi illo error fuga suscipit. Et placeat soluta vel</p>
+            </div>
+            <div>
+                <h1>day no</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius non odit saepe expedita optio
+                    provident nostrum ex et natus eligendi excepturi illo error fuga suscipit. Et placeat soluta vel</p>
+            </div>
+            <div>
+                <h1>day no</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius non odit saepe expedita optio
+                    provident nostrum ex et natus eligendi excepturi illo error fuga suscipit. Et placeat soluta vel</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script type="module">
+
+    // let myInnerData = document.getElementById("ineerDataShow")
+    // import noteData from "./componenets/notesdata.JS"
+    // myInnerData.innerHTML = noteData();
+
+
+
+
+    function AddMyAllData(e) {
+
+        e.preventDefault();
+
+        const myAddedData = {
+
+            day: document.getElementById("selectDay").value,
+            allData: document.getElementById("dataAded").value,
+            renomdata1: document.getElementById("rendom1").value,
+            renomdata1: document.getElementById("rendom2").value,
+
+        };
+
+        console.log('myAddedData:', myAddedData)
+
+        // myAddedData = JSON.stringify(myAddedData);
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+</script>

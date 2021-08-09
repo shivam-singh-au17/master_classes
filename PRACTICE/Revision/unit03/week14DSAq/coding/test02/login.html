@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #notsBox {
+            display: flex;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        #notsBox div {
+            width: 100%;
+            margin: 2%;
+        }
+
+        select,
+        input {
+            width: 100%;
+            height: 50px;
+        }
+
+        #addnots {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #myAllNots {
+            display: flex;
+        }
+
+        #myAllNots div {
+            width: 23%;
+            margin: 3%;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+
+        <div id="ineerDataShow">
+            <h1>Notes App</h1>
+
+            <div id="notsBox">
+
+                <div id="addnots">
+                    <h1>Add Nots</h1>
+                    <form onsubmit="AddMyAllData(event)">
+
+                        <select id="selectDay">
+                            <option value="null">Select Day</option>
+
+                            <optgroup label="More Numbers">
+
+                                <option id="opt1" value="1">1</option>
+                                <option id="opt2" value="2">2</option>
+
+
+                            </optgroup>
+                            <optgroup label="More Numbers Part 2">
+                                <option id="opt3" value="3">3</option>
+                                <option id="opt4" value="4">4</option>
+                                <option id="opt5" value="5">5</option>
+                            </optgroup>
+
+                            <optgroup label="Some Numbers">
+
+                                <option id="op6" value="6">6</option>
+                                <option id="opt7" value="7">7</option>
+                            </optgroup>
+
+                        </select>
+                        <textarea name="" id="dataAded" cols="80" rows="5"></textarea>
+                        <input id="inp7" type="submit">
+                    </form>
+                </div>
+
+
+                <div id="addnots">
+                    <h1>Show Nots</h1>
+                    <form onsubmit="ShowMyAllData(event)">
+
+                        <select id="selectDayShow">
+                            <option value="null">Select Day</option>
+
+                            <optgroup label="More Numbers">
+
+                                <option id="opt1" value="1">1</option>
+                                <option id="opt2" value="2">2</option>
+
+
+                            </optgroup>
+                            <optgroup label="More Numbers Part 2">
+                                <option id="opt3" value="3">3</option>
+                                <option id="opt4" value="4">4</option>
+                                <option id="opt5" value="5">5</option>
+                            </optgroup>
+
+                            <optgroup label="Some Numbers">
+
+                                <option id="op6" value="6">6</option>
+                                <option id="opt7" value="7">7</option>
+                            </optgroup>
+
+                        </select>
+                        <input id="inp7" type="submit">
+
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="myAllNots">
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    // let myInnerData = document.getElementById("ineerDataShow")
+    // import noteData from "./componenets/notesdata.JS"
+    // myInnerData.innerHTML = noteData();
+
+    function AddMyAllData(e) {
+
+        e.preventDefault();
+
+        let myFormData = {
+
+            Day: document.getElementById("selectDay").value,
+            dataAddNote: document.getElementById("dataAded").value,
+
+        };
+
+        let myArr = localStorage.getItem("myLocalStorage")
+
+        if (myArr == null) {
+
+            myArr = []
+        } else {
+            myArr = JSON.parse(localStorage.getItem("myLocalStorage"))
+        }
+
+        myArr.push(myFormData)
+
+
+        localStorage.setItem("myLocalStorage", JSON.stringify(myArr))
+
+        console.log('myArr:', myArr)
+
+    }
+
+
+
+
+    function ShowMyAllData(e) {
+
+        e.preventDefault();
+
+        let myFormData = {
+
+            Day: document.getElementById("selectDayShow").value,
+
+        };
+
+        console.log('myFormData:', myFormData.Day)
+
+        showMyDataLocation(myFormData.Day)
+    }
+
+
+
+    let mainDiv = document.getElementById("myAllNots")
+
+    function addMyAllData(el) {
+
+        let prod_div = document.createElement("div")
+
+        let prod_h1 = document.createElement("h1")
+        prod_h1.innerHTML = `Day: ${el.Day}`
+
+        let prod_p = document.createElement("p")
+        prod_p.innerHTML = el.dataAddNote
+
+        prod_div.appendChild(prod_h1)
+        prod_div.appendChild(prod_p)
+
+        mainDiv.appendChild(prod_div)
+
+    }
+
+
+
+
+    function showMyDataLocation(day) {
+
+        let myOneItemData = JSON.parse(localStorage.getItem("myLocalStorage"))
+
+        mainDiv.innerHTML = null;
+
+        myOneItemData.forEach((el) => {
+
+            if (day == el.Day) {
+                addMyAllData(el)
+            }
+
+        })
+    }
+
+
+
+</script>
