@@ -1,0 +1,121 @@
+
+# mongo
+
+
+# show dbs
+
+
+# use assignment 
+
+
+# db.createCollection('users')
+
+
+# db.users.insert({'first_name':'shivam','last_name':'singh','email':'shivamsingh4458@gmail.com','gender':'male','ip_address':'1278.35.64.35','age':23})
+
+
+# db.users.find().pretty()
+
+
+# db.users.insertMany([{
+  "first_name": "Yevette",
+  "last_name": "Gurrado",
+  "email": "ygurrado0@usatoday.com",
+  "gender": "Polygender",
+  "ip_address": "205.220.149.100",
+  "age": 1
+}, {
+  "first_name": "Saurabh",
+  "last_name": "Patle",
+  "email": "hwagstaffe1@sun.com",
+  "gender": "Male",
+  "ip_address": "247.236.132.87",
+  "age": 22
+}, {
+  "first_name": "Atlanta",
+  "last_name": "Cartmel",
+  "email": "acartmel2@ow.ly",
+  "gender": "Genderfluid",
+  "ip_address": "139.7.216.99",
+  "age": 3
+}, {
+  "first_name": "Huey",
+  "last_name": "Boxall",
+  "email": "hboxall3@quantcast.com",
+  "gender": "Polygender",
+  "ip_address": "42.232.217.102",
+  "age": 4
+}, {
+  "first_name": "Brigitte",
+  "last_name": "Tuft",
+  "email": "btuft4@tinypic.com",
+  "gender": "Genderfluid",
+  "ip_address": "47.245.42.122",
+  "age": 5
+}, {
+  "first_name": "Nyssa",
+  "last_name": "Lillo",
+  "email": "nlillo5@mail.ru",
+  "gender": "Genderfluid",
+  "ip_address": "228.226.211.91",
+  "age": 6
+}, {
+  "first_name": "Dasi",
+  "last_name": "Lillicrap",
+  "email": "dlillicrap6@g.co",
+  "gender": "Non-binary",
+  "ip_address": "220.66.229.6",
+  "age": 7
+}, {
+  "first_name": "Lynda",
+  "last_name": "Hubble",
+  "email": "lhubble7@utexas.edu",
+  "gender": "Male",
+  "ip_address": "16.227.229.88",
+  "age": 8
+}, {
+  "first_name": "Mireille",
+  "last_name": "Dowden",
+  "email": "mdowden8@cloudflare.com",
+  "gender": "Genderqueer",
+  "ip_address": "46.231.2.116",
+  "age": 9
+}, {
+  "first_name": "Waneta",
+  "last_name": "Glowacz",
+  "email": "wglowacz9@weather.com",
+  "gender": "Genderqueer",
+  "ip_address": "138.11.192.163",
+  "age": 10
+}])
+
+
+# db.users.find({first_name:"shivam"}).pretty()
+
+
+# db.users.find({}).pretty()
+
+
+#  db.users.findOne()
+
+
+# db.users.update({"first_name" : "Honey"},{   "first_name": "Saurabh",   "last_name": "Patle",   "email": "hwagstaffe1@sun.com",   "gender": "Male",   "ip_address": "247.236.132.87",   "age": 22 })
+
+
+# db.users.updateMany({"age": 10}, { $set:{"first_name": "Kamal",   "last_name": "Yadav",   "email": "hwagstaffe1@sun.com",   "gender": "Male",   "ip_address": "247.236.132.87",   "age": 25 }})
+
+
+# db.users.remove({"first_name": "Dasi"})
+
+
+# db.users.deleteOne({age:5})
+
+
+# db.users.deleteMany({"last_name": "Yadav"})
+
+
+# db
+
+
+# db.dropDatabase()
+
