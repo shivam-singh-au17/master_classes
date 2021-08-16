@@ -1,0 +1,130 @@
+
+SHOW DATABASES;
+
+CREATE DATABASE blog2;
+
+USE blog2;
+
+CREATE TABLE posts(
+PostId int not NULL auto_increment PRIMARY KEY,
+Title VARCHAR(50) NOT NULL,
+Content VARCHAR(200) NOT NULL,
+Time TIME,
+Author VARCHAR(20) NOT NULL
+);
+
+INSERT INTO posts
+(Title,Content,Time,Author)
+VALUES
+('Staff Scientist','Netaji Subhas Inst of Technology',curtime(),'Paule');
+
+INSERT INTO posts
+(Title,Content,Time,Author)
+VALUES
+('Associate Professor','Baqai Medical University',curtime(),'Alicia'),
+('Quality Engineer','Trinity College of Music',curtime(),'Tommie'),
+('Senior Developer','Tierärztliche Hochschule Hannover',curtime(),'Judd'),
+('General Manager','University of South Carolina - Sumter',curtime(),'Barrie'),
+('VP Quality Control','Bakht Er-Ruda University',curtime(),'Bay'),
+('Geologist III','University of Wroclaw',curtime(),'Don'),
+('Marketing Assistant','Gardner Webb University',curtime(),'Alleyn'),
+('VP Sales','Masinde Muliro University of Science and Technology',curtime(),'Hector'),
+('Food Chemist','Ege University',curtime(),'Adi');
+
+
+create table comments (
+Comments VARCHAR(50) not NULL,
+PostId INT NOT NULL,
+AuthId INT NOT NULL,
+FOREIGN KEY(PostId) REFERENCES posts(PostId) ON DELETE CASCADE,
+FOREIGN KEY(AuthId) REFERENCES author(AuthId) ON DELETE CASCADE
+);
+
+insert into comments (Comments, PostId, AuthId) values ('Fuscia', 1, 1);
+insert into comments (Comments, PostId, AuthId) values ('Puce', 2, 2);
+insert into comments (Comments, PostId, AuthId) values ('Maroon', 3, 3);
+insert into comments (Comments, PostId, AuthId) values ('Green', 4, 4);
+insert into comments (Comments, PostId, AuthId) values ('Mauv', 5, 5);
+
+insert into comments (Comments, PostId, AuthId) values ('Shaxi', 1, 1);
+insert into comments (Comments, PostId, AuthId) values ('Huanggang', 2, 2);
+insert into comments (Comments, PostId, AuthId) values ('Bykov', 3, 3);
+insert into comments (Comments, PostId, AuthId) values ('Marisgama', 4, 4);
+insert into comments (Comments, PostId, AuthId) values ('Ipoh', 5, 5);
+
+insert into comments (Comments, PostId, AuthId) values ('RX-8', 1, 1);
+insert into comments (Comments, PostId, AuthId) values ('RL', 2, 2);
+insert into comments (Comments, PostId, AuthId) values ('Outback', 3, 3);
+insert into comments (Comments, PostId, AuthId) values ('S-Type', 4, 4);
+insert into comments (Comments, PostId, AuthId) values ('Sephia', 5, 5);
+
+create table tags (
+Tags VARCHAR(50) not NULL,
+PostId INT NOT NULL,
+AuthId INT NOT NULL,
+FOREIGN KEY(PostId) REFERENCES posts(PostId) ON DELETE CASCADE,
+FOREIGN KEY(AuthId) REFERENCES author(AuthId) ON DELETE CASCADE
+);
+
+
+insert into tags (Tags, PostId, AuthId) values ('Xinjie', 1, 1);
+insert into tags (Tags, PostId, AuthId) values ('Gýtheio', 2, 2);
+insert into tags (Tags, PostId, AuthId) values ('Rustāq', 3, 3);
+insert into tags (Tags, PostId, AuthId) values ('San Sebastian', 4, 4);
+insert into tags (Tags, PostId, AuthId) values ('Murun-kuren', 5, 5);
+
+insert into tags (Tags, PostId, AuthId) values ('riolet', 1, 1);
+insert into tags (Tags, PostId, AuthId) values ('Mountaineer', 2, 2);
+insert into tags (Tags, PostId, AuthId) values ('Navigator L', 3, 3);
+insert into tags (Tags, PostId, AuthId) values ('Sonata', 4, 4);
+insert into tags (Tags, PostId, AuthId) values ('Econoline E150', 5, 5);
+
+insert into tags (Tags, PostId, AuthId) values ('Orange', 1, 1);
+insert into tags (Tags, PostId, AuthId) values ('Mauv', 2, 2);
+insert into tags (Tags, PostId, AuthId) values ('Mauv', 3, 3);
+insert into tags (Tags, PostId, AuthId) values ('Yellow', 4, 4);
+insert into tags (Tags, PostId, AuthId) values ('Green', 5, 5);
+
+CREATE TABLE author(
+AuthId int not NULL auto_increment PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+PostId int NOT NULL,
+FOREIGN KEY(PostId) REFERENCES posts(PostId) ON DELETE CASCADE
+);
+
+insert into author (first_name, last_name, PostId) values ('Arlinda', 'Middup', 1);
+insert into author (first_name, last_name, PostId) values ('Micaela', 'Ariss', 2);
+insert into author (first_name, last_name, PostId) values ('Shivam', 'Singh', 2);
+insert into author (first_name, last_name, PostId) values ('Emmie', 'Gardiner', 3);
+insert into author (first_name, last_name, PostId) values ('Winfred', 'Lilbourne', 4);
+insert into author (first_name, last_name, PostId) values ('Kellen', 'Kynson', 5);
+insert into author (first_name, last_name, PostId) values ('Bud', 'Culleford', 6);
+insert into author (first_name, last_name, PostId) values ('Ronny', 'Evennett', 7);
+insert into author (first_name, last_name, PostId) values ('Nathaniel', 'McMeyler', 8);
+insert into author (first_name, last_name, PostId) values ('Emanuele', 'McPhillips', 9);
+insert into author (first_name, last_name, PostId) values ('Wolfy', 'Ross', 10);
+
+UPDATE posts set Author = 'Shivam' WHERE PostId = 2;
+UPDATE `comments` set Comments = 'Kamal Hai' WHERE Comments = 'Green';
+UPDATE author set first_name = 'Shivam' WHERE first_name = 'Emmie';
+UPDATE tags set Tags = 'Sonatata' WHERE Tags = 'Sonata';
+
+DELETE FROM posts WHERE PostId = 1;
+DELETE FROM `comments` WHERE Comments = 'Mauv';
+DELETE FROM author WHERE first_name = 'Bud';
+DELETE FROM tags WHERE Tags = 'San Sebastian';
+
+SELECT * FROM posts, author WHERE posts.PostId = 2 && author.PostId = 2;
+
+SELECT * FROM `comments`, author WHERE `comments`.AuthId = 2 && author.AuthId = 2;
+
+SELECT * FROM `comments` WHERE PostId = 2;
+
+SELECT * FROM tags WHERE PostId = 2;
+
+SELECT * FROM tags JOIN posts ON tags.PostId = posts.PostId;
+
+SELECT Tags FROM tags, author WHERE tags.AuthId = 2 && author.AuthId = 2;
+
+
