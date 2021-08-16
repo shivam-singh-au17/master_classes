@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tatkal</h1>
+    <button id="btn">Alert Me</button>
+
+    <div id="page"></div>
+</body>
+
+</html>
+<script>
+    var btn = document.getElementById('btn')
+    var btn1 = document.getElementById('btn1')
+    var page = document.getElementById('page')
+
+    let BtoG = [ 'pulkit', 'raj', 'aman', 'don', 'raj', 'aman', 'don']
+    let MtoG = [ 'pulkit', 'raj', 'aman', 'don', 'raj', 'aman', 'don']
+    let PtoG = ['pallav', 'pulkit', 'raj', 'aman', 'don', 'raj', 'aman', 'don']
+
+    async function checkavilabity() {
+        let promise = new Promise(function(resolve) {
+            setInterval(function() {
+                if (BtoG.length < 5) {
+                    resolve('train 1 is avilable')
+                    clearInterval(interval)
+                    clearInterval(interval1)
+                } else if (MtoG.length < 5) {
+                    resolve('train 2 is avilable')
+                    clearInterval(interval)
+                    clearInterval(interval1)
+                } else if (PtoG.length < 5) {
+                    resolve('train 3 is avilable')
+                    clearInterval(interval)
+                    clearInterval(interval1)
+                }
+            }, 1000)
+        })
+
+        let res = await promise
+        alert(res)
+            // console.log('res:', res)
+
+        window.location.href = 'booking.html'
+
+    }
+    var train_count1 = document.createElement('div')
+    var train_count2 = document.createElement('div')
+    var train_count3 = document.createElement('div')
+
+    function cancelticket() {
+        let cancelling_speed1 = Math.ceil(Math.random() * 5)
+        let cancelling_speed2 = Math.ceil(Math.random() * 5)
+        let cancelling_speed3 = Math.ceil(Math.random() * 5)
+
+        setTimeout(function() {
+            BtoG.pop()
+            train_count1.innerHTML = `<h1>Seat Avilable for train BtoG = ${BtoG.length}</h1>
+            <button onclick = "train1()">Book Train BtoG</button>`
+        }, cancelling_speed1 * 1000)
+
+        setTimeout(function() {
+            MtoG.pop()
+            train_count2.innerHTML = `<h1>Seat Avilable for train MtoG = ${MtoG.length}</h1>
+            <button onclick = "train2()">Book Train for MtoG</button>`
+        }, cancelling_speed2 * 1000)
+
+        setTimeout(function() {
+            PtoG.pop()
+            train_count3.innerHTML = `<h1>Seat Avilable for train PtoG = ${PtoG.length}</h1>
+            <button onclick = "train3()">Book Train for PtoG</button>`
+        }, cancelling_speed3 * 1000)
+
+        page.append(train_count1)
+        page.append(train_count2)
+        page.append(train_count3)
+
+        // console.log('cancel:', BtoG, MtoG, PtoG)
+    }
+    var interval = setInterval(cancelticket, 2000)
+
+
+    function bookticket() {
+        let booking_speed1 = Math.ceil(Math.random() * 5)
+        let booking_speed2 = Math.ceil(Math.random() * 5)
+        let booking_speed3 = Math.ceil(Math.random() * 5)
+
+        setTimeout(function() {
+            BtoG.push('name')
+        }, booking_speed1 * 500)
+
+        setTimeout(function() {
+            MtoG.push('name')
+        }, booking_speed2 * 500)
+
+        setTimeout(function() {
+            PtoG.push('name')
+        }, booking_speed3 * 500)
+    }
+    var interval1 = setInterval(bookticket, 3000)
+
+    btn.addEventListener('click', checkavilabity)
+
+
+    function train1() {
+        if (BtoG.length != 0) {
+            alert('Your Train From Bangalore to Goa is booked')
+        } else {
+            alert('Seat is not avilable. Better Luck Next Time!!')
+        }
+    }
+
+    function train2() {
+        if (MtoG.length != 0) {
+            alert('Your Train From Mumbai to Goa is booked')
+        } else {
+            alert('Seat is not avilable. Better Luck Next Time!!')
+        }
+    }
+
+    function train3() {
+        if (PtoG.length != 0) {
+            alert('Your Train From Pune to Goa is booked')
+        } else {
+            alert('Seat is not avilable. Better Luck Next Time!!')
+        }
+    }
+</script>

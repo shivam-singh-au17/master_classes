@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0130)https://masai-course.s3.ap-south-1.amazonaws.com/users/992/submissions/108512/255264/7f16998597933d30c827a66aeb54fee5/promise.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h1>Vaccine boot alert system</h1>
+    <input type="text" id="input">
+    <button onclick="register()">register</button>
+</div>
+
+<script>
+    let queue=["abhisek","pulkit","Chandan","mahes","debasis","sonam"];
+    function register(){
+    var input=document.getElementById("input").value;
+    queue.push(input)
+    let message=`${input} your registration is successfull please wait for your turn`
+    alert(message)
+      let promise=new Promise(function(resolve,reject){
+        setInterval(function(){
+            if(queue[0]==input ||count==0){
+              resolve(`${input} is your turn now`)
+              clearInterval(interval)
+          }
+         
+        //   else{
+        //       reject("error")
+        //   }
+        },1000) 
+      
+      })
+      promise.then(function(res){
+        alert(res)
+      })
+      .catch(function(err){
+          console.log("err:",err);
+      })
+    
+    
+    // step-2
+    var count=queue.length-1;
+    function startVac(){
+        queue.shift();
+        count--;
+        console.log(queue);
+        if(count==2){
+          alert("vaccine out of stock, visit tomorrow")
+          alert(`${count} people are still in the queue `)
+        }
+    }
+   let interval= setInterval(startVac,2000);
+}
+  
+</script>
+</body></html>
