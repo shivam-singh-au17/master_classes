@@ -1,11 +1,35 @@
-var removeDuplicates = function (S, K) {
-    for (let i = 1, count = 1; i < S.length; i++) {
-        S.charAt(i) === S.charAt(i - 1) ? count++ : count = 1
-        if (count === K)
-            S = removeDuplicates(S.slice(0, i - K + 1) + S.slice(i + 1), K);
+
+function removeDuplicates(str) {
+    if (str.length == 0) {
+        return "Empty String"
     }
-    return S
-};
+    if (str.length == 1) {
+        return str;
+    } else {
+        let temp = "";
+        for (let i = 0; i < str.length; i++) {
+            if (i == 0) {
+                if (str.charAt(i) != str.charAt(i + 1)) {
+                    temp += str.charAt(i)
+                }
+            } else if (i == (str.length - 1)) {
+                if (str.charAt(i) != str.charAt(i - 1)) {
+                    temp += str.charAt(i)
+                }
+            } else {
+                if (str.charAt(i) != str.charAt(i - 1) && str.charAt(i) != str.charAt(i + 1)) {
+                    temp += str.charAt(i)
+                }
+            }
+        }
+        if (str.length == temp.length) {
+            return temp;
+        } else {
+            return removeDuplicates(temp)
+        }
+    }
+
+}
 
 
 function runProgram(input) {
@@ -15,19 +39,20 @@ function runProgram(input) {
 
     for (let i = 1; i <= testcases; i++) {
 
-        let str = Input[i].split("");
+        let str = Input[i];
 
-        let ans = removeDuplicate(str);
+        let ans = removeDuplicates(str);
         console.log(ans)
     }
 }
 
 if (process.env.USERNAME === "shiva") {
-    runProgram(`4
-azxxxzy
+    runProgram(`5
+acaaabbbacdddd
+qpaaaaadaaaaadprq
+aaaacddddcappp
 caaabbbaac
-gghhg
-aaaacddddcappp`);
+azxxxzy`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

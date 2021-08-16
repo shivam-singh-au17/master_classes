@@ -5,17 +5,17 @@ const app = express()
 // app.use(logger)
 app.use(express.json());
 
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
     res.send("home page get request")
-    next()
+    // next()
 })
+
 
 app.post("/", (req, res) => {
     res.status(201).json(req.body);
     // console.log('req.body:', req.body);
-    console.log("home page get request");
+    // console.log("home page get request 3");
 })
-
 
 // function logger(req, res, next) {
 //     console.log("logging before");
