@@ -1,0 +1,1 @@
+db.movies.find().sort({ "prod_year" : -1,  "movie_name" : 1 }).limit(10).forEach( (el) => db.movies.update( {'_id' : el._id }, {$unset :{ movie_genres : 1 }} ))
