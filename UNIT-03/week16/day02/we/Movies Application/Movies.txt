@@ -1,0 +1,46 @@
+
+
+# mongoimport --host=localhost --port 27017 --db=allmovies --drop --collection=movies --file Downloads/movies.json| --jsonArray
+
+# db.movies.find({ movie_name: { $eq: "Bryn" } }, {movie_name: 1, production_year: 1, _id:0} ).pretty()
+
+
+# db.movies.find({ movie_name: { $ne: "Bryn" } }, {movie_name: 1, production_year: 1, _id:0} ).pretty()
+
+
+# db.movies.find({ budget: { $gt: 9000 } }, {movie_name: 1, production_year: 1, _id:0} ).pretty()
+
+
+# db.movies.find({ budget: { $gte: 9000 } }, {movie_name: 1, production_year: 1, _id:0} ).pretty()
+
+
+# db.movies.find({ budget: { $lt: 10000 } }, {movie_name: 1, production_year: 1, budget: 1, _id:0} ).pretty()
+
+
+# db.movies.find({ budget: { $lte: 10000 } }, {movie_name: 1, production_year: 1, budget: 1, _id:0} ).pretty()
+
+
+# db.movies.find({$and: [{ production_year: { $gt: 2000 } }, { budget: { $gt: 10000 } }]}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+
+# db.movies.find({$or: [{ production_year: { $gt: 2000 } }, { budget: { $gt: 10000 } }]}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+
+# db.movies.find({$nor: [{ production_year: { $gt: 2000 } }, { budget: { $gt: 10000 } }]}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+
+# db.movies.find({$not: [{ production_year: { $gt: 2000 } }, { budget: { $gt: 10000 } }]}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+# db.movies.find({production_year: {$in: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010]}}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+
+# db.movies.find({$and: [{ production_year: { $gte: 2000 } }, { production_year: { $lte: 2010 } }]}, {movie_name: 1, production_year: 1, _id:0}).pretty()
+
+
+# db.movies.find({},{movie_name: 1, production_year: 1, _id:0}).sort({production_year:-1, movie_name: 1}).pretty()
+
+
+# db.movies.find().sort({ "production_year" : -1,  "movie_name" : 1 }).limit(10).forEach( (el) => db.movies.update( {'_id' : el._id }, {$unset :{ movie_genre : 1 }} ))
+
+
+

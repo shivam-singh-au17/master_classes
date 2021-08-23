@@ -1,0 +1,15 @@
+{
+  "name": "first_mongoose",
+  "version": "1.0.0",
+  "description": "This is my first mongoose file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivam singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
+  }
+}

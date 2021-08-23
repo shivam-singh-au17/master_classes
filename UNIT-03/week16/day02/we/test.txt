@@ -1,0 +1,26 @@
+# mongoimport --host=localhost --port 27017 --db=|DataBaseName| --drop --collection=|Collections Name| --file |Path Your Json File Like:Downloads/userdata.json| --jsonArray 
+
+
+# db.users.find( { age: { $eq: 20 } } ).pretty()
+# db.users.find( { age: { $ne: 20 } } ).pretty()
+# db.users.find( { age: { $gt: 20 } } ).pretty()
+# db.users.find( { age: { $lt: 20 } } ).pretty()
+
+# db.users.find({$and: [{email: "cskidmore2a@cnet.com"}, {age: 9}]}).pretty()
+# db.users.find({$and: [{ email: { $eq: "cskidmore2a@cnet.com" } }, { age: { $eq: 9 } }]}).pretty()
+# db.users.find({$and: [{ email: { $eq: "cskidmore2a@cnet.com" } }, { age: { $gt: 9 } }]}).pretty()
+# db.users.find({$or: [{gender: "male"}, {age: 9}]}).pretty()
+# db.users.find({age: {$nin: [40, 41, 42, 43, 44, 45]}}, {first_name: 1, age: 1, _id: 0}).pretty()
+# db.users.find({age: {$in: [40, 41, 42, 43, 44, 45]}}, {first_name: 1, age: 1, _id: 0}).pretty()
+# db.users.updateMany({}, {$unset {first_name: 1}})
+
+# db.users.find().sort({age:1}).pretty()
+# db.users.find().sort({age:-1}).pretty()
+# db.users.find().sort({age:-1, last_name: 1}).pretty()
+# db.users.find().sort({age:1, last_name: -1}).pretty()
+# db.users.find().sort({age:1}).limit(5).pretty()
+
+
+
+not/nor
+# db.users.find({$and: [{gender: "male"}, { age: { $not: { $gt: 19 } } }]}).pretty()
