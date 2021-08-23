@@ -50,7 +50,7 @@ function merge(arr, left, mid, right) {
 function mergeSort(arr, left, right) {
 
     if (left > right) {
-        return;
+        return arr;
     } else {
         let mid = Math.floor((left + right) / 2);
         mergeSort(arr, left, mid)
