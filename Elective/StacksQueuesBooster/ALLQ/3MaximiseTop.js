@@ -1,4 +1,28 @@
 
+let stack = [];
+let mins = [];
+
+function push(data) {
+    stack.push(x);
+    if (mins.length != 0 || x <= mins.length - 1) {
+        mins.push(x);
+    }
+}
+
+function pop() {
+    if (!mins.length != 0) {
+        temp = stack.pop();
+        if (temp == mins.length - 1) {
+            mins.pop();
+        }
+    }
+}
+
+function getMin() {
+    return mins.length - 1;
+}
+
+
 
 function maximiseTop(arr, K) {
     arr.reverse()
