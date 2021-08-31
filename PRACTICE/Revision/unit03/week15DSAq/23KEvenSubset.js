@@ -22,12 +22,12 @@ function printRes(arr, k) {
     let count = 0;
     function evenSumFun(res, arr, low, high) {
         if (low <= high + 1 && res != "") {
-            if (findEvenNum(res.split("").map(Number), k) == true) {
+            if (findEvenNum(res.trim().split(" ").map(Number), k) == true) {
                 count++;
             }
         }
         for (let i = low; i <= high; i++) {
-            evenSumFun(res + arr[i], arr, i + 1, high)
+            evenSumFun(res + arr[i] + " ", arr, i + 1, high)
         }
         return count
     }
@@ -53,13 +53,18 @@ function runProgram(input) {
     }
 }
 
-
 if (process.env.USERNAME === "shiva") {
-    runProgram(`2
-4 2
-4 3 2 1
-2 1
-2 3`);
+    runProgram(`5
+14 8
+66 30 81 2 8 79 60 23 77 26 18 40 58 58
+11 9
+40 62 27 25 19 89 66 60 17 58 32
+4 3
+44 60 38 87
+3 2
+83 93 31
+1 1
+39`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

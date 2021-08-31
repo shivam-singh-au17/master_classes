@@ -21,12 +21,12 @@ function printRes(arr, k) {
     let count = 0;
     function evenSumFun(res, arr, low, high) {
         if (low <= high + 1 && res != "") {
-            if (findOddNum(res.split("").map(Number), k) == true ) {
+            if (findOddNum(res.trim().split(" ").map(Number), k) == true ) {
                 count++;
             }
         }
         for (let i = low; i <= high; i++) {
-            evenSumFun(res + arr[i], arr, i + 1, high)
+            evenSumFun(res + arr[i]+ " ", arr, i + 1, high)
         }
         return count
     }

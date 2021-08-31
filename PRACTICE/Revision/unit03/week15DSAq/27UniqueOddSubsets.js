@@ -1,13 +1,30 @@
-
-function sum(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == arr[i] && arr[i + 1] == arr[i] + 1) {
-            sum += arr[i]
+function Checkdistinct(arr, k) {
+    let count = 0;
+    let temp = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if ((arr[i] == temp + 1) && temp == arr[i] - 1) {
+            temp = arr[i];
+            count++;
         }
     }
-    if (sum % 2 == 1) {
+    if (count = k - 1) {
         return true;
+    } else {
+        return false;
+    }
+}
+
+function sum(arr, k) {
+    if (Checkdistinct(arr, k) == true) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        if (sum % 2 == 1) {
+            return true;
+        } else {
+            return false;
+        }
     } else {
         return false;
     }
@@ -20,21 +37,19 @@ function printRes(arr, k) {
     let res = "";
     let count = 0;
     function evenSumFun(res, arr, low, high) {
-        if (low <= high + 1 && res.length == k) {
-            if (sum(res.split("").map(Number)) == true) {
+        if (low <= high + 1 && res != "") {
+            if (sum(res.trim().split(" ").map(Number), k) == true) {
                 count++;
             }
         }
         for (let i = low; i <= high; i++) {
-            evenSumFun(res + arr[i], arr, i + 1, high)
+            evenSumFun(res + arr[i] + " ", arr, i + 1, high)
         }
         return count
     }
     return evenSumFun(res, arr, low, high);
 
 }
-
-
 
 function runProgram(input) {
 
@@ -53,26 +68,19 @@ function runProgram(input) {
 }
 
 
-if (process.env.USERNAME === "shiva") {
-    runProgram(`3
-1 2 3
-2`);
-} else {
-    process.stdin.resume();
-    process.stdin.setEncoding("ascii");
-    var read = "";
-    process.stdin.on("data", function (input) {
-        read += input;
-    });
-    process.stdin.on("end", function () {
-        read = read.replace(/\n$/, "");
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-    });
-    process.on("SIGINT", function () {
-        read = read.replace(/\n$/, "");
-        runProgram(read);
-        process.exit(0);
-    });
-}
-
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+var read = "";
+process.stdin.on("data", function (input) {
+    read += input;
+});
+process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+});
+process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+});

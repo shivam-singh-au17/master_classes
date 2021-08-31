@@ -4,7 +4,6 @@
 
 function runProgram(input) {
     var input = input.split("\n");
-    var length = +input[0];
     var array = input[1].split(" ").map(Number);
     function quickSort(array) {
         if (array.length == 1) {
