@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO LIST</title>
     <style>
-        body{
+        body {
             background-color: rgb(1, 1, 41);
         }
+
         #cont {
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,6 +27,7 @@
             width: 55%;
             margin: 2%;
             height: 50px;
+            padding-left: 5px;
         }
 
         #cont input:nth-child(2) {
@@ -49,16 +51,11 @@
         <h1>TODO List</h1>
         <div>
             <form>
-                <input type="text" placeholder="Item Name" id="item">
+                <input type="text" placeholder=" Item Name" id="item">
                 <input type="Submit" value="Add Item" id="AddItem">
             </form>
         </div>
         <table>
-            <!-- <tr>
-                <td>#Item</td>
-                <td><button>Mark Complite</button></td>
-                <td><button>Delete</button></td>
-            </tr> -->
         </table>
     </div>
 </body>
@@ -94,6 +91,8 @@
 
         var listItem = document.getElementById("item").value
 
+        if (listItem.length > 0) {
+
             var tr = document.createElement("tr");
 
             var td1 = document.createElement("td");
@@ -128,6 +127,7 @@
             btn1.addEventListener("click", MarkComplited)
             btn2.addEventListener("click", MarkDeleted)
 
+        }
 
     }
 
