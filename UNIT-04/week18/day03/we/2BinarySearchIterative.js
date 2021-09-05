@@ -39,7 +39,7 @@ function runProgram(input) {
 }
 
 
-if (process.env.USERNAME === "shiva") {
+if (process.env.USERNAME === "Jay Mahakaal") {
     runProgram(`5 2
 8 4 1 9 11`);
 } else {
