@@ -1,0 +1,20 @@
+
+
+.myContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: chartreuse;
+  
+}
+
+
+.main{
+  text-align: center;
+  background-color: rgb(0, 247, 255);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+
