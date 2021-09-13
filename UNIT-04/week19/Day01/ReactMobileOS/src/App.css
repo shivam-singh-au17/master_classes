@@ -1,0 +1,58 @@
+
+.myContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(0, 255, 242);
+}
+
+
+.main{
+  background-color: rgb(255, 0, 179);
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: auto;
+  color: white;
+}
+
+.main div:nth-child(1) button{
+  color: white;
+  background-color: rgb(38, 0, 255);
+}
+
+.main div:nth-child(2) button{
+  color: white;
+  background-color: rgb(255, 0, 157);
+}
+
+.main div:nth-child(3) button{
+  color: white;
+  background-color: rgb(156, 154, 0);
+}
+
+.main div:nth-child(4) button{
+  color: white;
+  background-color: rgb(21, 255, 0);
+}
+
+.main div:nth-child(5) button{
+  color: white;
+  background-color: rgb(250, 5, 46);
+}
+
+.main div:nth-child(6) button{
+  color: white;
+  background-color: rgb(0, 132, 255);
+}
+
+.main div:nth-child(7) button{
+  color: white;
+  background-color: rgb(11, 85, 17);
+}
+
+.main div:nth-child(8) button{
+  color: white;
+  background-color: rgb(153, 0, 255);
+}

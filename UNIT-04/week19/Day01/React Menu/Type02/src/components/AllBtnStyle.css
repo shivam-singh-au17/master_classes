@@ -1,0 +1,14 @@
+
+.container{
+    margin: 10px;
+}
+
+.container button {
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 600;
+}
