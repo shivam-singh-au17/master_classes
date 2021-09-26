@@ -26,8 +26,8 @@ function runProgram(input) {
 
 
 if (process.env.USERNAME === "Jay Mahakaal") {
-    runProgram(`6
-2 4 1 3 5 6`);
+    runProgram(`3
+2 4 5`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
