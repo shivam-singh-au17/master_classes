@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 99vh;
+}
+
+.main {
+  width: 70%;
+  padding: 30px;
+}
+
+.main div {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+p {
+  font-size: 50px;
+}
