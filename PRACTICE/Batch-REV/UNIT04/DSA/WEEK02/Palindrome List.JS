@@ -4,27 +4,29 @@ const LinkedListNode = class {
         this.next = null;
     }
 };
-// Complete the function below
-var isPalindrome = function (head) {
-    let temp = head;
-    let temp1 = head;
-    var i = 1;
-    var j = 1;
-    let res = true;
-    while (temp.next) {
 
-        temp = temp.next;
-        j++
+
+var isPalindrome = function (head) {
+
+    let temp1 = head;
+    let temp2 = head;
+    var res1 = 1;
+    var res2 = 1;
+    let ans = true;
+    while (temp1.next) {
+
+        temp1 = temp1.next;
+        res2++
     }
-    while (i < j) {
-        if (temp.data === temp1.data) {
-            i++;
-            j--;
+    while (res1 < res2) {
+        if (temp1.data === temp2.data) {
+            res1++;
+            res2--;
         }
         else {
-            res = false;
-            return res;
+            ans = false;
+            return ans;
         }
     }
-    return res;
+    return ans;
 };

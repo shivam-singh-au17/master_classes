@@ -1,48 +1,53 @@
-function runProgram(input) {
-    var input = input.split("\n");
-    var num = input[0].split(" ").map(Number);
-    var length = num[0];
-    var k = num[1];
-    var arr = input[1].split(" ").map(Number);
-    var array = arr.sort((a, b) => a - b);
 
-    var sum = 0;
-    count = 0;
-    for (let i = 0; i <= array.length; i++) {
+function LoveOfSamosa(arr, k) {
+    let sum = 0;
+    let count = 0;
 
-        if (sum + array[i] <= k) {
+    for (let i = 0; i <= arr.length; i++) {
 
-            sum += array[i]
-
+        if (sum + arr[i] <= k) {
+            sum += arr[i]
             count++;
-
-        }
-        else {
+        } else {
             break;
         }
-
-
     }
-
-    console.log(count)
-
-
-
-
+    return count
 }
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-let read = "";
-process.stdin.on("data", function (input) {
-    read += input;
-});
-process.stdin.on("end", function () {
-    read = read.replace(/\n$/, "")
-    runProgram(read);
-});
 
-process.on("SIGINT", function () {
-    read = read.replace(/\n$/, "")
-    runProgram(read);
-    process.exit(0);
-});
+
+function runProgram(input) {
+
+    let Input = input.split("\n");
+
+    let NandK = Input[0].split(" ").map(Number);
+    let k = NandK[1];
+
+    let arr = Input[1].split(" ").map(Number);
+    arr.sort((a, b) => { return a - b });
+
+    console.log(LoveOfSamosa(arr, k));
+    
+}
+
+if (process.env.USERNAME === "Jay Mahakaal") {
+    runProgram(`4 10
+5 4 2 4`);
+} else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+        read += input;
+    });
+    process.stdin.on("end", function () {
+        read = read.replace(/\n$/, "");
+        read = read.replace(/\n$/, "");
+        runProgram(read);
+    });
+    process.on("SIGINT", function () {
+        read = read.replace(/\n$/, "");
+        runProgram(read);
+        process.exit(0);
+    });
+}
