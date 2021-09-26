@@ -19,7 +19,6 @@ class MyNode {
 let myObj = new MyNode(10)
 myObj.myNext = new MyNode(20)
 myObj.myNext.myNext = new MyNode(30)
-console.log('myObj:', myObj)
 
 let head = myObj;
 while (head != null) {

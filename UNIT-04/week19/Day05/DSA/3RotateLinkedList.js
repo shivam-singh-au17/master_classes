@@ -6,26 +6,45 @@ const LinkedListNode = class {
 };
 
 var rotateRight = function (head, k) {
-    if (head == null) { return head; }
-    let tmp = head;
+
+    if (head == null) {
+        return head;
+    }
+    
+    let temp = head;
     let len = 1;
-    while (tmp.next != null) {
-        tmp = tmp.next;
+
+    while (temp.next != null) {
+        temp = temp.next;
         len++;
     }
-    if (k > len) { k = k % len; }
+
+    if (k > len) {
+        k = k % len;
+    }
+
     k = len - k;
-    if (k == 0 || k == len) { return head; }
+
+    if (k == 0 || k == len) {
+        return head;
+    }
+
     let current = head;
     let count = 1;
+
     while (count < k && current != null) {
         current = current.next;
         count++;
     }
-    if (current == null) { return head; }
+
+    if (current == null) {
+        return head;
+    }
+
     let kthnode = current;
-    tmp.next = head;
+    temp.next = head;
     head = kthnode.next;
     kthnode.next = null;
     return head;
+    
 }
