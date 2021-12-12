@@ -40,15 +40,16 @@ function findMaxLength(arr, dpArr) {
     for (let j = 1; j < arr.length; j++) {
         for (let i = 0; i < j; i++) {
             if (arr[i] < arr[j]) {
-                dpArr[j] = Math.max(dpArr[j], dpArr[j] + 1);
+                dpArr[j] = Math.max(dpArr[j], dpArr[i] + 1);
             }
         }
     }
     return Math.max(...dpArr);
 }
 
-let arr = [2, 5, 8, 9, 5, 7, 10];
+let arr = [10, 22, 9, 33, 21, 50, 41, 60, 80];
 let dpArr = Array(arr.length).fill(0).map(() => 1);
+console.log('dpArr:', dpArr)
 let res = findMaxLength(arr, dpArr);
 console.log('res:', res)
 
