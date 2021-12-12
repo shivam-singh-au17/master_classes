@@ -1,0 +1,18 @@
+{
+  "name": "coding",
+  "version": "1.0.0",
+  "description": "pageination class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivam Singh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemailer": "^6.7.0"
+  }
+}
