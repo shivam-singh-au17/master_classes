@@ -1,5 +1,7 @@
 # mongoimport --host=localhost --port 27017 --db=|DataBaseName| --drop --collection=|Collections Name| --file |Path Your Json File Like:Downloads/userdata.json| --jsonArray 
 
+mongoimport --host=localhost --port 27017 --db=trinkerr --drop --collection=tradingApp --file Downloads/data.json --jsonArray
+
 
 # db.users.find( { age: { $eq: 20 } } ).pretty()
 # db.users.find( { age: { $ne: 20 } } ).pretty()
