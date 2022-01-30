@@ -1,3 +1,5 @@
+
+
 function battleOfOddAndEven(n, arr) {
 
     let oddSum = 0;
