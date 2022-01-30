@@ -1,3 +1,5 @@
+
+
 function checkPalindrome(N, str) {
 
     let newStr = "";
