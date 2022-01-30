@@ -1,4 +1,6 @@
 
+
+
 function addTwoNum(num) {
     let sqr = 0;
     while (num != 0) {
