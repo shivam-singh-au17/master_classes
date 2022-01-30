@@ -1,4 +1,6 @@
 
+
+
 function EncryptIt(str, rota) {
     let res = "";
     for (let i = 0; i < str.length; i++) {
