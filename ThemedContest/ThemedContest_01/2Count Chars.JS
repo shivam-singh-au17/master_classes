@@ -1,4 +1,6 @@
 
+
+
 function CountChars(str) {
     let count = 1;
     let temp = str[0];
