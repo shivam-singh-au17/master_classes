@@ -1,4 +1,5 @@
 
+
 function findOddNum(arr) {
 
     if (arr[0] % 2 == 1 || arr[arr.length - 1] % 2 == 1) {
@@ -7,6 +8,7 @@ function findOddNum(arr) {
         return false;
     }
 }
+
 
 
 function findKOddSubSet(arr, k) {
@@ -27,6 +29,7 @@ function findKOddSubSet(arr, k) {
     }
     return printRes(res, arr, low, high)
 }
+
 
 
 function runProgram(input) {
