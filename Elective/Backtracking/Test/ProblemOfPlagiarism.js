@@ -1,4 +1,5 @@
 
+
 function findOddNum(str, L, R) {
 
     let sum = 0;
@@ -27,7 +28,6 @@ function swap(a, i, j) {
 }
 
 
-
 function findKOddSubSet(str, L, R) {
     let low = 0;
     let high = str.length - 1;
@@ -48,6 +48,7 @@ function findKOddSubSet(str, L, R) {
     }
     return ProblemPlagiarism(str, low, high)
 }
+
 
 
 function runProgram(input) {
