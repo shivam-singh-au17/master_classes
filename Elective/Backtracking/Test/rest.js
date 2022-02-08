@@ -1,4 +1,5 @@
 
+
 function swap(a, i, j) {
     let temp;
     let charArry = a.split("");
@@ -8,6 +9,7 @@ function swap(a, i, j) {
     let res = charArry.join("")
     return res
 }
+
 
 function ProblemPlagiarism(str, low, high) {
     if (low == high) {
