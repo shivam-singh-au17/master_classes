@@ -1,4 +1,5 @@
 
+
 function findOddNum(arr, k) {
     let findOdd = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -12,6 +13,7 @@ function findOddNum(arr, k) {
         return false;
     }
 }
+
 
 
 function findKOddSubSet(arr, k) {
